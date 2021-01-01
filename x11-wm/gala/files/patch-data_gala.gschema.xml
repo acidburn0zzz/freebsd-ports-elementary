@@ -1,0 +1,29 @@
+--- data/gala.gschema.xml.orig	2020-04-03 18:45:09 UTC
++++ data/gala.gschema.xml
+@@ -18,7 +18,7 @@
+ 	
+ 	<schema path="/org/pantheon/desktop/gala/behavior/" id="org.pantheon.desktop.gala.behavior">
+ 		<key enum="GalaActionType" name="hotcorner-topleft">
+-			<default>'none'</default>
++			<default>'open-launcher'</default>
+ 			<summary>Action for the top left corner</summary>
+ 			<description></description>
+ 		</key>
+@@ -63,7 +63,7 @@
+ 			<description>If new notifications UI should be used, requires io.elemenetary.notifications to be present and running</description>
+ 		</key>
+ 		<key type="s" name="panel-main-menu-action">
+-			<default>''</default>
++			<default>'wingpanel --toggle-indicator=app-launcher'</default>
+ 			<summary>Panel main menu action</summary>
+ 			<description>Sets the command to run when the panel-main-menu keybinding is pressed.</description>
+ 		</key>
+@@ -73,7 +73,7 @@
+ 			<description></description>
+ 		</key>
+ 		<key type="s" name="overlay-action">
+-			<default>''</default>
++			<default>'wingpanel --toggle-indicator=app-launcher'</default>
+ 			<summary></summary>
+ 			<description></description>
+ 		</key>
