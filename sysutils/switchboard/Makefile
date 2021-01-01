@@ -1,0 +1,25 @@
+# Created by: Olivier Duchateau
+# $FreeBSD$
+
+PORTNAME=	switchboard
+PORTVERSION=	2.4.0
+CATEGORIES=	sysutils
+
+MAINTAINER=	duchateau.olivier@gmail.com
+COMMENT=	Extensible system settings for the Pantheon desktop
+
+LICENSE=	GPLv3
+
+BUILD_DEPENDS=	valac:lang/vala
+LIB_DEPENDS=	libgee-0.8.so:devel/libgee
+USES=		desktop-file-utils elementary gettext gnome meson pkgconfig \
+		python:3.5+,build
+USE_GNOME=	glib20 gtk30
+USE_ELEMENTARY=	granite
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	elementary
+
+GLIB_SCHEMAS=	io.elementary.switchboard.gschema.xml
+
+.include <bsd.port.mk>
