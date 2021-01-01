@@ -1,4 +1,4 @@
---- data/gala.gschema.xml.orig	2020-04-03 18:45:09 UTC
+--- data/gala.gschema.xml.orig	2020-04-30 22:23:37 UTC
 +++ data/gala.gschema.xml
 @@ -18,7 +18,7 @@
  	
@@ -27,3 +27,21 @@
  			<summary></summary>
  			<description></description>
  		</key>
+@@ -166,7 +166,7 @@
+ 			<description>When true, instead of having independent titlebars, modal dialogs appear attached to the titlebar of the parent window and are moved together with the parent window.</description>
+ 		</key>
+ 		<key type="s" name="button-layout">
+-			<default>'close:maximize'</default>
++			<default>':minimize,maximize,close'</default>
+ 			<summary>Arrangement of buttons on the titlebar</summary>
+ 			<description>Arrangement of buttons on the titlebar. The value should be a string, such as "menu:minimize,maximize,spacer,close"; the colon separates the left corner of the window from the right corner, and the button names are comma-separated. Duplicate buttons are not allowed. Unknown button names are silently ignored so that buttons can be added in future metacity versions without breaking older versions. A special spacer tag can be used to insert some space between two adjacent buttons.</description>
+ 		</key>
+@@ -266,7 +266,7 @@
+ 			<summary>Enable bubbles</summary>
+ 		</key>
+ 		<key type="b" name="sounds">
+-			<default>true</default>
++			<default>false</default>
+ 			<summary>Enable sounds</summary>
+ 		</key>
+ 		<key type="b" name="remember">

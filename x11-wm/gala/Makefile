@@ -31,6 +31,7 @@ USE_XORG=	xfixes
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 
-GLIB_SCHEMAS=	org.pantheon.desktop.gala.gschema.xml
+GLIB_SCHEMAS=	org.pantheon.desktop.gala.gschema.xml \
+		20_elementary.pantheon.wm.gschema.override
 
 .include <bsd.port.mk>
