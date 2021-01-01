@@ -1,0 +1,5 @@
+Wingpanel is the extensible top panel for the Pantheon desktop.
+It is an empty container that accepts indicators as extensions,
+including the application menu.
+
+WWW: https://github.com/elementary/wingpanel
