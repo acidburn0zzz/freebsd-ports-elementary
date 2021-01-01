@@ -1,0 +1,17 @@
+--- meson.build.orig	2020-04-29 21:58:06 UTC
++++ meson.build
+@@ -40,13 +40,11 @@ gtk_dep = dependency('gtk+-3.0')
+ granite_dep = dependency('granite')
+ gobject_dep = dependency('gobject-2.0')
+ libsoup_dep = dependency('libsoup-2.4')
+-appstream_dep = dependency('appstream')
+ gio_unix_dep = dependency('gio-unix-2.0')
+ json_glib_dep = dependency('json-glib-1.0')
+-zeitgeist_dep = dependency('zeitgeist-2.0')
+ switchboard_dep = dependency('switchboard-2.0')
+ libgnome_menu_dep = dependency('libgnome-menu-3.0')
+-libhandy_dep = dependency('libhandy-0.0')
++libhandy_dep = dependency('libhandy-1', version: '>= 0.83.0')
+ wingpanel_dep = dependency('wingpanel-2.0', version: '>=2.1.0')
+ posix_dep = meson.get_compiler('vala').find_library('posix')
+ 
