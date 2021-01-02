@@ -1,0 +1,26 @@
+--- data/schemas/io.elementary.files.gschema.xml.orig	2020-03-03 09:38:55 UTC
++++ data/schemas/io.elementary.files.gschema.xml
+@@ -107,7 +107,7 @@
+       <description>The minimum width of the side pane.</description>
+     </key>
+     <key type="b" name="restore-tabs">
+-      <default>true</default>
++      <default>false</default>
+       <summary>Whether to restore tabs on start up</summary>
+       <description>Whether to restore tabs on start up</description>
+     </key>
+@@ -125,12 +125,12 @@
+ 
+   <schema path="/io/elementary/files/icon-view/" id="io.elementary.files.icon-view">
+     <key name="default-zoom-level" enum="io.elementary.files.ZoomLevel">
+-      <default>'large'</default>
++      <default>'normal'</default>
+       <summary>Icon default zoom level</summary>
+       <description>Default Zoom level used by the icon view.</description>
+     </key>
+     <key name="zoom-level" enum="io.elementary.files.ZoomLevel">
+-      <default>'large'</default>
++      <default>'normal'</default>
+       <summary>Icon zoom level</summary>
+       <description>Zoom level used by the Icon View.</description>
+     </key>
