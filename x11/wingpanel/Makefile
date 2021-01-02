@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wingpanel
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	x11
 
 MAINTAINER=	duchateau.olivier@gmail.com
