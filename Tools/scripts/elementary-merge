@@ -136,7 +136,7 @@ revert()
 				fi
 			done
 
-			rm ${PORTSDIR}/Mk/Uses/pantheon.mk
+			rm ${PORTSDIR}/Mk/Uses/elementary.mk
 						
 			cd ${PORTSDIR};
 			${svn_bin} revert -R .;
