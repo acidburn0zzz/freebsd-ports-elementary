@@ -19,7 +19,8 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libcanberra.so:audio/libcanberra \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libgraphene-1.0.so:graphics/graphene
-RUN_DEPENDS=	gsettings-desktop-schemas>=3.28:devel/gsettings-desktop-schemas 
+RUN_DEPENDS=	gsettings-desktop-schemas>=3.28:devel/gsettings-desktop-schemas \
+		redacted-fonts-ttf>0:x11-fonts/redacted-fonts-ttf
 
 USES=		elementary gettext gnome meson pkgconfig \
 		python:3.5+,build xorg
