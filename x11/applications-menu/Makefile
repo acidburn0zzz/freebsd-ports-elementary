@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	applications-menu
-PORTVERSION=	2.7.0
+PORTVERSION=	2.7.1
 CATEGORIES=	x11
 
 MAINTAINER=	duchateau.olivier@gmail.com
