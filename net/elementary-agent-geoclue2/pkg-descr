@@ -1,0 +1,5 @@
+The location services agent appears whenever an application wants to
+request permission to use location services. It is designed for the
+Pantheon desktop.
+
+WWW: https://github.com/elementary/pantheon-agent-geoclue2
