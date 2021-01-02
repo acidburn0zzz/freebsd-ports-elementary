@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wingpanel-indicator-datetime
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.5
 CATEGORIES=	x11-clocks
 
 MAINTAINER=	duchateau.olivier@gmail.com
