@@ -1,0 +1,16 @@
+--- data/meson.build.orig	2020-02-26 06:34:51 UTC
++++ data/meson.build
+@@ -28,12 +28,6 @@ i18n.merge_file(
+ )
+ 
+ install_data(
+-    meson.project_name() + '.conf',
++    meson.project_name() + '.conf.sample',
+     install_dir: join_paths(get_option('sysconfdir'), 'lightdm')
+-)
+-
+-test (
+-    'Validate desktop file',
+-    find_program('desktop-file-validate'),
+-    args: join_paths(meson.current_build_dir (), meson.project_name() + '.desktop')
+ )
