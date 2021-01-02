@@ -1,9 +1,10 @@
 # Created by: Olivier Duchateau
 # $FreeBSD$
 
-PORTNAME=	pantheon-agent-polkit
+PORTNAME=	agent-polkit
 PORTVERSION=	1.0.3
 CATEGORIES=	sysutils
+PKGNAMEPREFIX=	elementary-
 
 MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	Polkit agent for the Pantheon desktop
@@ -20,7 +21,8 @@ USES=	elementary gettext gnome meson pkgconfig \
 USE_GNOME=	glib20 gtk30
 USE_ELEMENTARY=	granite
 
-GH_ACCOUNT=	elementary
 USE_GITHUB=	yes
+GH_ACCOUNT=	elementary
+GH_PROJECT=	pantheon-${PORTNAME}
 
 .include <bsd.port.mk>
