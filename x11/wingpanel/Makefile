@@ -6,7 +6,7 @@ PORTVERSION=	2.3.2
 CATEGORIES=	x11
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	Stylish top panel for the Pantheon desktop
+COMMENT=	Stylish top panel for the Elementary desktop
 
 LICENSE=	GPLv3
 

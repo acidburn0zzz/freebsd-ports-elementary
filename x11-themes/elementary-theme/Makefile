@@ -7,7 +7,7 @@ CATEGORIES=	x11-themes
 PKGNAMESUFFIX=	-theme
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	Gtk themes for the Pantheon desktop
+COMMENT=	Gtk themes for the Elementary desktop
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

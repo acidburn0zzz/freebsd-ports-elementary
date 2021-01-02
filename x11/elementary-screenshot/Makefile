@@ -7,7 +7,7 @@ CATEGORIES=	x11
 PKGNAMEPREFIX=	elementary-
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	Screenshot tool for the Pantheon desktop
+COMMENT=	Screenshot tool for the Elementary desktop
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

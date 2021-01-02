@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 PKGNAMEPREFIX=	elementary-
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	Polkit agent for the Pantheon desktop
+COMMENT=	Polkit agent for the Elementary desktop
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

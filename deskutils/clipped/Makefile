@@ -6,7 +6,7 @@ PORTVERSION=	1.1.1
 CATEGORIES=	deskutils
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	Clipboard manager for the Pantheon desktop
+COMMENT=	Clipboard manager for the Elementary desktop
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

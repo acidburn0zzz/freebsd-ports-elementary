@@ -6,7 +6,7 @@ PORTVERSION=	2.4.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	Extensible system settings for the Pantheon desktop
+COMMENT=	Extensible system settings for the Elementary desktop
 
 LICENSE=	GPLv3
 

@@ -6,7 +6,7 @@ PORTVERSION=	3.3.2
 CATEGORIES=	x11-wm
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	Window manager for the Pantheon desktop
+COMMENT=	Window manager for the Elementary desktop
 
 LICENSE=	GPLv3
 
