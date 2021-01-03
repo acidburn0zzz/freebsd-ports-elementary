@@ -7,7 +7,7 @@
 -        const string LOGIND_DBUS_NAME = "org.freedesktop.login1";
 -        const string LOGIND_DBUS_OBJECT_PATH = "/org/freedesktop/login1";
 +        const string LOGIND_DBUS_NAME = "org.freedesktop.ConsoleKit";
-+        const string LOGIND_DBUS_OBJECT_PATH = "/org/freedesktop/ConsoleKit";
++        const string LOGIND_DBUS_OBJECT_PATH = "/org/freedesktop/ConsoleKit/Manager";
  
          delegate unowned string? GlQueryFunc (uint id);
  
