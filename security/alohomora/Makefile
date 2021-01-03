@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	alohomora
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libsecret-1.so:security/libsecret
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	z0o0p
-GH_TAGNAME=	4369abb
+GH_TAGNAME=	ac6bf99
 
 USES=		gettext elementary gnome meson pkgconfig \
 		python:3.6+,build
