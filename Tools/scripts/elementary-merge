@@ -180,7 +180,7 @@ merge()
 			done
 
 			# Mk/...
-			cp Mk/Uses/pantheon.mk ${PORTSDIR}/Mk/Uses ;
+			cp Mk/Uses/elementary.mk ${PORTSDIR}/Mk/Uses ;
 
 			cd ${CWD};
 			exit 0
