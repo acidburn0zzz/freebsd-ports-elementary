@@ -20,7 +20,7 @@ IGNORE= Incorrect USES+= elementary:${elementary_ARGS} takes no arguments
 
 DIST_SUBDIR=	elementary
 
-PLIST_SUB+=	SWITCHBOARD_PLUGDIR="lib/switchboard/system"
+PLIST_SUB+=	SWITCHBOARD_PLUGDIR="lib/switchboard"
 
 # Available Elementary components are:
 _USE_ELEMENTARY_ALL=  gala granite plank switchboard wingpanel

@@ -1,4 +1,4 @@
-%%SWITCHBOARD_PLUGDIR%%/libsound.so
+%%SWITCHBOARD_PLUGDIR%%/system/libsound.so
 share/locale/aa/LC_MESSAGES/sound-plug.mo
 share/locale/ab/LC_MESSAGES/sound-plug.mo
 share/locale/ae/LC_MESSAGES/sound-plug.mo
