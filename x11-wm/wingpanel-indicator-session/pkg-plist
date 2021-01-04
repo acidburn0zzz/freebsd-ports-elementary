@@ -1,4 +1,4 @@
-lib/wingpanel/libsession.so
+%%WINGPANEL_PLUGDIR%%/libsession.so
 share/locale/aa/LC_MESSAGES/session-indicator.mo
 share/locale/ab/LC_MESSAGES/session-indicator.mo
 share/locale/ae/LC_MESSAGES/session-indicator.mo

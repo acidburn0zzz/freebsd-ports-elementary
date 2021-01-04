@@ -1,4 +1,4 @@
-lib/wingpanel/libkeyboard.so
+%%WINGPANEL_PLUGDIR%%/libkeyboard.so
 share/locale/aa/LC_MESSAGES/keyboard-indicator.mo
 share/locale/ab/LC_MESSAGES/keyboard-indicator.mo
 share/locale/ae/LC_MESSAGES/keyboard-indicator.mo

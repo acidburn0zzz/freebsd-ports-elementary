@@ -1,4 +1,4 @@
-lib/wingpanel/libdatetime.so
+%%WINGPANEL_PLUGDIR%%/libdatetime.so
 share/locale/aa/LC_MESSAGES/datetime-indicator.mo
 share/locale/ab/LC_MESSAGES/datetime-indicator.mo
 share/locale/ae/LC_MESSAGES/datetime-indicator.mo

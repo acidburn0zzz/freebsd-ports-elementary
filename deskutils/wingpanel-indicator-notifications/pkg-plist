@@ -1,4 +1,4 @@
-lib/wingpanel/libnotifications.so
+%%WINGPANEL_PLUGDIR%%/libnotifications.so
 share/locale/aa/LC_MESSAGES/notifications-indicator.mo
 share/locale/ab/LC_MESSAGES/notifications-indicator.mo
 share/locale/ae/LC_MESSAGES/notifications-indicator.mo

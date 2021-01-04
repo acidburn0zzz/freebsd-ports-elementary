@@ -1,4 +1,4 @@
-lib/wingpanel/libnightlight.so
+%%WINGPANEL_PLUGDIR%%/libnightlight.so
 share/locale/aa/LC_MESSAGES/nightlight-indicator.mo
 share/locale/ab/LC_MESSAGES/nightlight-indicator.mo
 share/locale/ae/LC_MESSAGES/nightlight-indicator.mo
