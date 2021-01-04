@@ -1,0 +1,14 @@
+etc/gtk-3.0/settings.ini
+etc/xdg/autostart/plank-initial-setup.desktop
+libexec/plank-initial-setup
+share/accountsservice/interfaces/io.elementary.pantheon.AccountsService.xml
+share/dbus-1/interfaces/io.elementary.pantheon.AccountsService.xml
+share/plank/launchers/com.github.cassidyjames.ephemeral.dockitem
+share/plank/launchers/gala-multitaskingview.dockitem
+share/plank/launchers/io.elementary.calendar.dockitem
+share/plank/launchers/io.elementary.music.dockitem
+share/plank/launchers/io.elementary.photos.dockitem
+share/plank/launchers/io.elementary.switchboard.dockitem
+share/plank/launchers/io.elementary.terminal.dockitem
+share/plank/launchers/io.elementary.videos.dockitem
+share/polkit-1/actions/io.elementary.pantheon.AccountsService.policy
