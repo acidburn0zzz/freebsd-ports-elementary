@@ -6,5 +6,5 @@
  IconTheme=elementary
 -CursorTheme=DMZ-Black
 -ButtonLayout=close:maximize
-+CursorTheme=DMZ-Vanilla
++CursorTheme=elementary
 +ButtonLayout=:minimize,maximize,close

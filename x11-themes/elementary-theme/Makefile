@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	gtk-murrine-engine>=0.98.1:x11-themes/gtk-murrine-engine \
-		cursor-dmz-theme>=0.4:x11-themes/cursor-dmz-theme
+		gnome-icons-elementary>0:x11-themes/gnome-icons-elementary
 
 USES=		gettext meson python:3.5+,build
 
