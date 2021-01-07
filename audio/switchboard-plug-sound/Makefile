@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	switchboard-plug-sound
-PORTVERSION=	2.2.5
+PORTVERSION=	2.2.6
 CATEGORIES=	audio
 
 MAINTAINER=	duchateau.olivier@gmail.com
