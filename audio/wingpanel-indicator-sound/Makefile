@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wingpanel-indicator-sound
-PORTVERSION=	2.1.7
+PORTVERSION=	2.1.8
 CATEGORIES=	audio
 
 MAINTAINER=	duchateau.olivier@gmail.com
