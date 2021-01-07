@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wingpanel-indicator-keyboard
-PORTVERSION=	2.2.1
+PORTVERSION=	2.3.0
 CATEGORIES=	x11
 
 MAINTAINER=	duchateau.olivier@gmail.com
@@ -22,6 +22,8 @@ USE_ELEMENTARY=	granite wingpanel
 
 GH_ACCOUNT=	elementary
 USE_GITHUB=	yes
+
+GLIB_SCHEMAS=	io.elementary.wingpanel.keyboard.gschema.xml
 
 post-patch:
 	${REINPLACE_CMD} -i '' -e 's|/usr|${PREFIX}|' \
