@@ -9,7 +9,7 @@
 # Variable which can be set by the port:
 # USE_ELEMENTARY  List of components
 #
-# MAINTAINER: ports@FreeBSD.org
+# MAINTAINER: portmgr@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_ELEMENTARY_MK)
 _INCLUDE_USES_ELEMENTARY_MK=  yes
