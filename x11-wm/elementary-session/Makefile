@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elementary-session
-PORTVERSION=	5.0.3.1
+PORTVERSION=	5.0.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://codeberg.org/olivierd/elementary-session/archive/
 DISTNAME=	${PORTVERSION}
@@ -15,7 +15,6 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	elementary-settings>0:sysutils/elementary-settings \
-		elementary-agent-polkit>0:sysutils/elementary-agent-polkit \
 		elementary-agent-geoclue2>0:net/elementary-agent-geoclue2 \
 		applications-menu>0:x11/applications-menu \
 		xdg-user-dirs-gtk-update:devel/xdg-user-dirs-gtk \
