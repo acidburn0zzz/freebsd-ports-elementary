@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ephemeral
-PORTVERSION=	7.0.4
+PORTVERSION=	7.0.5
 CATEGORIES=	www
 
 MAINTAINER=	duchateau.olivier@gmail.com
