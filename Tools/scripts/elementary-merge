@@ -136,7 +136,9 @@ revert()
 				fi
 			done
 
-			rm ${PORTSDIR}/Mk/Uses/elementary.mk
+			if [ -e "${PORTSDIR}/Mk/Uses/elementary.mk" ]; then
+				rm ${PORTSDIR}/Mk/Uses/elementary.mk
+			fi
 						
 			cd ${PORTSDIR};
 			${svn_bin} revert -R .;
