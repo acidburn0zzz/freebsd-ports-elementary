@@ -1,0 +1,10 @@
+--- session/meson.build.orig	2021-01-09 14:24:38 UTC
++++ session/meson.build
+@@ -15,7 +15,6 @@ gsd_components = [
+   'org.gnome.SettingsDaemon.Color',
+   'org.gnome.SettingsDaemon.Datetime',
+   'org.gnome.SettingsDaemon.Housekeeping',
+-  'org.gnome.SettingsDaemon.Keyboard',
+   'org.gnome.SettingsDaemon.MediaKeys',
+   'org.gnome.SettingsDaemon.Power',
+   'org.gnome.SettingsDaemon.PrintNotifications',

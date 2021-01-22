@@ -23,7 +23,6 @@ RUN_DEPENDS=	elementary-settings>0:sysutils/elementary-settings \
 # Official applications
 RUN_DEPENDS+=	io.elementary.shortcut-overlay:deskutils/shortcut-overlay \
 		io.elementary.calculator:math/pantheon-calculator \
-		io.elementary.greeter-compositor:x11/elementary-greeter \
 		io.elementary.screenshot-tool:x11/elementary-screenshot \
 		io.elementary.terminal:x11/elementary-terminal \
 		io.elementary.files:x11-fm/elementary-files \
