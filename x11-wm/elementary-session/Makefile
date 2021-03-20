@@ -17,15 +17,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	elementary-settings>0:sysutils/elementary-settings \
 		elementary-agent-geoclue2>0:net/elementary-agent-geoclue2 \
 		applications-menu>0:x11/applications-menu \
-		xdg-user-dirs-gtk-update:devel/xdg-user-dirs-gtk \
-		gnome-keyring:security/gnome-keyring
+		xdg-user-dirs-gtk-update:devel/xdg-user-dirs-gtk
 
 # Official applications
 RUN_DEPENDS+=	io.elementary.shortcut-overlay:deskutils/shortcut-overlay \
 		io.elementary.calculator:math/pantheon-calculator \
 		io.elementary.screenshot-tool:x11/elementary-screenshot \
 		io.elementary.terminal:x11/elementary-terminal \
-		io.elementary.files:x11-fm/elementary-files \
+		io.elementary.files:x11-fm/elementary-files
 
 # Switchboard plugins
 RUN_DEPENDS+=	switchboard-plug-a11y>0:accessibility/switchboard-plug-a11y \
