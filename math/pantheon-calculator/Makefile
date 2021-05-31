@@ -1,8 +1,7 @@
 # Created by: Olivier Duchateau
-# $FreeBSD: head/math/pantheon-calculator/Makefile 559356 2020-12-27 12:47:07Z rhurlin $
 
 PORTNAME=	calculator
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	math
 PKGNAMEPREFIX=	pantheon-
 DIST_SUBDIR=	pantheon
