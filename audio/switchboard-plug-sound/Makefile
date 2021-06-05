@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau
-# $FreeBSD$
 
 PORTNAME=	switchboard-plug-sound
 PORTVERSION=	2.2.6

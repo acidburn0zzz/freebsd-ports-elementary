@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau
-# $FreeBSD$
 
 PORTNAME=	agent-geoclue2
 PORTVERSION=	1.0.4

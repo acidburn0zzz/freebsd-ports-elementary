@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau
-# $FreeBSD$
 
 PORTNAME=	wingpanel-indicator-notifications
 PORTVERSION=	2.1.4

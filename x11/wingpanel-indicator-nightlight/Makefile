@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau
-# $FreeBSD$
 
 PORTNAME=	wingpanel-indicator-nightlight
 PORTVERSION=	2.0.4

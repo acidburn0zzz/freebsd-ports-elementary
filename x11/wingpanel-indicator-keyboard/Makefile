@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau
-# $FreeBSD$
 
 PORTNAME=	wingpanel-indicator-keyboard
 PORTVERSION=	2.3.0

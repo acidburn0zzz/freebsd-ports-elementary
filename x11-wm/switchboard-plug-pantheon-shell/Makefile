@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau
-# $FreeBSD$
 
 PORTNAME=	switchboard-plug-pantheon-shell
 PORTVERSION=	2.8.4

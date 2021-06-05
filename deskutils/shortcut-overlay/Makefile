@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau
-# $FreeBSD$
 
 PORTNAME=	shortcut-overlay
 PORTVERSION=	1.1.2

@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau
-# $FreeBSD$
 
 PORTNAME=	xdg-user-dirs-gtk
 PORTVERSION=	0.10

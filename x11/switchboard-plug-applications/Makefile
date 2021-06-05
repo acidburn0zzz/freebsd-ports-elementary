@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau
-# $FreeBSD$
 
 PORTNAME=	switchboard-plug-applications
 PORTVERSION=	2.1.7

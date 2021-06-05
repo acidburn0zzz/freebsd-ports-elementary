@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau
-# $FreeBSD$
 
 PORTNAME=	switchboard-plug-mouse-touchpad
 PORTVERSION=	2.4.2

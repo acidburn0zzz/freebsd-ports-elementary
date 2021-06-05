@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Provide support for the Elementary related ports
 #
 # Feature:      elementary
