@@ -1,7 +1,7 @@
 # Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 
 PORTNAME=	terminal
-PORTVERSION=	5.5.2
+PORTVERSION=	6.0.0
 CATEGORIES=	x11
 PKGNAMEPREFIX=	elementary-
 
@@ -12,7 +12,9 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	valac:lang/vala
-LIB_DEPENDS=	libgee-0.8.so:devel/libgee
+LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
+		libhandy-1.so:x11-toolkits/libhandy \
+		libpcre2-8.so:devel/pcre2
 RUN_DEPENDS=	dbus-send:devel/dbus
 
 USES=		desktop-file-utils elementary gettext gnome meson \
