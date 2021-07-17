@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	shortcut-overlay
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	duchateau.olivier@gmail.com
@@ -11,7 +11,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	valac:lang/vala
-LIB_DEPENDS=	libgee-0.8.so:devel/libgee
+LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
+		libhandy-1.so:x11-toolkits/libhandy
 
 USES=	elementary gettext gnome meson pkgconfig \
 	python:3.5+,build
