@@ -1,9 +1,8 @@
---- data/20_elementary.pantheon.wm.gschema.override.orig	2020-04-30 22:23:37 UTC
+--- data/20_elementary.pantheon.wm.gschema.override.orig	2021-07-14 17:07:19 UTC
 +++ data/20_elementary.pantheon.wm.gschema.override
-@@ -1,6 +1,4 @@
- [org.gnome.mutter:Pantheon]
- dynamic-workspaces = true
- attach-modal-dialogs = false
--button-layout = 'close:maximize'
+@@ -4,4 +4,4 @@ attach-modal-dialogs = false
  edge-tiling = true
--enable-animations = true
+ 
+ [org.gnome.desktop.wm.preferences:Pantheon]
+-button-layout='close:maximize'
++button-layout=':minimize,maximize,close'
