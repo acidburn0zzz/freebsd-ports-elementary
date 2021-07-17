@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	sound-theme
-PORTVERSION=	1.0
+PORTVERSION=	1.1.0
 CATEGORIES=	audio
 PKGNAMEPREFIX=	elementary-
 
