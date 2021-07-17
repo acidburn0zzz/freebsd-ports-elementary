@@ -30,6 +30,7 @@ share/locale/br/LC_MESSAGES/io.elementary.switchboard.mo
 share/locale/bs/LC_MESSAGES/io.elementary.switchboard.mo
 share/locale/ca/LC_MESSAGES/io.elementary.switchboard.mo
 share/locale/ce/LC_MESSAGES/io.elementary.switchboard.mo
+share/locale/ceb/LC_MESSAGES/io.elementary.switchboard.mo
 share/locale/ch/LC_MESSAGES/io.elementary.switchboard.mo
 share/locale/ckb/LC_MESSAGES/io.elementary.switchboard.mo
 share/locale/co/LC_MESSAGES/io.elementary.switchboard.mo
@@ -68,6 +69,7 @@ share/locale/gv/LC_MESSAGES/io.elementary.switchboard.mo
 share/locale/ha/LC_MESSAGES/io.elementary.switchboard.mo
 share/locale/he/LC_MESSAGES/io.elementary.switchboard.mo
 share/locale/hi/LC_MESSAGES/io.elementary.switchboard.mo
+share/locale/hil/LC_MESSAGES/io.elementary.switchboard.mo
 share/locale/ho/LC_MESSAGES/io.elementary.switchboard.mo
 share/locale/hr/LC_MESSAGES/io.elementary.switchboard.mo
 share/locale/ht/LC_MESSAGES/io.elementary.switchboard.mo

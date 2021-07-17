@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	switchboard
-PORTVERSION=	2.4.0
+PORTVERSION=	6.0.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	duchateau.olivier@gmail.com
@@ -10,7 +10,8 @@ COMMENT=	Extensible system settings for the Elementary desktop
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	valac:lang/vala
-LIB_DEPENDS=	libgee-0.8.so:devel/libgee
+LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
+		libhandy-1.so:x11-toolkits/libhandy
 USES=		desktop-file-utils elementary gettext gnome meson pkgconfig \
 		python:3.5+,build
 USE_GNOME=	glib20 gtk30
