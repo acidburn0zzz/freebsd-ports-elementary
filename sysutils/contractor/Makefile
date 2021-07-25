@@ -4,7 +4,7 @@ PORTNAME=	contractor
 PORTVERSION=	0.3.5
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	Desktop-wide extension service
 
 LICENSE=	GPLv3
