@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libhandy-1.so:x11-toolkits/libhandy
-RUN_DEPENDS=	redacted-fonts-ttf>0:x11-fonts/redacted-fonts-ttf
+RUN_DEPENDS=	redacted-fonts-ttf>0:x11-fonts/redacted-fonts-ttf \
+		gnome-shell>0:x11/gnome-shell
 
 USES=		elementary gettext gnome meson pkgconfig \
 		python:3.5+,build
