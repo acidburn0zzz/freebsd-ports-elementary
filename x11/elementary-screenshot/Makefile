@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	screenshot
-PORTVERSION=	1.7.1
+PORTVERSION=	6.0.0
 CATEGORIES=	x11
 PKGNAMEPREFIX=	elementary-
 
@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	valac:lang/vala
-LIB_DEPENDS=	libcanberra.so:audio/libcanberra
+LIB_DEPENDS=	libhandy-1.so:x11-toolkits/libhandy
 RUN_DEPENDS=	redacted-fonts-ttf>0:x11-fonts/redacted-fonts-ttf
 
 USES=		elementary gettext gnome meson pkgconfig \
@@ -24,6 +24,6 @@ INSTALLS_ICONS=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 
-GLIB_SCHEMAS=	io.elementary.screenshot-tool.gschema.xml
+GLIB_SCHEMAS=	io.elementary.screenshot.gschema.xml
 
 .include <bsd.port.mk>
