@@ -39,10 +39,10 @@ LOCAL_REP=""
 ####
 
 #### Don't change anything below
-PRGFILE="`realpath "$0"`"
+PRGFILE=$(realpath "$0")
 PRGNAME="${0##*/}"
 
-CWD=`pwd`
+CWD=$(pwd)
 
 # Repository
 : ${HOST:="https://codeberg.org/olivierd/freebsd-ports-elementary.git"}
@@ -63,7 +63,6 @@ options:
   -h    show this help
   -c    clone remote repository
   -m    merge into the ports tree
-  -r    revert changes
   -u    update local repository
 EOF
 		exit 0
@@ -75,17 +74,6 @@ check_git()
 		echo $(which git);
 	else
 		err "ERROR: git(1) not found. Try 'pkg install git'";
-	fi
-}
-
-check_svn()
-{
-	if [ -x $(which svn 2>/dev/null) ]; then
-		echo $(which svn);
-	elif [ -x $(which svnlite 2>/dev/null) ]; then
-		echo $(which svnlite);
-	else
-		err "ERROR: svn(1) not found. Try 'pkg install subversion'";
 	fi
 }
 
@@ -103,86 +91,62 @@ update()
 	${1} pull
 }
 
-checkout()
+clone()
 {
-	git_bin=$(check_git)
+	GIT=$(check_git)
 		
 	if [ ! -d "${LOCAL_REP}/.git" ]; then
 		$(init_repository)
 
 		cd $(dirname ${LOCAL_REP})
-		${git_bin} clone ${HOST}
+		${GIT} clone ${HOST}
 	else
-		update ${git_bin};
+		update ${GIT};
 	fi
 	exit 0
 }
 
-revert()
-{
-	svn_bin=$(check_svn)
-
-	if [ ! -d "${LOCAL_REP}/.git" ]; then
-		err "ERROR: You must clone repository first!"
-	else
-		if [ -n "${PORTSDIR}" ]; then
-			cd ${LOCAL_REP};
-
-			dirs=$(find . -type d -depth 2 \
-                   ! -path './.git*' ! -path './Tools*' ! -path './Mk*');
-			for d in ${dirs}; do
-				if [ -d "${PORTSDIR}/${d#./}" ]; then
-					rm -Rf "${PORTSDIR}/${d#./}";
-				fi
-			done
-
-			if [ -e "${PORTSDIR}/Mk/Uses/elementary.mk" ]; then
-				rm ${PORTSDIR}/Mk/Uses/elementary.mk
-			fi
-						
-			cd ${PORTSDIR};
-			${svn_bin} revert -R .;
-						
-			cd ${CWD};
-			exit 0
-		else
-			err "ERROR: ${PORTSDIR} is not defined!"
-		fi
-	fi
-}
-
 merge()
 {
+	GIT=$(check_git)
+
 	if [ ! -d "${LOCAL_REP}/.git" ]; then
 		err "ERROR: You must clone repository first!";
 	else
 		if [ -n "${PORTSDIR}" ]; then
-			cd ${LOCAL_REP};
+			cd ${PORTSDIR};
+			${GIT} switch io.elementary 2>/dev/null;
+			if [ ${?} -ne 0 ]; then
+				${GIT} switch -c io.elementary;
+			fi
 
-			dirs=$(find . -type d -depth 2 \
-                   ! -path './.git*' ! -path './Tools*' ! -path './Mk*');
+			dirs=$(find ${LOCAL_REP} -type d -depth 2 \
+                   ! -path '*/.git*' ! -path '*/Tools*' ! -path '*/Mk*');
 			for d in ${dirs}; do
+                # Name
+                port=${d##${LOCAL_REP}/}
+
 				# New port
-				if [ ! -d "${PORTSDIR}/${d#./}" ]; then
-					mkdir "${PORTSDIR}/${d#./}";
+				if [ ! -d "${port}" ]; then
+					mkdir "${port}";
 				fi
 
 				# Clean port directory
-				if [ -d "${PORTSDIR}/${d#./}/work" ]; then
-					rm -Rf "${PORTSDIR}/${d#./}/work";
+				if [ -d "${port}/work" ]; then
+					rm -Rf "${port}/work";
 				fi
 								
 				# Overrides files/
-				if [ -d "${PORTSDIR}/${d#./}/files" ]; then
-					rm -Rf "${PORTSDIR}/${d#./}/files";
+				if [ -d "${port}/files" ]; then
+					rm -Rf "${port}/files";
 				fi
 
 				# Copy everything
-				cp -Rv ${d#./}/* ${PORTSDIR}/${d#./};
+				cp -Rv ${d}/* ${port};
 			done
 
 			# Mk/...
-			cp Mk/Uses/elementary.mk ${PORTSDIR}/Mk/Uses ;
+			cp ${LOCAL_REP}/Mk/Uses/elementary.mk ${PORTSDIR}/Mk/Uses ;
 
 			cd ${CWD};
 			exit 0
@@ -192,7 +156,7 @@ merge()
 	fi
 }
 
-opts=$(getopt hcmur ${*})
+opts=$(getopt hcmu ${*})
 if [ ${?} -ne 0 ]; then
 		usage
 fi
@@ -208,7 +172,7 @@ else
 				shift
 				;;
 			-c)
-				checkout;
+				clone;
 				shift
 				;;
 			-m)
@@ -216,11 +180,7 @@ else
 				shift
 				;;
 			-u)
-				checkout;
-				shift
-				;;
-			-r)
-				revert;
+				clone;
 				shift
 				;;
 			--)
