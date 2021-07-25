@@ -1,0 +1,5 @@
+bin/io.elementary.notifications
+bin/io.elementary.notifications.demo
+etc/xdg/autostart/io.elementary.notifications.desktop
+share/applications/io.elementary.notifications.demo.desktop
+share/metainfo/io.elementary.notifications.appdata.xml
