@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	elementary
-PORTVERSION=	5.4.2
+PORTVERSION=	6.0.0
 CATEGORIES=	x11-themes
 PKGNAMESUFFIX=	-theme
 
@@ -11,13 +11,13 @@ COMMENT=	Gtk themes for the Elementary desktop
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	gtk-murrine-engine>=0.98.1:x11-themes/gtk-murrine-engine \
-		gnome-icons-elementary>0:x11-themes/gnome-icons-elementary
+BUILD_DEPENDS=	sassc:textproc/sassc
+RUN_DEPENDS=	gnome-icons-elementary>0:x11-themes/gnome-icons-elementary
 
-USES=		gettext meson python:3.5+,build
+USES=		gettext meson python:3.6+,build
 
+USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 GH_PROJECT=	stylesheet
-USE_GITHUB=	yes
 
 .include <bsd.port.mk>
