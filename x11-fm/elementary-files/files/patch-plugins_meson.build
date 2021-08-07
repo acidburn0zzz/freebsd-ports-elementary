@@ -1,9 +1,0 @@
---- plugins/meson.build.orig	2021-08-03 15:45:30 UTC
-+++ plugins/meson.build
-@@ -1,5 +1,5 @@
- subdir('contractor')
- subdir('pantheon-files-trash')
- subdir('pantheon-files-ctags')
--subdir('pantheon-files-cloud')
-+#subdir('pantheon-files-cloud')
- subdir('git')
