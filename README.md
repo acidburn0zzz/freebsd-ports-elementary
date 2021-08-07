@@ -20,10 +20,10 @@ It is an **early state** (very unstable). Repository contains several branches:
 	# kldload cuse
 	# sysrc kld_list+=cuse
 	# pw groupmod webcamd -m olivierd
-
+	
 	# vi /etc/rc.conf → webcamd_enable="YES"
-
-	service webcamd start
+	
+	# service webcamd start
 
 5. Check available cameras
 
