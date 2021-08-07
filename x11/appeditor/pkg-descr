@@ -1,9 +1,0 @@
-AppEditor allows you to edit application entries in the application
-menu. It is designed for the Elementary desktop.
-
-Some of its features include:
-- Hide and show applications from the application menu
-- Create new applications entries
-- Change application's display name, icon and more
-
-WWW: https://github.com/donadigo/appeditor
