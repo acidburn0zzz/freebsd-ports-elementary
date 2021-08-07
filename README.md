@@ -16,22 +16,26 @@ It is an **early state** (very unstable). Repository contains several branches:
 3. Add yourself to the **webcamd** group
 4. Start **webcamd(8)** demon
 
-	\# pkg install webcamd
-	\# kldload cuse
-	\# sysrc kld_list+=cuse
-	\# pw groupmod webcamd -m olivierd
+```
+	# pkg install webcamd
+	# kldload cuse
+	# sysrc kld_list+=cuse
+	# pw groupmod webcamd -m olivierd
 	
-	\# vi /etc/rc.conf → webcamd_enable="YES"
+	# vi /etc/rc.conf → webcamd_enable="YES"
 	
-	\# service webcamd start
+	# service webcamd start
+```
 
 5. Check available cameras
 
+```
 	% usbconfig
 	.
 	.
 	.
 	ugen2.3: <NC2141102N70206E30LM21 VGA Webcam> at usbus2, cfg=0 md=HOST spd=HIGH (480Mbps) pwr=ON (500mA)
+```
 
 The USB device of my webcam is **ugen2.3**, we can adjust value of `webcamd_0_flags`.
 
