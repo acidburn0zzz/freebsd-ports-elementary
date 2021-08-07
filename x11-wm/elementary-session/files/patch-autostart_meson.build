@@ -1,8 +1,0 @@
---- autostart/meson.build.orig	2021-01-09 14:24:38 UTC
-+++ autostart/meson.build
-@@ -1,4 +1,4 @@
--install_data(['gala.desktop', 'plank.desktop'],
-+install_data('plank.desktop',
-              install_dir: join_paths(get_option('sysconfdir'), 'xdg',
-                                      'autostart')
- )
