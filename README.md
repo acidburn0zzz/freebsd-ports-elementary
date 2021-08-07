@@ -4,9 +4,17 @@ This is the [FreeBSD Ports](https://cgit.freebsd.org/ports/) collection in order
 
 It is an **early state** (very unstable). Repository contains several branches:
 
+* 6.0 → **main branch**
 * broken
 * 3rd-pary-apps → applications which use the Granite toolkit
 * obsolete → no need anymore
+
+## How to test
+
+1. `pkg install git`
+2. fetch [elementary-merge](https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/Tools/scripts/elementary-merge) script
+
+You need to adjust **LOCAL_REP** variable, before to run it. The ports collection must be present in your system. Then run `sh elementary-merge -h` for more details.
 
 ## Tips
 

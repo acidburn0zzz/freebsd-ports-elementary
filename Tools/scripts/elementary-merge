@@ -100,7 +100,7 @@ clone()
 		$(init_repository)
 
 		cd $(dirname ${LOCAL_REP})
-		${GIT} clone ${HOST}
+		${GIT} clone -b 6.0 --depth 1 ${HOST}
 	else
 		update ${GIT};
 	fi
@@ -120,7 +120,7 @@ revert()
 			${GIT} switch main;
 
 			dirs=$(find ${LOCAL_REP} -type d -depth 2 \
-                   ! -path '*/.git*' ! -path '*/Tools*' ! -path '*/Mk*');
+                   ! -path '*/.git*' ! -path '*/Mk*');
 			for d in ${dirs}; do
                 # Name
                 port=${d##${LOCAL_REP}/}
@@ -161,7 +161,7 @@ merge()
 			fi
 
 			dirs=$(find ${LOCAL_REP} -type d -depth 2 \
-                   ! -path '*/.git*' ! -path '*/Tools*' ! -path '*/Mk*');
+                   ! -path '*/.git*' ! -path '*/Mk*');
 			for d in ${dirs}; do
                 # Name
                 port=${d##${LOCAL_REP}/}
