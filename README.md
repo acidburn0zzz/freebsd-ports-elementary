@@ -6,7 +6,7 @@ It is an **early state** (very unstable). Repository contains several branches:
 
 * [6.0](https://codeberg.org/olivierd/freebsd-ports-elementary/src/branch/6.0) → **main branch**
 * broken
-* 3rd-pary-apps → applications which use the Granite toolkit
+* 3rd-party-apps → applications which use the Granite toolkit
 * obsolete → no need anymore
 
 ## How to test
