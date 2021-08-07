@@ -6,6 +6,7 @@ It is an **early state** (very unstable). Repository contains several branches:
 
 * broken
 * 3rd-pary-apps → applications which use the Granite toolkit
+* obsolete → no need anymore
 
 ## Tips
 
