@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	switchboard-plug-notifications
-PORTVERSION=	2.1.7
+PORTVERSION=	2.2.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	duchateau.olivier@gmail.com
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee
 
 USES=		elementary gettext gnome meson pkgconfig \
-		python:3.5+,build
+		python:3.6+,build
 USE_GNOME=	glib20 gtk30
 USE_ELEMENTARY=	gala granite switchboard
 INSTALLS_ICONS=	yes
