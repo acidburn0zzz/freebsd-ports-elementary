@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	switchboard-plug-pantheon-shell
-PORTVERSION=	2.8.4
+PORTVERSION=	6.0.0
 CATEGORIES=	x11-wm
 
 MAINTAINER=	duchateau.olivier@gmail.com
@@ -15,12 +15,16 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libgexiv2.so:graphics/gexiv2 \
 		libaccountsservice.so:sysutils/accountsservice \
 		libtumbler-1.so:deskutils/xfce4-tumbler
-RUN_DEPENDS=	contractor:sysutils/contractor
+RUN_DEPENDS=	contractor:sysutils/contractor \
+		elementary-theme>=6.0.0:x11-themes/elementary-theme \
+		elementary-wallpapers>0:x11-themes/elementary-wallpapers \
+		opendyslexic-fonts-otf>0:x11-fonts/opendyslexic-fonts-otf
 
 USES=		elementary gettext gnome meson pkgconfig \
-		python:3.5+,build
+		python:3.6+,build
 USE_GNOME=	glib20 gtk30 gnomedesktop3 librsvg2 gdkpixbuf2
 USE_ELEMENTARY=	granite plank switchboard wingpanel
+INSTALLS_ICONS=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
