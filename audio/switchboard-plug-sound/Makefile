@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	switchboard-plug-sound
-PORTVERSION=	2.2.6
+PORTVERSION=	2.2.7
 CATEGORIES=	audio
 
 MAINTAINER=	duchateau.olivier@gmail.com

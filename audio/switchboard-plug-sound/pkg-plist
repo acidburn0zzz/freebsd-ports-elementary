@@ -22,6 +22,7 @@ share/locale/bn/LC_MESSAGES/sound-plug.mo
 share/locale/bo/LC_MESSAGES/sound-plug.mo
 share/locale/br/LC_MESSAGES/sound-plug.mo
 share/locale/bs/LC_MESSAGES/sound-plug.mo
+share/locale/btk/LC_MESSAGES/sound-plug.mo
 share/locale/ca/LC_MESSAGES/sound-plug.mo
 share/locale/ce/LC_MESSAGES/sound-plug.mo
 share/locale/ch/LC_MESSAGES/sound-plug.mo
@@ -158,6 +159,7 @@ share/locale/sn/LC_MESSAGES/sound-plug.mo
 share/locale/so/LC_MESSAGES/sound-plug.mo
 share/locale/sq/LC_MESSAGES/sound-plug.mo
 share/locale/sr/LC_MESSAGES/sound-plug.mo
+share/locale/sr@latin/LC_MESSAGES/sound-plug.mo
 share/locale/ss/LC_MESSAGES/sound-plug.mo
 share/locale/st/LC_MESSAGES/sound-plug.mo
 share/locale/su/LC_MESSAGES/sound-plug.mo
