@@ -37,7 +37,7 @@ switchboard_LIB_DEPENDS=	libswitchboard-2.0.so:sysutils/switchboard
 switchboard_USE_ELEMENTARY_REQ=	granite
 
 wingpanel_LIB_DEPENDS=	libwingpanel.so:x11/wingpanel
-wingpanel_RUN_DEPENDS=	wingpanel:x11/wingpanel
+wingpanel_RUN_DEPENDS=	io.elementary.wingpanel:x11/wingpanel
 wingpanel_USE_ELEMENTARY_REQ=	gala
 
 .if defined(USE_ELEMENTARY)
