@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	switchboard-plug-display
-PORTVERSION=	2.2.2
+PORTVERSION=	2.3.0
 CATEGORIES=	x11
 
 MAINTAINER=	duchateau.olivier@gmail.com
@@ -12,11 +12,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
-		libmutter-6.so:x11-wm/mutter
-RUN_DEPENDS=	gnome-settings-daemon>=3.28:sysutils/gnome-settings-daemon
+		libmutter-7.so:x11-wm/mutter
+RUN_DEPENDS=	gnome-settings-daemon>0:sysutils/gnome-settings-daemon
 
 USES=		elementary gettext gnome meson pkgconfig \
-		python:3.5+,build
+		python:3.6+,build
 USE_GNOME=	glib20 gtk30
 USE_ELEMENTARY=	granite switchboard
 
