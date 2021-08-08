@@ -5,7 +5,7 @@ PORTVERSION=	5.1.0
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	Redacted TTF fonts
+COMMENT=	Redacted TrueType Fonts
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/redacted/OFL.txt
