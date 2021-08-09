@@ -55,3 +55,5 @@ Now we can test, if everything is fine. Install gstreamer1-plugings-v4l2.
 	# pkg install gstreamer1-plugins-v4l2 gstreamer1-plugins-ximagesrc
 
 	% GST_V4L2_USE_LIBV4L2=1 gst-launch-1.0 v4l2src ! xvimagesink
+
+(img/io.elementary.camera.png?raw=true)
