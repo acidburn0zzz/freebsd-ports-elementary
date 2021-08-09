@@ -1,0 +1,11 @@
+--- src/meson.build.orig	2021-07-21 20:19:39 UTC
++++ src/meson.build
+@@ -22,7 +22,7 @@ plug_files = files(
+ switchboard_dep = dependency('switchboard-2.0')
+ switchboard_plugsdir = switchboard_dep.get_pkgconfig_variable('plugsdir', define_variable: ['libdir', libdir])
+ 
+-cups_lib = meson.get_compiler('c').find_library('cups')
++cups_lib = meson.get_compiler('c').find_library('cups', dirs: ['/usr/local/lib'])
+ cups_vapi = meson.get_compiler('vala').find_library('cups', dirs: join_paths(meson.source_root(), 'vapi'))
+ cups_dep = declare_dependency(dependencies: [cups_lib, cups_vapi])
+ 
