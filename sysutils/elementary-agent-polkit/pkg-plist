@@ -3,6 +3,7 @@ libexec/policykit-1-pantheon/io.elementary.desktop.agent-polkit
 share/applications/io.elementary.desktop.agent-polkit.desktop
 share/locale/aa/LC_MESSAGES/io.elementary.desktop.agent-polkit.mo
 share/locale/ab/LC_MESSAGES/io.elementary.desktop.agent-polkit.mo
+share/locale/ace/LC_MESSAGES/io.elementary.desktop.agent-polkit.mo
 share/locale/ae/LC_MESSAGES/io.elementary.desktop.agent-polkit.mo
 share/locale/af/LC_MESSAGES/io.elementary.desktop.agent-polkit.mo
 share/locale/ak/LC_MESSAGES/io.elementary.desktop.agent-polkit.mo
@@ -50,6 +51,7 @@ share/locale/eu/LC_MESSAGES/io.elementary.desktop.agent-polkit.mo
 share/locale/fa/LC_MESSAGES/io.elementary.desktop.agent-polkit.mo
 share/locale/ff/LC_MESSAGES/io.elementary.desktop.agent-polkit.mo
 share/locale/fi/LC_MESSAGES/io.elementary.desktop.agent-polkit.mo
+share/locale/fil/LC_MESSAGES/io.elementary.desktop.agent-polkit.mo
 share/locale/fj/LC_MESSAGES/io.elementary.desktop.agent-polkit.mo
 share/locale/fo/LC_MESSAGES/io.elementary.desktop.agent-polkit.mo
 share/locale/fr/LC_MESSAGES/io.elementary.desktop.agent-polkit.mo
@@ -160,6 +162,7 @@ share/locale/sn/LC_MESSAGES/io.elementary.desktop.agent-polkit.mo
 share/locale/so/LC_MESSAGES/io.elementary.desktop.agent-polkit.mo
 share/locale/sq/LC_MESSAGES/io.elementary.desktop.agent-polkit.mo
 share/locale/sr/LC_MESSAGES/io.elementary.desktop.agent-polkit.mo
+share/locale/sr@latin/LC_MESSAGES/io.elementary.desktop.agent-polkit.mo
 share/locale/ss/LC_MESSAGES/io.elementary.desktop.agent-polkit.mo
 share/locale/st/LC_MESSAGES/io.elementary.desktop.agent-polkit.mo
 share/locale/su/LC_MESSAGES/io.elementary.desktop.agent-polkit.mo

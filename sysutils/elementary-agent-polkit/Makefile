@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	agent-polkit
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	elementary-
 
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libpolkit-agent-1.so:sysutils/polkit
 
 USES=	elementary gettext gnome meson pkgconfig \
-	python:3.5+,build
+	python:3.6+,build
 USE_GNOME=	glib20 gtk30
 USE_ELEMENTARY=	granite
 
