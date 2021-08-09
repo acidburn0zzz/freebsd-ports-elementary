@@ -56,4 +56,6 @@ Now we can test, if everything is fine. Install gstreamer1-plugings-v4l2.
 
 	% GST_V4L2_USE_LIBV4L2=1 gst-launch-1.0 v4l2src ! xvimagesink
 
+Or `cd multimedia/elementary-camera ; make install clean`
+
 ![Screenshot of io.elementary.camera](https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/img/io.elementary.camera.png)
