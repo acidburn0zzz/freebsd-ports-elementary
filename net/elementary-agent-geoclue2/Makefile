@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	agent-geoclue2
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	net
 PKGNAMEPREFIX=	elementary-
 
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgeoclue-2.so:net/geoclue
 
 USES=		elementary gettext gnome meson pkgconfig \
-		python:3.5+,build
+		python:3.6+,build
 USE_GNOME=	glib20 gtk30
 
 USE_GITHUB=	yes

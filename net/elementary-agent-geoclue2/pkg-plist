@@ -3,6 +3,7 @@ libexec/geoclue2-1-pantheon/pantheon-agent-geoclue2
 share/applications/io.elementary.desktop.agent-geoclue2.desktop
 share/locale/aa/LC_MESSAGES/pantheon-agent-geoclue2.mo
 share/locale/ab/LC_MESSAGES/pantheon-agent-geoclue2.mo
+share/locale/ace/LC_MESSAGES/pantheon-agent-geoclue2.mo
 share/locale/ae/LC_MESSAGES/pantheon-agent-geoclue2.mo
 share/locale/af/LC_MESSAGES/pantheon-agent-geoclue2.mo
 share/locale/ak/LC_MESSAGES/pantheon-agent-geoclue2.mo
@@ -50,6 +51,7 @@ share/locale/eu/LC_MESSAGES/pantheon-agent-geoclue2.mo
 share/locale/fa/LC_MESSAGES/pantheon-agent-geoclue2.mo
 share/locale/ff/LC_MESSAGES/pantheon-agent-geoclue2.mo
 share/locale/fi/LC_MESSAGES/pantheon-agent-geoclue2.mo
+share/locale/fil/LC_MESSAGES/pantheon-agent-geoclue2.mo
 share/locale/fj/LC_MESSAGES/pantheon-agent-geoclue2.mo
 share/locale/fo/LC_MESSAGES/pantheon-agent-geoclue2.mo
 share/locale/fr/LC_MESSAGES/pantheon-agent-geoclue2.mo
@@ -160,6 +162,7 @@ share/locale/sn/LC_MESSAGES/pantheon-agent-geoclue2.mo
 share/locale/so/LC_MESSAGES/pantheon-agent-geoclue2.mo
 share/locale/sq/LC_MESSAGES/pantheon-agent-geoclue2.mo
 share/locale/sr/LC_MESSAGES/pantheon-agent-geoclue2.mo
+share/locale/sr@latin/LC_MESSAGES/pantheon-agent-geoclue2.mo
 share/locale/ss/LC_MESSAGES/pantheon-agent-geoclue2.mo
 share/locale/st/LC_MESSAGES/pantheon-agent-geoclue2.mo
 share/locale/su/LC_MESSAGES/pantheon-agent-geoclue2.mo
