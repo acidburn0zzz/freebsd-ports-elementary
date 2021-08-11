@@ -12,7 +12,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	sassc:textproc/sassc
-RUN_DEPENDS=	gnome-icons-elementary>0:x11-themes/gnome-icons-elementary
+RUN_DEPENDS=	gnome-icons-elementary>0:x11-themes/gnome-icons-elementary \
+		inter-fonts-otf>0:x11-themes/inter-fonts-otf
 
 USES=		gettext meson python:3.6+,build
 
