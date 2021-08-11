@@ -4,7 +4,7 @@ PORTNAME=	redacted-fonts-ttf
 PORTVERSION=	5.1.0
 CATEGORIES=	x11-fonts
 
-MAINTAINER=	duchateau.olivier@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Redacted TrueType Fonts
 
 LICENSE=	OFL11
