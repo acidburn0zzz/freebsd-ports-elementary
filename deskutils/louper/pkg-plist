@@ -1,0 +1,11 @@
+bin/com.github.ryonakano.louper
+share/applications/com.github.ryonakano.louper.desktop
+share/icons/hicolor/128x128/apps/com.github.ryonakano.louper.svg
+share/icons/hicolor/16x16/apps/com.github.ryonakano.louper.svg
+share/icons/hicolor/24x24/apps/com.github.ryonakano.louper.svg
+share/icons/hicolor/32x32/apps/com.github.ryonakano.louper.svg
+share/icons/hicolor/48x48/apps/com.github.ryonakano.louper.svg
+share/icons/hicolor/64x64/apps/com.github.ryonakano.louper.svg
+share/locale/ja/LC_MESSAGES/com.github.ryonakano.louper.mo
+share/locale/nl/LC_MESSAGES/com.github.ryonakano.louper.mo
+share/metainfo/com.github.ryonakano.louper.appdata.xml
