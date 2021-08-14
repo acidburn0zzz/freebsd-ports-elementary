@@ -1,13 +1,13 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	ephemeral
-PORTVERSION=	7.0.5
+PORTVERSION=	7.1.0
 CATEGORIES=	www
 
 MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	Always-incognito web browser
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	valac:lang/vala
@@ -17,14 +17,13 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libgee-0.8.so:devel/libgee
 
 USES=		desktop-file-utils elementary gettext gnome meson \
-		pkgconfig python:3.5+,build
+		pkgconfig python:3.6+,build
 USE_GNOME=	glib20 gtk30
 USE_ELEMENTARY=	granite
 INSTALLS_ICONS=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cassidyjames
-GH_TAGNAME=	06293a7
 
 GLIB_SCHEMAS=	com.github.cassidyjames.ephemeral.gschema.xml
 

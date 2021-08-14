@@ -1,8 +1,17 @@
---- data/gschema.xml.orig	2020-04-30 21:50:41 UTC
+--- data/gschema.xml.orig	2021-03-25 17:36:18 UTC
 +++ data/gschema.xml
-@@ -49,7 +49,7 @@
-       <description>Number of times the user manually closed Ephemeral shortly after opening a page externally</description>
+@@ -2,7 +2,7 @@
+ <schemalist>
+   <schema path="/com/github/cassidyjames/ephemeral/" id="com.github.cassidyjames.ephemeral">
+     <key name="ask-default" type="b">
+-      <default>true</default>
++      <default>false</default>
+       <summary>Ask to be default</summary>
+       <description>Whether or not Ephemeral should ask to be the default web browser (if it isn't already)</description>
      </key>
+@@ -58,7 +58,7 @@
+     </key>
+ 
      <key name="search-engine" type="s">
 -      <default>"https://duckduckgo.com/?q=%s&amp;kp=1&amp;t=elementary"</default>
 +      <default>"https://duckduckgo.com/?q=%s&amp;kh=1&amp;t=elementary"</default>
