@@ -9,22 +9,25 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	valac:lang/vala
-# Core dependencies
-LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
-		libgranite.so:x11-toolkits/granite \
-		libhandy-1.so:x11-toolkits/libhandy \
-		libpeas-1.0.so:devel/libpeas \
-		libfontconfig.so:x11-fonts/fontconfig \
-		libgit2-glib-1.0.so:devel/libgit2-glib
-# For plugins
-LIB_DEPENDS+=	libeditorconfig.so:editors/editorconfig-core-c \
-		libgtkspell3-3.so:textproc/gtkspell3 \
-		libsoup-2.4.so:devel/libsoup
 RUN_DEPENDS=	droid-fonts-ttf>0:x11-fonts/droid-fonts-ttf \
 		pkcheck:sysutils/polkit
+LIB_DEPENDS=	libatk-1.0.so:accessibility/atk \
+		libeditorconfig.so:editors/editorconfig-core-c \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libgee-0.8.so:devel/libgee \
+		libgit2-glib-1.0.so:devel/libgit2-glib \
+		libgranite.so:x11-toolkits/granite \
+		libgtkspell3-3.so:textproc/gtkspell3 \
+		libhandy-1.so:x11-toolkits/libhandy \
+		libpeas-1.0.so:devel/libpeas \
+		libpeas-gtk-1.0.so:devel/libpeas \
+		libsoup-2.4.so:devel/libsoup \
+		libvala-0.48.so:lang/vala \
+		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
+		libzeitgeist-2.0.so:sysutils/zeitgeist
 
 USES=		compiler:c++11-lang desktop-file-utils gettext gnome meson \
-		pkgconfig python:3.6+,build
+		ninja pkgconfig python:3.6+,build xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 GH_PROJECT=	code
@@ -34,6 +37,7 @@ GLIB_SCHEMAS=	io.elementary.code.gschema.xml \
 		io.elementary.code.plugins.terminal.gschema.xml
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
+USE_XORG=	x11
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
