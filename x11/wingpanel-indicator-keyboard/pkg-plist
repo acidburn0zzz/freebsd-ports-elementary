@@ -23,6 +23,7 @@ share/locale/bo/LC_MESSAGES/keyboard-indicator.mo
 share/locale/br/LC_MESSAGES/keyboard-indicator.mo
 share/locale/bs/LC_MESSAGES/keyboard-indicator.mo
 share/locale/ca/LC_MESSAGES/keyboard-indicator.mo
+share/locale/ca@valencia/LC_MESSAGES/keyboard-indicator.mo
 share/locale/ce/LC_MESSAGES/keyboard-indicator.mo
 share/locale/ch/LC_MESSAGES/keyboard-indicator.mo
 share/locale/ckb/LC_MESSAGES/keyboard-indicator.mo
@@ -48,6 +49,7 @@ share/locale/eu/LC_MESSAGES/keyboard-indicator.mo
 share/locale/fa/LC_MESSAGES/keyboard-indicator.mo
 share/locale/ff/LC_MESSAGES/keyboard-indicator.mo
 share/locale/fi/LC_MESSAGES/keyboard-indicator.mo
+share/locale/fil/LC_MESSAGES/keyboard-indicator.mo
 share/locale/fj/LC_MESSAGES/keyboard-indicator.mo
 share/locale/fo/LC_MESSAGES/keyboard-indicator.mo
 share/locale/fr/LC_MESSAGES/keyboard-indicator.mo
@@ -158,6 +160,7 @@ share/locale/sn/LC_MESSAGES/keyboard-indicator.mo
 share/locale/so/LC_MESSAGES/keyboard-indicator.mo
 share/locale/sq/LC_MESSAGES/keyboard-indicator.mo
 share/locale/sr/LC_MESSAGES/keyboard-indicator.mo
+share/locale/sr@latin/LC_MESSAGES/keyboard-indicator.mo
 share/locale/ss/LC_MESSAGES/keyboard-indicator.mo
 share/locale/st/LC_MESSAGES/keyboard-indicator.mo
 share/locale/su/LC_MESSAGES/keyboard-indicator.mo
