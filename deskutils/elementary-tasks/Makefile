@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	tasks
-PORTVERSION=	6.0.2
+PORTVERSION=	6.0.3
 CATEGORIES=	deskutils
 PKGNAMEPREFIX=	elementary-
 
