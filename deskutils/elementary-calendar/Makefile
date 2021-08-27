@@ -1,5 +1,5 @@
 PORTNAME=	calendar
-DISTVERSION=	6.0.0
+DISTVERSION=	6.0.1
 CATEGORIES=	deskutils
 PKGNAMEPREFIX=	elementary-
 
@@ -26,7 +26,7 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 RUN_DEPENDS=	consolekit2>0:sysutils/consolekit2 \
 		switchboard-plug-onlineaccounts>0:net/switchboard-plug-onlineaccounts
 
-USES=		desktop-file-utils gnome meson pkgconfig
+USES=		desktop-file-utils gettext gnome meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 USE_GNOME=	glib20 gtk30 evolutiondataserver3
