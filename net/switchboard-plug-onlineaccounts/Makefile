@@ -1,14 +1,14 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	switchboard-plug-onlineaccounts
-PORTVERSION=	6.1.0
+PORTVERSION=	6.2.0
 CATEGORIES=	net
 PKGNAMEPREFIX=	switchboard-plug-
 
 MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	Switchboard online accounts plugin
 
-LICENSE=	GPLv3
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	valac:lang/vala
@@ -24,9 +24,5 @@ INSTALLS_ICONS=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
-
-post-extract:
-	@${CP} ${FILESDIR}/camel-1.2.vapi \
-		${WRKSRC}/vapi/
 
 .include <bsd.port.mk>
