@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	files
-PORTVERSION=	6.0.1
+PORTVERSION=	6.0.2
 CATEGORIES=	x11-fm
 PKGNAMEPREFIX=	elementary-
 
