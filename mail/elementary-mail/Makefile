@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	mail
-PORTVERSION=	6.1.0
+PORTVERSION=	6.1.1
 CATEGORIES=	mail
 PKGNAMEPREFIX=	elementary-
 
