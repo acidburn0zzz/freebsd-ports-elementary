@@ -1,0 +1,33 @@
+--- overrides/default-settings.gschema.override.in.orig	2021-08-31 19:15:18 UTC
++++ overrides/default-settings.gschema.override.in
+@@ -84,19 +84,10 @@ toggle-maximized=['<Super>Up']
+ unmaximize=['<Alt>F5']
+ 
+ [org.gnome.desktop.wm.preferences:Pantheon]
+-button-layout='close:maximize'
++button-layout=':minimize,maximize,close'
+ mouse-button-modifier='<Super>'
+ resize-with-right-button=true
+ 
+-[org.gnome.Epiphany.ui:Pantheon]
+-expand-tabs-bar=false
+-tabs-bar-visibility-policy='always'
+-
+-[org.gnome.Epiphany.web:Pantheon]
+-cookies-policy='no-third-party'
+-enable-adblock=false
+-enable-smooth-scrolling=true
+-
+ [org.gnome.mutter:Pantheon]
+ auto-maximize=false
+ overlay-key='Super_L'
+@@ -139,9 +130,6 @@ overrides={'Gtk/DialogsUseHeader': <0>, 'Gtk/EnablePri
+ 
+ [org.gtk.Settings.FileChooser:Pantheon]
+ sort-directories-first=true
+-
+-[org.onboard:Pantheon]
+-theme='/usr/share/onboard/themes/Nightshade.theme'
+ 
+ [org.pantheon.desktop.gala.behavior:Pantheon]
+ overlay-action='io.elementary.shortcut-overlay'

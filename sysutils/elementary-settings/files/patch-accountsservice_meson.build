@@ -1,0 +1,40 @@
+--- accountsservice/meson.build.orig	2021-08-31 19:15:18 UTC
++++ accountsservice/meson.build
+@@ -1,24 +1,17 @@
+-dbus_dep = dependency('dbus-1')
+-dbus_interfaces_dir = dbus_dep.get_pkgconfig_variable('interfaces_dir', define_variable: ['datadir', datadir])
++skeleton = 'io.elementary.pantheon.AccountsService'
+ 
+-install_data(
+-    'io.elementary.pantheon.AccountsService.xml',
+-    install_dir: dbus_interfaces_dir
+-)
++polkit_dir = join_paths(prefix, get_option('datadir'),
++                        'polkit-1', 'actions')
++install_data(skeleton + '.policy',
++             install_dir: polkit_dir)
+ 
+-polkit_dep = dependency('polkit-gobject-1')
+-polkit_actiondir = polkit_dep.get_pkgconfig_variable('actiondir', define_variable: ['prefix', prefix])
++dbus_dir = join_paths(prefix, get_option('datadir'),
++                      'dbus-1', 'interfaces')
++install_data(skeleton + '.xml',
++             install_dir: dbus_dir)
+ 
+-install_data(
+-    'io.elementary.pantheon.AccountsService.policy',
+-    install_dir: polkit_actiondir
+-)
++acc_dir = join_paths(prefix, get_option('datadir'),
++                     'accountsservice', 'interfaces')
+ 
+-act_dep = dependency('accountsservice')
+-act_interfacesdir = act_dep.get_pkgconfig_variable('interfacesdir', define_variable: ['datadir', datadir], default: datadir /'accountsservice' / 'interfaces')
+-
+-meson.add_install_script(
+-    symlink,
+-    join_paths(dbus_interfaces_dir, 'io.elementary.pantheon.AccountsService.xml'),
+-    join_paths(act_interfacesdir, 'io.elementary.pantheon.AccountsService.xml'),
+-)
++meson.add_install_script('../meson/create-symlink.py',
++                         skeleton + '.xml', dbus_dir, acc_dir)

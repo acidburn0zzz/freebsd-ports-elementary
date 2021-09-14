@@ -1,0 +1,29 @@
+--- skel/meson.build.orig	2021-08-31 19:15:18 UTC
++++ skel/meson.build
+@@ -1,25 +1,8 @@
+-skeldir = join_paths(sysconfdir, 'skel')
+ 
+ # Planks Default DockItems
+ if get_option('plank-dockitems')
+     install_subdir(
+         'plank',
+-        install_dir: join_paths(skeldir, '.config')
++        install_dir: join_paths(prefix, get_option('datadir'))
+     )
+ endif
+-
+-# AppCenter Flatpak Remote
+-if get_option('appcenter-flatpak')
+-    install_subdir(
+-        'flatpak',
+-        install_dir: join_paths(skeldir, '.local', 'share')
+-    )
+-endif
+-
+-# Configuration file of GNU readline
+-install_data(
+-    '.inputrc',
+-    install_dir: skeldir
+-)
+-
+-

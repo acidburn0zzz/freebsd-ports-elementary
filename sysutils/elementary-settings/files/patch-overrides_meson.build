@@ -1,0 +1,19 @@
+--- overrides/meson.build.orig	2021-08-31 19:15:18 UTC
++++ overrides/meson.build
+@@ -6,7 +6,7 @@ if get_option('default-gsettings-overrides')
+ 
+     settings_override = configure_file(
+         input: 'default-settings.gschema.override.in',
+-        output: '@BASENAME@',
++        output: '25_io.elementary.default-settings.gschema.override',
+         configuration: wallpaper_configuration,
+         install_dir: join_paths(schemadir)
+     )
+@@ -16,6 +16,7 @@ endif
+ if get_option('plank-dockitems')
+     install_data(
+         'plank-dockitems.gschema.override',
++        rename: ['20_net.launchpad.plank-dockitems.gschema.override'],
+         install_dir: join_paths(schemadir)
+     )
+ endif
