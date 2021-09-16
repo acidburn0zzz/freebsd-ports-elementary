@@ -1,11 +1,8 @@
 --- src/Views/OperatingSystemView.vala.orig	2021-08-24 20:34:26 UTC
 +++ src/Views/OperatingSystemView.vala
-@@ -29,9 +29,9 @@ public class About.OperatingSystemView : Gtk.Grid {
+@@ -31,7 +31,7 @@ public class About.OperatingSystemView : Gtk.Grid {
  
-         var uts_name = Posix.utsname ();
- 
--        support_url = Environment.get_os_info (GLib.OsInfoKey.SUPPORT_URL);
-+        support_url = Environment.get_os_info (GLib.OsInfoKey.SUPPORT_URL).down ();
+         support_url = Environment.get_os_info (GLib.OsInfoKey.SUPPORT_URL);
          if (support_url == "" || support_url == null) {
 -            support_url = "https://elementary.io/support";
 +            support_url = "https://bugs.freebsd.org/";
