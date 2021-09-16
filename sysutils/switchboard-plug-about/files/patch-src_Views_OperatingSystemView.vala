@@ -39,20 +39,21 @@
          }
  
          var website_label = new Gtk.LinkButton.with_label (website_url, _("Website")) {
-@@ -180,27 +180,21 @@ public class About.OperatingSystemView : Gtk.Grid {
+@@ -176,37 +176,20 @@ public class About.OperatingSystemView : Gtk.Grid {
+             }
+         });
+ 
+-        get_upstream_release.begin ();
++        get_upstream_release ();
      }
  
-     private async void get_upstream_release () {
+-    private async void get_upstream_release () {
 -        // Upstream distro version (for "Built on" text)
 -        // FIXME: Add distro specific field to /etc/os-release and use that instead
 -        // Like "ELEMENTARY_UPSTREAM_DISTRO_NAME" or something
 -        var file = File.new_for_path ("/etc/upstream-release/lsb-release");
 -        string? upstream_release = null;
-+        string? kernel_version = null;
-+        GLib.Subprocess proc;
-+
-+        // https://docs.freebsd.org/en/books/porters-handbook/versions/
-         try {
+-        try {
 -            var dis = new DataInputStream (yield file.read_async ());
 -            string line;
 -            // Read lines until end of file (null) is reached
@@ -64,22 +65,30 @@
 -            }
 -        } catch (Error e) {
 -            warning ("Couldn't read upstream lsb-release file, assuming none");
-+            proc = new GLib.Subprocess (GLib.SubprocessFlags.STDOUT_PIPE,
-+                                        "uname", "-K");
-+            yield proc.communicate_utf8_async (null, null,
-+                                               out kernel_version, null);
-+        } catch (GLib.Error e) {
-+            warning (e.message);
-         }
+-        }
++    // https://docs.freebsd.org/en/books/porters-handbook/versions/
++    [CCode (cheader_filename="unistd.h", cname="getosreldate")]
++    extern static int getosreldate ();
  
 -        if (upstream_release != null) {
 -            var based_off = new Gtk.Label (_("Built on %s").printf (upstream_release)) {
-+        if (kernel_version != null) {
-+            var based_off = new Gtk.Label (_("Built on %s").printf (kernel_version)) {
-                 selectable = true,
-                 xalign = 0
-             };
-@@ -265,7 +259,6 @@ public class About.OperatingSystemView : Gtk.Grid {
+-                selectable = true,
+-                xalign = 0
+-            };
+-            software_grid.attach (based_off, 1, 1, 3);
+-            software_grid.show_all ();
+-        }
++    private  void get_upstream_release () {
++        var based_off = new Gtk.Label (_("Built on %d").printf (getosreldate ())) {
++            selectable = true,
++            xalign = 0
++        };
++        software_grid.attach (based_off, 1, 1, 3);
++        software_grid.show_all ();
+     }
+ 
+     private void launch_support_url () {
+@@ -265,7 +248,6 @@ public class About.OperatingSystemView : Gtk.Grid {
          string[] prefixes = {
              "org.pantheon.desktop",
              "io.elementary.desktop",

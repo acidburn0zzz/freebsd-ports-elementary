@@ -1,6 +1,6 @@
 --- src/Views/HardwareView.vala.orig	2021-08-24 20:34:26 UTC
 +++ src/Views/HardwareView.vala
-@@ -22,19 +22,12 @@
+@@ -22,19 +22,10 @@
  
  public class About.HardwareView : Gtk.Grid {
      private bool oem_enabled;
@@ -9,8 +9,8 @@
 -    private string manufacturer_support_url;
      private string memory;
      private string processor;
-     private string product_name;
-     private string product_version;
+-    private string product_name;
+-    private string product_version;
 -    private SystemInterface system_interface;
      private SessionManager? session_manager;
 -    private SwitcherooControl? switcheroo_interface;
@@ -20,7 +20,7 @@
      private Gtk.Label primary_graphics_info;
      private Gtk.Label secondary_graphics_info;
      private Gtk.Grid graphics_grid;
-@@ -94,81 +87,22 @@ public class About.HardwareView : Gtk.Grid {
+@@ -94,81 +85,22 @@ public class About.HardwareView : Gtk.Grid {
              row_spacing = 6
          };
  
@@ -103,7 +103,7 @@
      private string? try_get_arm_model (GLib.HashTable<string, string> values) {
          string? cpu_implementer = values.lookup ("CPU implementer");
          string? cpu_part = values.lookup ("CPU part");
-@@ -258,52 +192,16 @@ public class About.HardwareView : Gtk.Grid {
+@@ -258,52 +190,16 @@ public class About.HardwareView : Gtk.Grid {
              }
          }
  
@@ -156,7 +156,7 @@
          if (session_manager != null) {
              return clean_name (session_manager.renderer);
          }
-@@ -339,34 +237,7 @@ public class About.HardwareView : Gtk.Grid {
+@@ -339,34 +235,7 @@ public class About.HardwareView : Gtk.Grid {
          get_graphics_info.begin ();
          get_storage_info.begin ();
  
@@ -192,7 +192,7 @@
      }
  
      private async void get_storage_info () {
-@@ -413,32 +284,10 @@ public class About.HardwareView : Gtk.Grid {
+@@ -413,32 +282,10 @@ public class About.HardwareView : Gtk.Grid {
      }
  
      private async string get_storage_type (string storage_capacity) {
@@ -227,7 +227,7 @@
          return storage;
      }
  
-@@ -483,57 +332,13 @@ public class About.HardwareView : Gtk.Grid {
+@@ -483,57 +330,13 @@ public class About.HardwareView : Gtk.Grid {
          string replacement;
      }
  
