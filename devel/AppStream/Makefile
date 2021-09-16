@@ -4,7 +4,7 @@ CATEGORIES=	devel
 MASTER_SITES=	https://www.freedesktop.org/software/${PORTNAME:tl}/releases/
 
 MAINTAINER=	desktop@FreeBSD.org
-COMMENT=	Machine-readable software metadata for desktop environment
+COMMENT=	Machine-readable software metadata for desktop environments
 
 LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi
