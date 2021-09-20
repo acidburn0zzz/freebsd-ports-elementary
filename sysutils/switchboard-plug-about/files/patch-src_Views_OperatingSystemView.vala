@@ -36,10 +36,41 @@
          }
  
          var website_label = new Gtk.LinkButton.with_label (website_url, _("Website")) {
-@@ -176,37 +176,20 @@ public class About.OperatingSystemView : Gtk.Grid {
-             }
-         });
+@@ -112,8 +112,6 @@ public class About.OperatingSystemView : Gtk.Grid {
+             margin_top = 12
+         };
  
+-        var bug_button = new Gtk.Button.with_label (_("Send Feedback"));
+-
+         Gtk.Button? update_button = null;
+         var appcenter_info = new GLib.DesktopAppInfo ("io.elementary.appcenter.desktop");
+         if (appcenter_info != null) {
+@@ -131,7 +129,6 @@ public class About.OperatingSystemView : Gtk.Grid {
+             spacing = 6
+         };
+         button_grid.add (settings_restore_button);
+-        button_grid.add (bug_button);
+         if (update_button != null) {
+             button_grid.add (update_button);
+         }
+@@ -162,61 +159,22 @@ public class About.OperatingSystemView : Gtk.Grid {
+ 
+         settings_restore_button.clicked.connect (settings_restore_clicked);
+ 
+-        bug_button.clicked.connect (() => {
+-            var appinfo = new GLib.DesktopAppInfo ("io.elementary.feedback.desktop");
+-            if (appinfo != null) {
+-                try {
+-                    appinfo.launch (null, null);
+-                } catch (Error e) {
+-                    critical (e.message);
+-                    launch_support_url ();
+-                }
+-            } else {
+-                launch_support_url ();
+-            }
+-        });
+-
 -        get_upstream_release.begin ();
 +        get_upstream_release ();
      }
@@ -84,8 +115,18 @@
 +        software_grid.show_all ();
      }
  
-     private void launch_support_url () {
-@@ -265,7 +248,6 @@ public class About.OperatingSystemView : Gtk.Grid {
+-    private void launch_support_url () {
+-        try {
+-            AppInfo.launch_default_for_uri (support_url, null);
+-        } catch (Error e) {
+-            critical (e.message);
+-        }
+-    }
+-
+      /**
+      * returns true to continue, false to cancel
+      */
+@@ -265,7 +223,6 @@ public class About.OperatingSystemView : Gtk.Grid {
          string[] prefixes = {
              "org.pantheon.desktop",
              "io.elementary.desktop",

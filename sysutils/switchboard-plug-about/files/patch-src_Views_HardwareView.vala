@@ -1,6 +1,6 @@
 --- src/Views/HardwareView.vala.orig	2021-08-24 20:34:26 UTC
 +++ src/Views/HardwareView.vala
-@@ -22,19 +22,10 @@
+@@ -22,16 +22,9 @@
  
  public class About.HardwareView : Gtk.Grid {
      private bool oem_enabled;
@@ -15,25 +15,22 @@
      private SessionManager? session_manager;
 -    private SwitcherooControl? switcheroo_interface;
  
--    private Gtk.Image manufacturer_logo;
--
-     private Gtk.Label primary_graphics_info;
-     private Gtk.Label secondary_graphics_info;
-     private Gtk.Grid graphics_grid;
-@@ -94,81 +85,22 @@ public class About.HardwareView : Gtk.Grid {
-             row_spacing = 6
-         };
+     private Gtk.Image manufacturer_logo;
  
--        manufacturer_logo = new Gtk.Image () {
--            halign = Gtk.Align.END,
--            pixel_size = 128,
+@@ -97,61 +90,19 @@ public class About.HardwareView : Gtk.Grid {
+         manufacturer_logo = new Gtk.Image () {
+             halign = Gtk.Align.END,
+             pixel_size = 128,
 -            use_fallback = true
--        };
-+        details_grid.add (product_name_info);
++            use_fallback = true,
++            // fallback icon
++            icon_name = "computer"
+         };
  
 -        if (oem_enabled) {
 -            var fileicon = new FileIcon (File.new_for_path (manufacturer_icon_path));
--
++        details_grid.add (product_name_info);
+ 
 -            if (manufacturer_icon_path != null) {
 -                manufacturer_logo.gicon = fileicon;
 -            }
@@ -86,9 +83,7 @@
          margin_left = 16;
          margin_right = 16;
          column_spacing = 32;
-         halign = Gtk.Align.CENTER;
- 
--        add (manufacturer_logo);
+@@ -161,14 +112,6 @@ public class About.HardwareView : Gtk.Grid {
          add (details_grid);
      }
  
@@ -103,7 +98,7 @@
      private string? try_get_arm_model (GLib.HashTable<string, string> values) {
          string? cpu_implementer = values.lookup ("CPU implementer");
          string? cpu_part = values.lookup ("CPU part");
-@@ -258,52 +190,16 @@ public class About.HardwareView : Gtk.Grid {
+@@ -258,52 +201,12 @@ public class About.HardwareView : Gtk.Grid {
              }
          }
  
@@ -121,10 +116,10 @@
 -
          string? gpu_name = null;
  
-         const string[] FALLBACKS = {
-             "Intel Corporation"
-         };
- 
+-        const string[] FALLBACKS = {
+-            "Intel Corporation"
+-        };
+-
 -        if (switcheroo_interface != null) {
 -            if (!primary && !switcheroo_interface.has_dual_gpu) {
 -                return null;
@@ -156,49 +151,121 @@
          if (session_manager != null) {
              return clean_name (session_manager.renderer);
          }
-@@ -339,34 +235,7 @@ public class About.HardwareView : Gtk.Grid {
+@@ -339,44 +242,77 @@ public class About.HardwareView : Gtk.Grid {
          get_graphics_info.begin ();
          get_storage_info.begin ();
  
--        try {
++        oem_enabled = false;
++    }
++
++    private async uint64 get_fs_size (string path) {
++        GLib.File file = GLib.File.new_for_path (path);
++        GLib.FileInfo info = null;
++        uint64 size = 0;
++
+         try {
 -            var oem_file = new KeyFile ();
 -            oem_file.load_from_file ("/etc/oem.conf", KeyFileFlags.NONE);
 -            // Assume we get the manufacturer name
 -            manufacturer_name = oem_file.get_string ("OEM", "Manufacturer");
--
++            info = yield file.query_filesystem_info_async (GLib.FileAttribute.FILESYSTEM_SIZE);
++            size = info.get_attribute_uint64 (GLib.FileAttribute.FILESYSTEM_SIZE);
++        } catch (GLib.Error e) {
++            critical (e.message);
++		}
+ 
 -            // We need to check if the key is here because get_string throws an error if the key isn't available.
 -            if (oem_file.has_key ("OEM", "Product")) {
 -                product_name = oem_file.get_string ("OEM", "Product");
 -            }
--
++        return size;
++    }
+ 
 -            if (oem_file.has_key ("OEM", "Version")) {
 -                product_version = oem_file.get_string ("OEM", "Version");
 -            }
--
++    private uint64 make_sum (List<uint64?> list) {
++        uint64 result = 0;
+ 
 -            if (oem_file.has_key ("OEM", "Logo")) {
 -                manufacturer_icon_path = oem_file.get_string ("OEM", "Logo");
 -            }
--
++        list.foreach ((i) => {
++            result = result + i;
++        });
+ 
 -            if (oem_file.has_key ("OEM", "URL")) {
 -                manufacturer_support_url = oem_file.get_string ("OEM", "URL");
 -            }
--
++        return result;
++    }
+ 
 -            oem_enabled = true;
 -        } catch (Error e) {
 -            debug (e.message);
 -            oem_enabled = false;
--        }
-+        oem_enabled = false;
++    private List<string> get_mount_points () {
++        List<GLib.UnixMountEntry> entries;
++        List<string> list; // list of mount points
++        unowned string blk_dev; // e.g. /dev, ...
++        unowned string mnt_p; // mount point
++
++        entries = GLib.UnixMountEntry.get ();
++        list = new List<string> ();
++
++        foreach (unowned GLib.UnixMountEntry entry in entries) {
++            if (entry.is_system_internal ()) {
++                blk_dev = entry.get_device_path ();
++                if ((blk_dev != null) && (blk_dev.has_prefix ("/dev"))) {
++                    mnt_p = entry.get_mount_path ();
++                    // We want only partitions of system */
++                    if (! mnt_p.has_prefix ("/home")) {
++                        list.append (mnt_p);
++                    }
++                }
++            }
+         }
++
++        return list;
      }
  
      private async void get_storage_info () {
-@@ -413,32 +282,10 @@ public class About.HardwareView : Gtk.Grid {
+-        var file_root = GLib.File.new_for_path ("/");
++        List<string> mount_points;
++        uint64 size = 0;
++        List<uint64?> list = new List<uint64?> ();
+         string storage_capacity = "";
+-        try {
+-            var info = yield file_root.query_filesystem_info_async (GLib.FileAttribute.FILESYSTEM_SIZE);
+-            storage_capacity = GLib.format_size (info.get_attribute_uint64 (GLib.FileAttribute.FILESYSTEM_SIZE));
+-        } catch (Error e) {
+-            critical (e.message);
++
++        mount_points = get_mount_points ();
++
++        for (uint i = 0; i < mount_points.length (); i++) {
++            size = yield get_fs_size (mount_points.nth_data (i));
++            if (size > 0) {
++                list.append (size);
++            }
++        }
++
++        if (list.length () > 0) {
++            storage_capacity = GLib.format_size (make_sum (list));
++        } else {
+             storage_capacity = _("Unknown");
+         }
+ 
+@@ -413,127 +349,39 @@ public class About.HardwareView : Gtk.Grid {
      }
  
      private async string get_storage_type (string storage_capacity) {
 -        string partition_name = yield get_partition_name ();
 -        string disk_name = yield get_disk_name (partition_name);
 -        string path = "/sys/block/%s/queue/rotational".printf (disk_name);
++        GLib.UnixMountEntry entry = new GLib.UnixMountEntry.for ("/");
++        string disk_name;
++        unowned string path;
          string storage = "";
 -        try {
 -            var file = File.new_for_path (path);
@@ -220,14 +287,60 @@
 -        } catch (Error e) {
 -            warning (e.message);
 -            // Set fallback string for the device type
--            storage = _("%s storage").printf (storage_capacity);
--        }
-+        // Set fallback string for the device type
-+        storage = _("%s storage").printf (storage_capacity);
++        path = entry.get_device_path ();
++        disk_name = path.splice (0, "/dev/".length);
++
++        if (disk_name.has_prefix ("nvme")) {
++            storage = _("%s storage (NVMe SSD)").printf (storage_capacity);
++        } else if (disk_name.has_prefix ("mmc")) {
++            storage = _("%s storage (eMMC)").printf (storage_capacity);
++        } else if (disk_name.has_prefix ("ada")) {
++            storage = _("%s storage (HDD)").printf (storage_capacity);
++        } else {
+             storage = _("%s storage").printf (storage_capacity);
+         }
++
          return storage;
      }
  
-@@ -483,57 +330,13 @@ public class About.HardwareView : Gtk.Grid {
+-    private async string get_partition_name () {
+-        string df_stdout;
+-        string partition = "";
+-        try {
+-            var subprocess = new GLib.Subprocess (GLib.SubprocessFlags.STDOUT_PIPE, "df", "/");
+-            yield subprocess.communicate_utf8_async (null, null, out df_stdout, null);
+-            string[] output = df_stdout.split ("\n");
+-            foreach (string line in output) {
+-                if (line.has_prefix ("/dev/")) {
+-                    int idx = line.index_of (" ");
+-                    if (idx != -1) {
+-                        partition = line.substring (0, idx);
+-                        return partition;
+-                    }
+-                }
+-            }
+-        } catch (Error e) {
+-            warning (e.message);
+-        }
+-
+-        return partition;
+-    }
+-
+-    private async string get_disk_name (string partition) {
+-        string lsblk_stout;
+-        string disk_name = "";
+-        try {
+-            var subprocess = new GLib.Subprocess (GLib.SubprocessFlags.STDOUT_PIPE, "lsblk", "-no", "pkname", partition);
+-            yield subprocess.communicate_utf8_async (null, null, out lsblk_stout, null);
+-            disk_name = lsblk_stout.strip ();
+-        } catch (Error e) {
+-            warning (e.message);
+-        }
+-        return disk_name;
+-    }
+-
+     struct GraphicsReplaceStrings {
+         string regex;
          string replacement;
      }
  
