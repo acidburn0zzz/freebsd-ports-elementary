@@ -1,0 +1,6 @@
+Taxi is the FTP client that drives you anywhere! It connects to a
+remote server with various protocols (FTP, SFTP, etc.), and quickly
+transfer files and folders with the handy double paned interface.
+It handles bookmarks and remembers your login credentials.
+
+WWW: https://github.com/Alecaddd/taxi
