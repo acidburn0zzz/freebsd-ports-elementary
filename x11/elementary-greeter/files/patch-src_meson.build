@@ -1,6 +1,6 @@
---- src/meson.build.orig	2020-05-28 18:48:15 UTC
+--- src/meson.build.orig	2021-07-14 19:41:27 UTC
 +++ src/meson.build
-@@ -8,7 +8,7 @@ lightdm_dep = dependency('liblightdm-gobject-1')
+@@ -9,7 +9,7 @@ lightdm_dep = dependency('liblightdm-gobject-1')
  install_path = join_paths(get_option('prefix'), get_option('sbindir'))
  
  conf_data = configuration_data()
