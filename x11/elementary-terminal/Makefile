@@ -15,10 +15,9 @@ BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libhandy-1.so:x11-toolkits/libhandy \
 		libpcre2-8.so:devel/pcre2
-RUN_DEPENDS=	dbus-send:devel/dbus
 
 USES=		desktop-file-utils elementary gettext gnome meson \
-		pkgconfig python:3.5+,build
+		pkgconfig python:3.6+,build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
