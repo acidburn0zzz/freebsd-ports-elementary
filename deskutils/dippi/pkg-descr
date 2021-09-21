@@ -1,0 +1,13 @@
+Dippi is a simple application which analyzes any display. Inputs a
+few simple details and figures out the aspect ratio, DPI, and
+other details of a particular display.
+Great for deciding which laptop or external monitor to purpose, and
+if it would be considered HiDPI.
+
+Handy features:
+* Find out if a display is a good choice based on its size and resolution
+* Get advice about different densities
+* Learn the logical resolution
+* Differentiate between laptops and desktop displays
+
+WWW: https://github.com/cassidyjames/dippi
