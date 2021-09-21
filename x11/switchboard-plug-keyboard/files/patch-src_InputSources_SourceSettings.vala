@@ -1,6 +1,6 @@
 --- src/InputSources/SourceSettings.vala.orig	2021-07-14 21:00:05 UTC
 +++ src/InputSources/SourceSettings.vala
-@@ -176,6 +176,61 @@ class Pantheon.Keyboard.SourceSettings : Object {
+@@ -176,6 +176,71 @@ class Pantheon.Keyboard.SourceSettings : Object {
          input_sources.foreach (func);
      }
  
@@ -12,6 +12,16 @@
 +        if ("-" in result[0]) {
 +            result = split_value (result[0], "-");
 +        }
++
++        return result;
++    }
++
++    private string remove_last_double_quote (string val) {
++        int last_occurrence;
++        string result;
++
++        last_occurrence = val.index_of ("\"", 0);
++        result = "%s".printf (val.slice (0, last_occurrence));
 +
 +        return result;
 +    }
@@ -62,7 +72,7 @@
      private void add_default_keyboard_if_required () {
          bool have_xkb = false;
          input_sources.@foreach ((source) => {
-@@ -185,31 +240,26 @@ class Pantheon.Keyboard.SourceSettings : Object {
+@@ -185,31 +250,26 @@ class Pantheon.Keyboard.SourceSettings : Object {
          });
  
          if (!have_xkb) {
@@ -98,12 +108,12 @@
  
 +                while ((line = dis.read_line (null)) != null) {
 +                    if (line.contains ("keymap=")) {
-+                        heuristic_find_keymap (line.replace ("keymap=\"", ""));
++                        heuristic_find_keymap (remove_last_double_quote (line.replace ("keymap=\"", "")));
 +
                          break;
                      }
                  }
-@@ -218,19 +268,6 @@ class Pantheon.Keyboard.SourceSettings : Object {
+@@ -218,19 +278,6 @@ class Pantheon.Keyboard.SourceSettings : Object {
                  warning ("%s", e.message);
                  return;
              }
