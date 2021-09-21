@@ -4,9 +4,9 @@ This is the [FreeBSD Ports](https://cgit.freebsd.org/ports/) collection in order
 
 It is an **early state** (very unstable). Repository contains several branches:
 
+* [3rd-party-apps](https://codeberg.org/olivierd/freebsd-ports-elementary/src/branch/3rd-party-apps) → curated list of applications, which use the Granite toolkit
 * [6.0](https://codeberg.org/olivierd/freebsd-ports-elementary/src/branch/6.0) → **main branch**
 * broken
-* [3rd-party-apps](https://codeberg.org/olivierd/freebsd-ports-elementary/src/branch/3rd-party-apps) → curated list of applications, which use the Granite toolkit
 * obsolete → no need anymore
 
 ## How to test
