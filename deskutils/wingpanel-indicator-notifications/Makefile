@@ -1,25 +1,28 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	wingpanel-indicator-notifications
-PORTVERSION=	2.1.4
+PORTVERSION=	6.0.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	Wingpanel Notifications Indicator
 
-LICENSE=	GPLv3
+LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	valac:lang/vala
-LIB_DEPENDS=	libgee-0.8.so:devel/libgee
-RUN_DEPENDS=	notification-daemon>=3.20.0:deskutils/notification-daemon
+LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
+		libhandy-1.so:x11-toolkits/libhandy
+RUN_DEPENDS=	notification-daemon>0:deskutils/notification-daemon
 
 USES=		elementary gettext gnome meson pkgconfig \
-		python:3.5+,build
-USE_GNOME=	glib20 gtk30 libwnck3
+		python:3.6+,build
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 USE_ELEMENTARY=	granite wingpanel
 
-GH_ACCOUNT=	elementary
 USE_GITHUB=	yes
+GH_ACCOUNT=	elementary
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${LOCALBASE}|' \
+		${WRKSRC}/src/Services/Notification.vala
 
 .include <bsd.port.mk>
