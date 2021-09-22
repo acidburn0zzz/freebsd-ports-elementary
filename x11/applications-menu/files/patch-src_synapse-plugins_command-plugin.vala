@@ -1,13 +1,6 @@
---- src/synapse-plugins/command-plugin.vala.orig	2019-11-25 17:07:00 UTC
+--- src/synapse-plugins/command-plugin.vala.orig	2021-08-30 17:37:01 UTC
 +++ src/synapse-plugins/command-plugin.vala
-@@ -31,15 +31,13 @@ namespace Synapse {
-         private class CommandObject: Synapse.Match, ApplicationMatch {
-             // for ApplicationMatch
-             public AppInfo? app_info { get; set; default = null; }
--            public bool needs_terminal { get; set; default = false; }
-             public string? filename { get; construct set; default = null; }
-             public string command { get; construct set; }
- 
+@@ -38,8 +38,7 @@ namespace Synapse {
              public CommandObject (string cmd) {
                  Object (title: _("Execute '%s'").printf (cmd), description: _("Run command"), command: cmd,
                          icon_name: "application-x-executable",
@@ -17,3 +10,15 @@
  
                  try {
                      app_info = AppInfo.create_from_commandline (
+@@ -49,6 +48,11 @@ namespace Synapse {
+                     );
+                 } catch (Error err) {
+                     warning ("%s", err.message);
++                }
++
++                // We have security/sudo and security/doas
++                if ((cmd.contains ("sudo ")) || (cmd.contains ("doas "))) {
++                    needs_terminal = true;
+                 }
+             }
+         }

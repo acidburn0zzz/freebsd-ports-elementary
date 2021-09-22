@@ -1,6 +1,5 @@
-etc/xdg/menus/pantheon-applications.menu
 lib/io.elementary.wingpanel.applications-menu/switchboard-plugin
-lib/wingpanel/libslingshot.so
+%%WINGPANEL_PLUGDIR%%/libslingshot.so
 share/locale/aa/LC_MESSAGES/slingshot.mo
 share/locale/ab/LC_MESSAGES/slingshot.mo
 share/locale/ae/LC_MESSAGES/slingshot.mo
@@ -25,6 +24,7 @@ share/locale/bo/LC_MESSAGES/slingshot.mo
 share/locale/br/LC_MESSAGES/slingshot.mo
 share/locale/bs/LC_MESSAGES/slingshot.mo
 share/locale/ca/LC_MESSAGES/slingshot.mo
+share/locale/ca@valencia/LC_MESSAGES/slingshot.mo
 share/locale/ce/LC_MESSAGES/slingshot.mo
 share/locale/ch/LC_MESSAGES/slingshot.mo
 share/locale/ckb/LC_MESSAGES/slingshot.mo
@@ -50,6 +50,7 @@ share/locale/eu/LC_MESSAGES/slingshot.mo
 share/locale/fa/LC_MESSAGES/slingshot.mo
 share/locale/ff/LC_MESSAGES/slingshot.mo
 share/locale/fi/LC_MESSAGES/slingshot.mo
+share/locale/fil/LC_MESSAGES/slingshot.mo
 share/locale/fj/LC_MESSAGES/slingshot.mo
 share/locale/fo/LC_MESSAGES/slingshot.mo
 share/locale/fr/LC_MESSAGES/slingshot.mo
@@ -160,6 +161,7 @@ share/locale/sn/LC_MESSAGES/slingshot.mo
 share/locale/so/LC_MESSAGES/slingshot.mo
 share/locale/sq/LC_MESSAGES/slingshot.mo
 share/locale/sr/LC_MESSAGES/slingshot.mo
+share/locale/sr@latin/LC_MESSAGES/slingshot.mo
 share/locale/ss/LC_MESSAGES/slingshot.mo
 share/locale/st/LC_MESSAGES/slingshot.mo
 share/locale/su/LC_MESSAGES/slingshot.mo

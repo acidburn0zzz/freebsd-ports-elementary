@@ -1,10 +1,10 @@
---- src/meson.build.orig	2019-11-25 17:07:00 UTC
+--- src/meson.build.orig	2021-08-30 17:37:01 UTC
 +++ src/meson.build
-@@ -77,7 +77,6 @@ dependencies = [
-     zeitgeist_dep,
-     libgnome_menu_dep,
-     libsoup_dep,
--    appstream_dep,
-     plank_dep,
-     unity_dep,
-     wingpanel_dep,
+@@ -61,7 +61,6 @@ sources = [
+     'synapse-plugins/switchboard-plugin.vala',
+     'synapse-plugins/system-managment.vala',
+     'synapse-plugins/link-plugin.vala',
+-    'synapse-plugins/appcenter-plugin.vala',
+     asresources
+ ]
+ 
