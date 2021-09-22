@@ -23,6 +23,7 @@ share/locale/bo/LC_MESSAGES/nightlight-indicator.mo
 share/locale/br/LC_MESSAGES/nightlight-indicator.mo
 share/locale/bs/LC_MESSAGES/nightlight-indicator.mo
 share/locale/ca/LC_MESSAGES/nightlight-indicator.mo
+share/locale/ca@valencia/LC_MESSAGES/nightlight-indicator.mo
 share/locale/ce/LC_MESSAGES/nightlight-indicator.mo
 share/locale/ch/LC_MESSAGES/nightlight-indicator.mo
 share/locale/ckb/LC_MESSAGES/nightlight-indicator.mo
@@ -41,6 +42,7 @@ share/locale/el/LC_MESSAGES/nightlight-indicator.mo
 share/locale/en_AU/LC_MESSAGES/nightlight-indicator.mo
 share/locale/en_CA/LC_MESSAGES/nightlight-indicator.mo
 share/locale/en_GB/LC_MESSAGES/nightlight-indicator.mo
+share/locale/en_US/LC_MESSAGES/nightlight-indicator.mo
 share/locale/eo/LC_MESSAGES/nightlight-indicator.mo
 share/locale/es/LC_MESSAGES/nightlight-indicator.mo
 share/locale/et/LC_MESSAGES/nightlight-indicator.mo
@@ -48,6 +50,7 @@ share/locale/eu/LC_MESSAGES/nightlight-indicator.mo
 share/locale/fa/LC_MESSAGES/nightlight-indicator.mo
 share/locale/ff/LC_MESSAGES/nightlight-indicator.mo
 share/locale/fi/LC_MESSAGES/nightlight-indicator.mo
+share/locale/fil/LC_MESSAGES/nightlight-indicator.mo
 share/locale/fj/LC_MESSAGES/nightlight-indicator.mo
 share/locale/fo/LC_MESSAGES/nightlight-indicator.mo
 share/locale/fr/LC_MESSAGES/nightlight-indicator.mo
@@ -158,6 +161,7 @@ share/locale/sn/LC_MESSAGES/nightlight-indicator.mo
 share/locale/so/LC_MESSAGES/nightlight-indicator.mo
 share/locale/sq/LC_MESSAGES/nightlight-indicator.mo
 share/locale/sr/LC_MESSAGES/nightlight-indicator.mo
+share/locale/sr@latin/LC_MESSAGES/nightlight-indicator.mo
 share/locale/ss/LC_MESSAGES/nightlight-indicator.mo
 share/locale/st/LC_MESSAGES/nightlight-indicator.mo
 share/locale/su/LC_MESSAGES/nightlight-indicator.mo
