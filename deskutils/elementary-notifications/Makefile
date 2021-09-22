@@ -16,6 +16,7 @@ LIB_DEPENDS=	libhandy-1.so:x11-toolkits/libhandy \
 		libcanberra.so:audio/libcanberra \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libgee-0.8.so:devel/libgee
+RUN_DEPENDS=	notification-daemon>0:deskutils/notification-daemon
 
 USES=		elementary gettext gnome meson pkgconfig \
 		python:3.6+,build
