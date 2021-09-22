@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	wingpanel
 PORTVERSION=	3.0.0
 CATEGORIES=	x11
@@ -12,6 +10,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libmutter-7.so:x11-wm/mutter
+RUN_DEPENDS=	elementary-notifications>0:deskutils/elementary-notifications
 
 USES=		elementary gettext gnome meson pkgconfig \
 		python:3.5+,build
