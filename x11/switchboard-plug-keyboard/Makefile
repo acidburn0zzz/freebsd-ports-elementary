@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	switchboard-plug-keyboard
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 CATEGORIES=	x11
 
 MAINTAINER=	duchateau.olivier@gmail.com
