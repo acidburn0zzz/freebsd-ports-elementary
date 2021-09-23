@@ -16,9 +16,9 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libjson-glib-1.0.so:devel/json-glib \
 		libhandy-1.so:x11-toolkits/libhandy \
 		libappstream.so:devel/AppStream
-RUN_DEPENDS=	upower>=0.99.11:sysutils/upower \
-		consolekit2>=1.2.0:sysutils/consolekit2 \
-		gnome-settings-daemon>=3.28.0:sysutils/gnome-settings-daemon
+RUN_DEPENDS=	upower>0:sysutils/upower \
+		consolekit2>0:sysutils/consolekit2 \
+		gnome-settings-daemon>0:sysutils/gnome-settings-daemon
 
 USES=		elementary gettext gnome meson pkgconfig \
 		python:3.6+,build
