@@ -14,7 +14,7 @@
      construct {
          try {
 -            interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
-+            interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.ConsoleKit.Manager", "/org/freedesktop/ConsoleKit/Manager");
++            interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.ConsoleKit", "/org/freedesktop/ConsoleKit/Manager");
          } catch (Error e) {
              warning ("Could not connect to login interface: %s", e.message);
          }
