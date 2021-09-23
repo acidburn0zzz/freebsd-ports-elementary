@@ -30,14 +30,9 @@ USE_XORG=	x11
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 
-#MESON_ARGS=	-Dubuntu-patched-gsd=false
-
 post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|%%PREFIX%%|${LOCALBASE}|g' \
 		${WRKSRC}/src/Widgets/BackgroundImage.vala \
-		${WRKSRC}/data/io.elementary.greeter.conf
-
-#	@${MV} ${WRKSRC}/data/io.elementary.greeter.conf \
-#		${WRKSRC}/data/io.elementary.greeter.conf.sample
+#		${WRKSRC}/data/io.elementary.greeter.conf
 
 .include <bsd.port.mk>
