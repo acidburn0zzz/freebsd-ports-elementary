@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	applications-menu
 PORTVERSION=	2.8.2
 CATEGORIES=	x11
