@@ -14,7 +14,8 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libedataserver-1.2.so:databases/evolution-data-server \
 		libhandy-1.so:x11-toolkits/libhandy
 RUN_DEPENDS=	consolekit2>0:sysutils/consolekit2 \
-		accountsservice>0:sysutils/accountsservice
+		accountsservice>0:sysutils/accountsservice \
+		elementary-calendar>0:deskutils/elementary-calendar
 
 USES=		elementary gettext gnome meson pkgconfig \
 		python:3.6+,build
