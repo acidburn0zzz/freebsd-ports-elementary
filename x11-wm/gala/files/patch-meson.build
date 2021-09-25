@@ -1,0 +1,10 @@
+--- meson.build.orig	2021-09-22 20:42:08 UTC
++++ meson.build
+@@ -61,7 +61,6 @@ add_project_arguments([
+     language: 'vala',
+ )
+ add_project_arguments([
+-        '-Wno-discarded-qualifiers',
+         '-Wno-incompatible-pointer-types',
+         '-Wno-unused',
+         '-Wl,--enable-new-dtags',

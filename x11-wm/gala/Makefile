@@ -1,7 +1,5 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	gala
-PORTVERSION=	6.0.1
+PORTVERSION=	6.2.0
 CATEGORIES=	x11-wm
 
 MAINTAINER=	duchateau.olivier@gmail.com
