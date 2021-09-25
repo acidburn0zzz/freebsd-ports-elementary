@@ -1,9 +1,6 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	switchboard-plug-onlineaccounts
 PORTVERSION=	6.2.0
 CATEGORIES=	net
-PKGNAMEPREFIX=	switchboard-plug-
 
 MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	Switchboard online accounts plugin
