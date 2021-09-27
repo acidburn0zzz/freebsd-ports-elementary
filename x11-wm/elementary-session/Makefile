@@ -18,9 +18,8 @@ RUN_DEPENDS=	io.elementary.notifications:deskutils/elementary-notifications \
 		desktop-file-install:devel/desktop-file-utils
 
 # Standalone applications
-##RUN_DEPENDS+=	io.elementary.tasks:deskutils/elementary-tasks \
-##		io.elementary.code:editors/elementary-code \
-#RUN_DEPENDS+=	io.elementary.tasks:deskutils/elementary-tasks \
+RUN_DEPENDS+=	io.elementary.tasks:deskutils/elementary-tasks \
+		io.elementary.code:editors/elementary-code \
 		io.elementary.photos:graphics/elementary-photos \
 		io.elementary.calculator:math/pantheon-calculator \
 		io.elementary.videos:multimedia/elementary-videos \
@@ -31,8 +30,7 @@ RUN_DEPENDS=	io.elementary.notifications:deskutils/elementary-notifications \
 		io.elementary.calendar:deskutils/elementary-calendar
 
 # Switchboard plugins
-##RUN_DEPENDS+=	switchboard-plug-a11y>0:accessibility/switchboard-plug-a11y \
-RUN_DEPENDS+=	switchboard-plug-sound>0:audio/switchboard-plug-sound \
+RUN_DEPENDS+=	switchboard-plug-a11y>0:accessibility/switchboard-plug-a11y \
 		switchboard-plug-notifications>0:deskutils/switchboard-plug-notifications \
 		switchboard-plug-about>0:sysutils/switchboard-plug-about \
 		switchboard-plug-applications>0:x11/switchboard-plug-applications \
