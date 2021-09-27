@@ -6,6 +6,8 @@ PKGNAMEPREFIX=	elementary-
 MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	Default settings for the Elementary desktop
 
+DISABLE_LICENSES=	yes
+
 LIB_DEPENDS=	libaccountsservice.so:sysutils/accountsservice
 RUN_DEPENDS=	gnome-icons-elementary>0:x11-themes/gnome-icons-elementary \
 		elementary-theme>0:x11-themes/elementary-theme \
