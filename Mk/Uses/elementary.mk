@@ -1,4 +1,4 @@
-# Provide support for the Elementary related ports
+# Provide support for the Elementary OS related ports
 #
 # Feature:      elementary
 # Usage:        USES= elementary
@@ -16,7 +16,9 @@ _INCLUDE_USES_ELEMENTARY_MK=  yes
 IGNORE= Incorrect USES+= elementary:${elementary_ARGS} takes no arguments
 .endif
 
-DIST_SUBDIR=	elementary
+.if defined(USE_GITHUB) && ${GH_ACCOUNT:Melementary}
+DIST_SUBDIR?=	elementary
+.endif
 
 PLIST_SUB+=	SWITCHBOARD_PLUGDIR="lib/switchboard" \
 		WINGPANEL_PLUGDIR="lib/wingpanel"
