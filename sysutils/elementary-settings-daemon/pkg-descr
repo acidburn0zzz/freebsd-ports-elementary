@@ -1,0 +1,4 @@
+Elementary settings daemon synchronizes settings to the greeter and
+manages background tasks like scheduling dark mode.
+
+WWW: https://github.com/elementary/settings-daemon

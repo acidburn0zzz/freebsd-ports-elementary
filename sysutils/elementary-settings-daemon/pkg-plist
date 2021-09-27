@@ -1,0 +1,5 @@
+bin/io.elementary.settings-daemon
+etc/xdg/autostart/io.elementary.settings-daemon.desktop
+share/accountsservice/interfaces/io.elementary.SettingsDaemon.AccountsService.xml
+share/dbus-1/interfaces/io.elementary.SettingsDaemon.AccountsService.xml
+share/metainfo/io.elementary.settings-daemon.appdata.xml

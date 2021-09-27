@@ -1,0 +1,16 @@
+--- data/meson.build.orig	2021-07-15 23:29:21 UTC
++++ data/meson.build
+@@ -15,10 +15,9 @@ install_data(
+ act_dep = dependency('accountsservice')
+ act_interfacesdir = act_dep.get_pkgconfig_variable('interfacesdir', define_variable: ['datadir', datadir], default: datadir /'accountsservice' / 'interfaces')
+ 
+-meson.add_install_script(
+-    symlink,
+-    join_paths(dbus_interfaces_dir, 'io.elementary.SettingsDaemon.AccountsService.xml'),
+-    join_paths(act_interfacesdir, 'io.elementary.SettingsDaemon.AccountsService.xml'),
++install_data(
++    'io.elementary.SettingsDaemon.AccountsService.xml',
++    install_dir: act_interfacesdir
+ )
+ 
+ install_data(

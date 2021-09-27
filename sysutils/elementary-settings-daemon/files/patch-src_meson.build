@@ -1,0 +1,10 @@
+--- src/meson.build.orig	2021-07-15 23:29:21 UTC
++++ src/meson.build
+@@ -12,7 +12,6 @@ sources = files(
+     'AccountsService.vala',
+     'Application.vala',
+     'SessionManager.vala',
+-    'Backends/Housekeeping.vala',
+     'Backends/KeyboardSettings.vala',
+     'Backends/PrefersColorSchemeSettings.vala',
+     'Utils/SunriseSunsetCalculator.vala',

@@ -19,7 +19,7 @@ RUN_DEPENDS=	gnome-settings-daemon>0:sysutils/gnome-settings-daemon \
 		gnome-session>0:x11/gnome-session \
 		gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
 		elementary-wallpapers>0:x11-themes/elementary-wallpapers \
-		elementary-settings>0:sysutils/elementary-settings
+		elementary-settings-daemon>0:sysutils/elementary-settings-daemon
 
 USES=		elementary gettext gnome meson pkgconfig \
 		python:3.6+,build xorg

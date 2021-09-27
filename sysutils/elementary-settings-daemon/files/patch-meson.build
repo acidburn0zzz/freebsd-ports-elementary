@@ -1,0 +1,11 @@
+--- meson.build.orig	2021-07-15 23:29:21 UTC
++++ meson.build
+@@ -16,8 +16,6 @@ libgeoclue_dep = dependency ('libgeoclue-2.0')
+ prefix = get_option('prefix')
+ datadir = join_paths(prefix, get_option('datadir'))
+ 
+-symlink = join_paths(meson.current_source_dir (), 'meson', 'create-symlink.sh')
+-
+ subdir('data')
+ subdir('po')
+ subdir('src')
