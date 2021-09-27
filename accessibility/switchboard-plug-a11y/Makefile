@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	switchboard-plug-a11y
 PORTVERSION=	2.3.0
 CATEGORIES=	accessibility

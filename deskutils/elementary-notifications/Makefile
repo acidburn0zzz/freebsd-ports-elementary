@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	notifications
 PORTVERSION=	6.0.0
 CATEGORIES=	deskutils

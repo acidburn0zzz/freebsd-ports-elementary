@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	redacted-fonts-ttf
 PORTVERSION=	5.1.0
 CATEGORIES=	x11-fonts

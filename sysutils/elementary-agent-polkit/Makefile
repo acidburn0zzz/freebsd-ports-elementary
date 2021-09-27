@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	agent-polkit
 PORTVERSION=	1.0.4
 CATEGORIES=	sysutils

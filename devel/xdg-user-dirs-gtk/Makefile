@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	xdg-user-dirs-gtk
 PORTVERSION=	0.10
 CATEGORIES=	devel gnome

@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	sound-theme
 PORTVERSION=	1.1.0
 CATEGORIES=	audio

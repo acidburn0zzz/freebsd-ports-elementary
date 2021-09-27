@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	wallpapers
 PORTVERSION=	6.0.0
 CATEGORIES=	x11-themes

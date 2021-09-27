@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	switchboard-plug-sound
 PORTVERSION=	2.2.7
 CATEGORIES=	audio

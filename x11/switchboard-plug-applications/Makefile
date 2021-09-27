@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	switchboard-plug-applications
 PORTVERSION=	6.0.0
 CATEGORIES=	x11

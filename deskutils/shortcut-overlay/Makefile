@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	shortcut-overlay
 PORTVERSION=	1.2.0
 CATEGORIES=	deskutils

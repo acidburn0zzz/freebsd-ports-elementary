@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	inter-fonts-otf
 DISTVERSION=	3.19
 CATEGORIES=	x11-fonts

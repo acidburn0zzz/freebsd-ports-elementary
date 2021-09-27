@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	agent-geoclue2
 PORTVERSION=	1.0.5
 CATEGORIES=	net

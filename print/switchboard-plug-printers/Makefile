@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	switchboard-plug-printers
 PORTVERSION=	2.1.10
 CATEGORIES=	print

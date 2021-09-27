@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	switchboard-plug-about
 PORTVERSION=	6.0.1
 CATEGORIES=	sysutils

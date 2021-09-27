@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	elementary-session
 PORTVERSION=	5.0.4
 CATEGORIES=	x11-wm

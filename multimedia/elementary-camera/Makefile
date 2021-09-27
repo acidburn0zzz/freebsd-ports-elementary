@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	camera
 PORTVERSION=	6.0.0
 CATEGORIES=	multimedia

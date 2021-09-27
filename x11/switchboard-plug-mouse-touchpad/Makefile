@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	switchboard-plug-mouse-touchpad
 PORTVERSION=	6.1.0
 CATEGORIES=	x11

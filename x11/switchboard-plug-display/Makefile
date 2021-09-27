@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	switchboard-plug-display
 PORTVERSION=	2.3.1
 CATEGORIES=	x11

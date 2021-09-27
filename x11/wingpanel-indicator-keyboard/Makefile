@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	wingpanel-indicator-keyboard
 PORTVERSION=	2.4.0
 CATEGORIES=	x11

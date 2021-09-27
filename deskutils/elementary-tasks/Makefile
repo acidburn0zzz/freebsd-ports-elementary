@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	tasks
 PORTVERSION=	6.0.3
 CATEGORIES=	deskutils

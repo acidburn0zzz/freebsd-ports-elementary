@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	switchboard-plug-notifications
 PORTVERSION=	2.2.0
 CATEGORIES=	deskutils

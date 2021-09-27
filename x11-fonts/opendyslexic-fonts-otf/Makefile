@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	opendyslexic
 PORTVERSION=	0.91.12
 DISTVERSIONPREFIX=	v
