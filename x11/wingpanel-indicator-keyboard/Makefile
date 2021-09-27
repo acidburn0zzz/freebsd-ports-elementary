@@ -11,7 +11,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libibus-1.0.so:textproc/ibus
 RUN_DEPENDS=	xkeyboard-config>0:x11/xkeyboard-config \
-		gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
+		gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
+		switchboard-plug-keyboard>0:x11/switchboard-plug-keyboard
 
 USES=		elementary gettext gnome meson pkgconfig \
 		python:3.6+,build
