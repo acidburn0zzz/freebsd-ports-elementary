@@ -1,3 +1,4 @@
-Provides some session-specific configuration files.
+Provides some session-specific configuration files for the Elementary
+desktop.
 
-WWW: https://codeberg.org/olivierd/elementary-session
+WWW: https://github.com/elementary/session-settings
