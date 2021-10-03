@@ -1,5 +1,5 @@
 PORTNAME=	wingpanel-indicator-notifications
-PORTVERSION=	6.0.0
+PORTVERSION=	6.0.1
 CATEGORIES=	deskutils
 
 MAINTAINER=	duchateau.olivier@gmail.com
@@ -20,9 +20,5 @@ USE_ELEMENTARY=	granite wingpanel
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${LOCALBASE}|' \
-		${WRKSRC}/src/Services/Notification.vala
 
 .include <bsd.port.mk>
