@@ -1,5 +1,5 @@
 PORTNAME=	gala
-PORTVERSION=	6.2.0
+PORTVERSION=	6.2.1
 CATEGORIES=	x11-wm
 
 MAINTAINER=	duchateau.olivier@gmail.com
