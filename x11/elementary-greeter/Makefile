@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libaccountsservice.so:sysutils/accountsservice \
 		liblightdm-gobject-1.so:x11/lightdm \
-		libmutter-7.so:x11-wm/mutter \
+		libmutter-9.so:x11-wm/mutter \
 		libgee-0.8.so:devel/libgee \
 		libhandy-1.so:x11-toolkits/libhandy
 RUN_DEPENDS=	gnome-settings-daemon>0:sysutils/gnome-settings-daemon \

@@ -10,7 +10,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
-		libmutter-7.so:x11-wm/mutter
+		libmutter-9.so:x11-wm/mutter
 RUN_DEPENDS=	gnome-settings-daemon>0:sysutils/gnome-settings-daemon
 
 USES=		elementary gettext gnome meson pkgconfig \

@@ -10,7 +10,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	valac:lang/vala \
 		gnome-settings-daemon>0:sysutils/gnome-settings-daemon
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
-		libmutter-7.so:x11-wm/mutter \
+		libmutter-9.so:x11-wm/mutter \
 		libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
 		libbamf3.so:sysutils/bamf \
 		libcanberra.so:audio/libcanberra \
