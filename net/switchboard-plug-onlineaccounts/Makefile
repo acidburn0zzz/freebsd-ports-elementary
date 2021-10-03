@@ -1,5 +1,5 @@
 PORTNAME=	switchboard-plug-onlineaccounts
-PORTVERSION=	6.2.0
+PORTVERSION=	6.2.1
 CATEGORIES=	net
 
 MAINTAINER=	duchateau.olivier@gmail.com
