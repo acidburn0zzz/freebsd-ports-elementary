@@ -1,5 +1,5 @@
 PORTNAME=	applications-menu
-PORTVERSION=	2.8.2
+PORTVERSION=	2.9.0
 CATEGORIES=	x11
 
 MAINTAINER=	duchateau.olivier@gmail.com
@@ -12,8 +12,7 @@ BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libsoup-2.4.so:devel/libsoup \
 		libjson-glib-1.0.so:devel/json-glib \
-		libhandy-1.so:x11-toolkits/libhandy \
-		libappstream.so:devel/AppStream
+		libhandy-1.so:x11-toolkits/libhandy
 RUN_DEPENDS=	upower>0:sysutils/upower \
 		consolekit2>0:sysutils/consolekit2 \
 		gnome-settings-daemon>0:sysutils/gnome-settings-daemon
