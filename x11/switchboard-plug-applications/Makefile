@@ -1,5 +1,5 @@
 PORTNAME=	switchboard-plug-applications
-PORTVERSION=	6.0.0
+PORTVERSION=	6.0.1
 CATEGORIES=	x11
 
 MAINTAINER=	duchateau.olivier@gmail.com
