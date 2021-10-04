@@ -8,12 +8,7 @@
  
  [org.gnome.desktop.peripherals.touchpad:Pantheon]
  natural-scroll=true
-@@ -84,19 +83,10 @@ toggle-maximized=['<Super>Up']
- unmaximize=['<Alt>F5']
- 
- [org.gnome.desktop.wm.preferences:Pantheon]
--button-layout='close:maximize'
-+button-layout=':minimize,maximize,close'
+@@ -88,15 +87,6 @@ button-layout='close:maximize'
  mouse-button-modifier='<Super>'
  resize-with-right-button=true
  
