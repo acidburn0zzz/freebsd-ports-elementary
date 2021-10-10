@@ -35,7 +35,7 @@ include/appstream/as-version.h
 include/appstream/as-video.h
 lib/girepository-1.0/AppStream-1.0.typelib
 lib/libappstream.so
-lib/libappstream.so.0.14.5
+lib/libappstream.so.0.14.6
 lib/libappstream.so.4
 libdata/pkgconfig/appstream.pc
 man/man1/appstreamcli.1.gz
