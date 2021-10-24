@@ -1,7 +1,5 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	louper
-PORTVERSION=	0.1.1
+PORTVERSION=	1.0.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	duchateau.olivier@gmail.com
@@ -17,7 +15,6 @@ USES=		elementary gettext gnome meson pkgconfig \
 		python:3.6+,build
 USE_GNOME=	glib20 gtk30
 USE_ELEMENTARY=	granite
-INSTALLS_ICONS=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ryonakano
