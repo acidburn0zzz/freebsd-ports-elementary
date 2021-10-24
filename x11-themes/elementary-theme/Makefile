@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	elementary
-PORTVERSION=	6.0.0
+PORTVERSION=	6.1.0
 CATEGORIES=	x11-themes
 DIST_SUBDIR=	elementary
 PKGNAMESUFFIX=	-theme
