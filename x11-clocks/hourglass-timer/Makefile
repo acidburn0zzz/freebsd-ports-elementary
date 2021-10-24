@@ -16,7 +16,6 @@ USES=		elementary gettext gnome meson pkgconfig \
 		python:3.6+,build
 USE_GNOME=	glib20 gtk30
 USE_ELEMENTARY=	granite
-INSTALLS_ICONS=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sgpthomas
