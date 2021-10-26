@@ -1,5 +1,5 @@
 PORTNAME=	wingpanel-indicator-notifications
-PORTVERSION=	6.0.1
+PORTVERSION=	6.0.2
 CATEGORIES=	deskutils
 
 MAINTAINER=	duchateau.olivier@gmail.com
