@@ -20,7 +20,6 @@ USES=	elementary gettext gnome meson pkgconfig \
 USE_GNOME=	glib20 gtk30
 USE_GSTREAMER1=	yes good gtk jpeg ogg v4l2 vorbis vpx
 USE_ELEMENTARY=	granite
-INSTALLS_ICONS=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary

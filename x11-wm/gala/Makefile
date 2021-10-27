@@ -24,7 +24,6 @@ USES=		elementary gettext gnome meson pkgconfig \
 		python:3.6+,build xorg
 USE_GNOME=	glib20 gtk30 gnomedesktop3 cairo gdkpixbuf2
 USE_ELEMENTARY=	granite plank
-INSTALL_ICONS=	yes
 USE_XORG=	xfixes
 
 USE_GITHUB=	yes

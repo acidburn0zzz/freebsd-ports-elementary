@@ -22,7 +22,6 @@ USES=		elementary gettext gnome meson pkgconfig \
 		python:3.6+,build
 USE_GNOME=	glib20 gtk30 gnomedesktop3 librsvg2 gdkpixbuf2
 USE_ELEMENTARY=	granite plank switchboard wingpanel
-INSTALLS_ICONS=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary

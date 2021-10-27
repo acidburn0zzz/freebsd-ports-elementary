@@ -22,7 +22,6 @@ USES=		desktop-file-utils elementary gettext gnome meson pkgconfig \
 		python:3.6+,build sqlite:3
 USE_GNOME=	glib20 gtk30 cairo gdkpixbuf2 pango gvfs
 USE_ELEMENTARY=	granite plank
-INSTALLS_ICONS=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary

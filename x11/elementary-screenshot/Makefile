@@ -18,7 +18,6 @@ USES=		elementary gettext gnome meson pkgconfig \
 		python:3.5+,build
 USE_GNOME=	glib20 gtk30 cairo gdkpixbuf2
 USE_ELEMENTARY=	granite
-INSTALLS_ICONS=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
