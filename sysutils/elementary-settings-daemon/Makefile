@@ -1,5 +1,5 @@
 PORTNAME=	settings-daemon
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	elementary-
 
@@ -21,6 +21,8 @@ USE_ELEMENTARY=	granite
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
+
+MESON_ARGS=	-Dsystemduserunitdir='no'
 
 GLIB_SCHEMAS=	io.elementary.settings-daemon.gschema.xml
 

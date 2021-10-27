@@ -1,5 +1,8 @@
 bin/io.elementary.settings-daemon
 etc/xdg/autostart/io.elementary.settings-daemon.desktop
+libexec/io.elementary.settings-daemon.xdg-desktop-portal
 share/accountsservice/interfaces/io.elementary.SettingsDaemon.AccountsService.xml
 share/dbus-1/interfaces/io.elementary.SettingsDaemon.AccountsService.xml
+share/dbus-1/services/org.freedesktop.impl.portal.desktop.elementary.settings-daemon.service
 share/metainfo/io.elementary.settings-daemon.appdata.xml
+share/xdg-desktop-portal/portals/io.elementary.settings-daemon.portal
