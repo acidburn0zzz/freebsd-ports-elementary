@@ -1,5 +1,5 @@
 PORTNAME=	gala
-PORTVERSION=	6.2.1
+PORTVERSION=	6.3.0
 CATEGORIES=	x11-wm
 
 MAINTAINER=	duchateau.olivier@gmail.com
@@ -28,6 +28,8 @@ USE_XORG=	xfixes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
+
+MESON_ARGS=	-Dsystemd=false
 
 GLIB_SCHEMAS=	org.pantheon.desktop.gala.gschema.xml \
 		20_elementary.pantheon.wm.gschema.override
