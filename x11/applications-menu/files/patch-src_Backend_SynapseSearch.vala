@@ -1,12 +1,10 @@
---- src/Backend/SynapseSearch.vala.orig	2021-08-30 17:37:01 UTC
+--- src/Backend/SynapseSearch.vala.orig	2021-11-24 22:02:41 UTC
 +++ src/Backend/SynapseSearch.vala
-@@ -26,8 +26,7 @@ namespace Slingshot.Backend {
-             typeof (Synapse.DesktopFilePlugin),
+@@ -27,7 +27,6 @@ namespace Slingshot.Backend {
              typeof (Synapse.SwitchboardPlugin),
              typeof (Synapse.SystemManagementPlugin),
--            typeof (Synapse.LinkPlugin),
--            typeof (Synapse.AppcenterPlugin)
-+            typeof (Synapse.LinkPlugin)
+             typeof (Synapse.LinkPlugin),
+-            typeof (Synapse.AppcenterPlugin),
+             typeof (Synapse.FileBookmarkPlugin)
          };
  
-         private static Synapse.DataSink? sink = null;

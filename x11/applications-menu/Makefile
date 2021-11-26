@@ -1,5 +1,5 @@
 PORTNAME=	applications-menu
-PORTVERSION=	2.9.1
+PORTVERSION=	2.10.1
 CATEGORIES=	x11
 
 MAINTAINER=	duchateau.olivier@gmail.com
