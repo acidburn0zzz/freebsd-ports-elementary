@@ -1,0 +1,22 @@
+--- data/meson.build.orig	2021-10-28 08:07:25 UTC
++++ data/meson.build
+@@ -11,19 +11,6 @@ configure_file(
+     install_dir: join_paths(datadir, 'dbus-1', 'services')
+ )
+ 
+-systemd_systemduserunitdir = get_option('systemduserunitdir')
+-if systemd_systemduserunitdir == ''
+-    systemd_systemduserunitdir = systemd_dep.get_pkgconfig_variable('systemduserunitdir', define_variable: ['prefix', prefix])
+-endif
+-
+-configure_file(
+-    input: meson.project_name() + '.service.in',
+-    output: '@BASENAME@',
+-    configuration: conf_data,
+-    install: true,
+-    install_dir: systemd_systemduserunitdir
+-)
+-
+ i18n.merge_file(
+     input: 'portals.appdata.xml.in',
+     output: 'io.elementary.portals.appdata.xml',

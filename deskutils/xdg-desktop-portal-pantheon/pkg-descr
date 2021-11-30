@@ -1,0 +1,5 @@
+xdg-desktop-portal backend for the Pantheon desktop. It provides
+PIs to secure apps which enable them to access system features
+while requiring informed consent.
+
+WWW: https://github.com/elementary/portals

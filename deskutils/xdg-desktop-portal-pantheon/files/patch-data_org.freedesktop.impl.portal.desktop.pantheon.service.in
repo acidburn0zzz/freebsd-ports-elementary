@@ -1,0 +1,7 @@
+--- data/org.freedesktop.impl.portal.desktop.pantheon.service.in.orig	2021-10-28 08:07:25 UTC
++++ data/org.freedesktop.impl.portal.desktop.pantheon.service.in
+@@ -1,4 +1,3 @@
+ [D-BUS Service]
+ Name=org.freedesktop.impl.portal.desktop.pantheon
+ Exec=@LIBEXECDIR@/xdg-desktop-portal-pantheon
+-SystemdService=xdg-desktop-portal-pantheon.service
