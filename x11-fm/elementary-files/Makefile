@@ -1,5 +1,5 @@
 PORTNAME=	files
-PORTVERSION=	6.0.4
+PORTVERSION=	6.1.0
 CATEGORIES=	x11-fm
 PKGNAMEPREFIX=	elementary-
 
@@ -16,7 +16,8 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libnotify.so:devel/libnotify \
 		libgit2-glib-1.0.so:devel/libgit2-glib
 RUN_DEPENDS=	pkexec:sysutils/polkit \
-		xfce4-tumbler>0:deskutils/xfce4-tumbler
+		xfce4-tumbler>0:deskutils/xfce4-tumbler \
+		xdg-desktop-portal-pantheon>0:deskutils/xdg-desktop-portal-pantheon
 
 USES=		desktop-file-utils elementary gettext gnome meson pkgconfig \
 		python:3.6+,build sqlite:3
