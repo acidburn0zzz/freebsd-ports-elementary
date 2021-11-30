@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	elementary
 PORTVERSION=	6.1.1
 CATEGORIES=	x11-themes
