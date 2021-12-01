@@ -1,5 +1,5 @@
 PORTNAME=	wingpanel-indicator-sound
-PORTVERSION=	6.0.0
+PORTVERSION=	6.0.1
 CATEGORIES=	audio
 
 MAINTAINER=	duchateau.olivier@gmail.com
