@@ -1,10 +1,10 @@
---- data/meson.build.orig	2021-08-28 20:15:28 UTC
+--- data/meson.build.orig	2021-12-02 21:52:25 UTC
 +++ data/meson.build
-@@ -36,6 +36,7 @@ test ('as-validate_metainfo.cli',
+@@ -67,6 +67,7 @@ test('as-validate_metainfo.cli',
  )
  
- install_data ('appstream.conf',
-+              rename: ['appstream.conf.sample'],
-               install_dir: get_option('sysconfdir'))
+ install_data('appstream.conf',
++             rename: ['appstream.conf.sample'],
+              install_dir: get_option('sysconfdir'))
  
  if get_option('compose')
