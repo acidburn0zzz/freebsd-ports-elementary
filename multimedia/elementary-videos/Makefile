@@ -1,5 +1,5 @@
 PORTNAME=	elementary-videos
-DISTVERSION=	2.7.3
+DISTVERSION=	2.8.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	miguel@gocobachi.dev
@@ -14,8 +14,7 @@ LIB_DEPENDS=	libclutter-1.0.so:graphics/clutter \
 		libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
 		libgee-0.8.so:devel/libgee \
 		libgranite.so:x11-toolkits/granite \
-		libgstbase-1.0.so:multimedia/gstreamer1
-RUN_DEPENDS=	gstreamer1-plugins-core>=0:multimedia/gstreamer1-plugins-core
+		libhandy-1.so:x11-toolkits/libhandy
 
 USES=		desktop-file-utils gettext gnome meson pkgconfig xorg
 USE_GITHUB=	yes
@@ -23,7 +22,8 @@ GH_ACCOUNT=	elementary
 GH_PROJECT=	videos
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 GLIB_SCHEMAS=	io.elementary.videos.gschema.xml
-USE_GSTREAMER1=	yes
+USE_GSTREAMER1=	yes core faad libav ogg opus theora vorbis x264 x \
+		ximagesrc
 USE_XORG=	x11
 
 .include <bsd.port.mk>
