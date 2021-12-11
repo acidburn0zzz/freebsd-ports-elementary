@@ -25,7 +25,7 @@ RUN_DEPENDS=	switchboard-plug-onlineaccounts>0:net/switchboard-plug-onlineaccoun
 
 USES=		elementary gettext gnome meson pkgconfig \
 		python:3.6+,build
-USE_GNOME=	glib20 gtk30 evolutiondataserver3
+USE_GNOME=	glib20 gtk30 gdkpixbuf2 evolutiondataserver3
 USE_ELEMENTARY=	granite
 
 USE_GITHUB=	yes
