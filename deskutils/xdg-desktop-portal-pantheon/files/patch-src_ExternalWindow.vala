@@ -6,8 +6,8 @@
          Gdk.set_allowed_backends ("x11");
 -        x11_display = Gdk.Display.open (null);
 -        Gdk.set_allowed_backends (null);
-+        x11_display = Gdk.Display.get_default ();
-+        //Gdk.set_allowed_backends (null);
++        x11_display = Gdk.Display.open ("");
++        Gdk.set_allowed_backends ("");
  
          if (x11_display == null) {
              warning ("Failed to open X11 display");
