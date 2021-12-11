@@ -3,7 +3,6 @@ bin/io.elementary.files-daemon
 bin/io.elementary.files-pkexec
 include/pantheon-files-core/marlin-file-operations.h
 include/pantheon-files-core/pantheon-files-core.h
-include/pantheon-files-widgets.h
 lib/io.elementary.files/plugins/core/libpantheon-files-contractor.so
 lib/io.elementary.files/plugins/core/libpantheon-files-ctags.so
 lib/io.elementary.files/plugins/core/libpantheon-files-git.so
@@ -16,15 +15,13 @@ lib/io.elementary.files/plugins/core/pantheon-files-send-by-email.plug
 lib/io.elementary.files/plugins/core/pantheon-files-trash.plug
 lib/libpantheon-files-core.so
 lib/libpantheon-files-core.so.6
-lib/libpantheon-files-core.so.6.1.0
-lib/libpantheon-files-widgets.so
-lib/libpantheon-files-widgets.so.6
-lib/libpantheon-files-widgets.so.6.1.0
+lib/libpantheon-files-core.so.6.1.1
 libdata/pkgconfig/pantheon-files-core.pc
-libdata/pkgconfig/pantheon-files-widgets.pc
+libexec/io.elementary.files.xdg-desktop-portal
 share/applications/io.elementary.files.desktop
 share/dbus-1/services/io.elementary.files.Filemanager1.service
 share/dbus-1/services/io.elementary.files.service
+share/dbus-1/services/org.freedesktop.impl.portal.desktop.elementary.files.service
 share/locale/aa/LC_MESSAGES/io.elementary.files.mo
 share/locale/ab/LC_MESSAGES/io.elementary.files.mo
 share/locale/ae/LC_MESSAGES/io.elementary.files.mo
@@ -228,4 +225,4 @@ share/metainfo/io.elementary.files.appdata.xml
 share/pixmaps/io.elementary.files/poof.png
 share/polkit-1/actions/io.elementary.files.policy
 share/vala/vapi/pantheon-files-core.vapi
-share/vala/vapi/pantheon-files-widgets.vapi
+share/xdg-desktop-portal/portals/io.elementary.files.portal
