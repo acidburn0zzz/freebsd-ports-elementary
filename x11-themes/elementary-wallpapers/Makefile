@@ -1,5 +1,5 @@
 PORTNAME=	wallpapers
-PORTVERSION=	6.0.0
+PORTVERSION=	6.1.0
 CATEGORIES=	x11-themes
 PKGNAMEPREFIX=	elementary-
 
@@ -9,7 +9,7 @@ COMMENT=	Collection of wallpapers for the Elementary desktop
 LICENSE=	CC0-1.0 GPLv3+
 LICENSE_COMB=	multi
 
-USES=		gettext meson pkgconfig python:3.5+,build
+USES=		gettext meson pkgconfig python:3.6+,build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
@@ -17,12 +17,8 @@ GH_ACCOUNT=	elementary
 post-extract:
 	${CHMOD} a-x "${WRKSRC}/backgrounds/Ashim DSilva.jpg"
 
-post-patch:
-	@${REINPLACE_CMD} -i "" -e 's|%%PORTVERSION%%|${PORTVERSION}|' \
-		${WRKSRC}/meson.build
-
 post-install:
-	${RLN} "${STAGEDIR}${PREFIX}/share/backgrounds/odin.jpg" \
+	${RLN} "${STAGEDIR}${PREFIX}/share/backgrounds/odin-dark.jpg" \
 		${STAGEDIR}${PREFIX}/share/backgrounds/elementaryos-default
 
 .include <bsd.port.mk>

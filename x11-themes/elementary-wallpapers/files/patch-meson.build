@@ -1,10 +1,20 @@
---- meson.build.orig	2021-07-13 22:06:01 UTC
+--- meson.build.orig	2021-12-13 22:46:29 UTC
 +++ meson.build
-@@ -1,6 +1,6 @@
- project(
-     'io.elementary.wallpapers',
--    version: '5.5.0'
-+    version: '%%PORTVERSION%%'
+@@ -4,17 +4,10 @@ project(
  )
  
  i18n = import('i18n')
+-symlink = meson.current_source_dir() / 'meson' / 'symlink.py'
+ 
+ install_subdir(
+     'backgrounds',
+     install_dir: get_option('datadir')
+-)
+-
+-meson.add_install_script(
+-    symlink,
+-    '--src', get_option('datadir') / 'backgrounds' / 'odin-dark.jpg',
+-    '--dest', get_option('datadir') / 'backgrounds' / 'elementaryos-default'
+ )
+ 
+ subdir('data')
