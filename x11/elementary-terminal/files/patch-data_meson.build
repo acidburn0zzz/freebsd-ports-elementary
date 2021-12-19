@@ -1,9 +1,34 @@
---- data/meson.build.orig	2020-04-02 00:28:39 UTC
+--- data/meson.build.orig	2021-12-13 18:31:36 UTC
 +++ data/meson.build
-@@ -43,13 +43,3 @@ test (
+@@ -4,7 +4,6 @@ install_data(
+ )
+ 
+ i18n.merge_file (
+-    'desktop',
+     input: meson.project_name() + '.desktop.in',
+     output: meson.project_name() + '.desktop',
+     install: true,
+@@ -14,7 +13,6 @@ i18n.merge_file (
+ )
+ 
+ i18n.merge_file (
+-    'desktop',
+     input: 'open-pantheon-terminal-here.desktop.in',
+     output: 'open-pantheon-terminal-here.desktop',
+     install: true,
+@@ -24,7 +22,6 @@ i18n.merge_file (
+ )
+ 
+ i18n.merge_file (
+-    'appdata',
+     input: meson.project_name() + '.appdata.xml.in',
+     output: meson.project_name() + '.appdata.xml',
+     install: true,
+@@ -42,14 +39,4 @@ test (
+     'Validate open here desktop file',
      find_program('desktop-file-validate'),
      args: join_paths(meson.current_build_dir (), 'open-pantheon-terminal-here.desktop')
- )
+-)
 -
 -install_data(
 -    'pantheon_terminal_process_completion_notifications.fish',
@@ -13,4 +38,4 @@
 -install_data(
 -    'enable-zsh-completion-notifications',
 -    install_dir: join_paths(get_option('datadir'), meson.project_name())
--)
+ )
