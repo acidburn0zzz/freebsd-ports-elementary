@@ -24,7 +24,7 @@ PLIST_SUB+=	SWITCHBOARD_PLUGDIR="lib/switchboard" \
 		WINGPANEL_PLUGDIR="lib/wingpanel"
 
 # Available Elementary components are:
-_USE_ELEMENTARY_ALL=  gala granite plank switchboard wingpanel
+_USE_ELEMENTARY_ALL=  gala granite plank portals switchboard wingpanel
 
 gala_LIB_DEPENDS=       libgala.so:x11-wm/gala
 gala_RUN_DEPENDS=       gala:x11-wm/gala
@@ -34,6 +34,8 @@ granite_LIB_DEPENDS=    libgranite.so:x11-toolkits/granite
 
 plank_LIB_DEPENDS=  libplank.so:x11/plank
 plank_RUN_DEPENDS=  plank:x11/plank
+
+portls_RUN_DEPENDS=	xdg-desktop-portal-pantheon>0:deskutils/xdg-desktop-portal-pantheon
 
 switchboard_LIB_DEPENDS=	libswitchboard-2.0.so:sysutils/switchboard
 switchboard_USE_ELEMENTARY_REQ=	granite
