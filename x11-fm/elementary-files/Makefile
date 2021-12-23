@@ -16,13 +16,12 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libnotify.so:devel/libnotify \
 		libgit2-glib-1.0.so:devel/libgit2-glib
 RUN_DEPENDS=	pkexec:sysutils/polkit \
-		xfce4-tumbler>0:deskutils/xfce4-tumbler \
-		xdg-desktop-portal-pantheon>0:deskutils/xdg-desktop-portal-pantheon
+		xfce4-tumbler>0:deskutils/xfce4-tumbler
 
 USES=		desktop-file-utils elementary gettext gnome meson pkgconfig \
 		python:3.6+,build sqlite:3
 USE_GNOME=	glib20 gtk30 cairo gdkpixbuf2 pango gvfs
-USE_ELEMENTARY=	granite plank
+USE_ELEMENTARY=	granite portals plank
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
