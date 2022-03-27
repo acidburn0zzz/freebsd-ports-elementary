@@ -15,7 +15,7 @@ lib/io.elementary.files/plugins/core/pantheon-files-send-by-email.plug
 lib/io.elementary.files/plugins/core/pantheon-files-trash.plug
 lib/libpantheon-files-core.so
 lib/libpantheon-files-core.so.6
-lib/libpantheon-files-core.so.6.1.1
+lib/libpantheon-files-core.so.6.1.2
 libdata/pkgconfig/pantheon-files-core.pc
 libexec/io.elementary.files.xdg-desktop-portal
 share/applications/io.elementary.files.desktop
