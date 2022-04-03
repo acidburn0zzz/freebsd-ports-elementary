@@ -35,7 +35,7 @@ granite_LIB_DEPENDS=    libgranite.so:x11-toolkits/granite
 plank_LIB_DEPENDS=  libplank.so:x11/plank
 plank_RUN_DEPENDS=  plank:x11/plank
 
-portls_RUN_DEPENDS=	xdg-desktop-portal-pantheon>0:deskutils/xdg-desktop-portal-pantheon
+portals_RUN_DEPENDS=	xdg-desktop-portal-pantheon>0:deskutils/xdg-desktop-portal-pantheon
 
 switchboard_LIB_DEPENDS=	libswitchboard-2.0.so:sysutils/switchboard
 switchboard_USE_ELEMENTARY_REQ=	granite
