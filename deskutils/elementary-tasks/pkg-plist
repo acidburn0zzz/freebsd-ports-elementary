@@ -1,4 +1,5 @@
 bin/io.elementary.tasks
+etc/xdg/autostart/io.elementary.tasks-daemon.desktop
 share/applications/io.elementary.tasks.desktop
 share/icons/hicolor/128x128/apps/io.elementary.tasks.svg
 share/icons/hicolor/128x128@2/apps/io.elementary.tasks.svg

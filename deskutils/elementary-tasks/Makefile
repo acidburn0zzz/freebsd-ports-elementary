@@ -1,5 +1,5 @@
 PORTNAME=	tasks
-PORTVERSION=	6.1.0
+PORTVERSION=	6.2.0
 CATEGORIES=	deskutils
 PKGNAMEPREFIX=	elementary-
 
