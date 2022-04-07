@@ -1,5 +1,5 @@
 PORTNAME=	switchboard-plug-sound
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 CATEGORIES=	audio
 
 MAINTAINER=	duchateau.olivier@gmail.com
