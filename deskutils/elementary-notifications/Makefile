@@ -1,5 +1,5 @@
 PORTNAME=	notifications
-PORTVERSION=	6.0.0
+PORTVERSION=	6.0.1
 CATEGORIES=	deskutils
 PKGNAMEPREFIX=	elementary-
 
@@ -27,9 +27,5 @@ GH_ACCOUNT=	elementary
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 GLIB_SCHEMAS=	io.elementary.notifications.gschema.xml
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${LOCALBASE}|' \
-		${WRKSRC}/src/Notification.vala
 
 .include <bsd.port.mk>
