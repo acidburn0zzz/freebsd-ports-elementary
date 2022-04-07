@@ -1,5 +1,5 @@
 PORTNAME=	gala
-PORTVERSION=	6.3.0
+PORTVERSION=	6.3.1
 CATEGORIES=	x11-wm
 
 MAINTAINER=	duchateau.olivier@gmail.com
@@ -23,7 +23,7 @@ RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
 USES=		elementary gettext gnome meson pkgconfig \
 		python:3.6+,build xorg
 USE_GNOME=	glib20 gtk30 gnomedesktop3 cairo gdkpixbuf2
-USE_ELEMENTARY=	granite plank
+USE_ELEMENTARY=	granite portals
 USE_XORG=	xfixes
 
 USE_GITHUB=	yes
