@@ -1,11 +1,11 @@
---- src/Views/OperatingSystemView.vala.orig	2021-08-24 20:34:26 UTC
+--- src/Views/OperatingSystemView.vala.orig	2022-04-06 18:14:50 UTC
 +++ src/Views/OperatingSystemView.vala
 @@ -31,7 +31,7 @@ public class About.OperatingSystemView : Gtk.Grid {
  
          support_url = Environment.get_os_info (GLib.OsInfoKey.SUPPORT_URL);
          if (support_url == "" || support_url == null) {
 -            support_url = "https://elementary.io/support";
-+            support_url = "https://bugs.freebsd.org/";
++            support_url = "https://https://bugs.freebsd.org/";
          }
  
          var logo_icon_name = Environment.get_os_info ("LOGO");
@@ -13,8 +13,8 @@
          // want more granular control over text formatting
          var pretty_name = "<b>%s</b> %s".printf (
              Environment.get_os_info (GLib.OsInfoKey.NAME),
--            Environment.get_os_info (GLib.OsInfoKey.VERSION)
-+            Environment.get_os_info (GLib.OsInfoKey.VERSION_ID)
+-            Environment.get_os_info (GLib.OsInfoKey.VERSION) ?? ""
++            Environment.get_os_info (GLib.OsInfoKey.VERSION_ID) ?? ""
          );
  
          var title = new Gtk.Label (pretty_name) {
@@ -23,7 +23,7 @@
          title.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
  
 -        var kernel_version_label = new Gtk.Label ("%s %s".printf (uts_name.sysname, uts_name.release)) {
-+        var kernel_version_label = new Gtk.Label ("%s".printf (uts_name.release)) {
++        var kernel_version_label = new Gtk.Label ("%s".printf (uts_name.sysname)) {
              selectable = true,
              xalign = 0
          };
@@ -106,7 +106,7 @@
 -            software_grid.attach (based_off, 1, 1, 3);
 -            software_grid.show_all ();
 -        }
-+    private  void get_upstream_release () {
++    private void get_upstream_release () {
 +        var based_off = new Gtk.Label (_("Built on %d").printf (getosreldate ())) {
 +            selectable = true,
 +            xalign = 0

@@ -1,5 +1,5 @@
 PORTNAME=	switchboard-plug-about
-PORTVERSION=	6.0.1
+PORTVERSION=	6.1.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	duchateau.olivier@gmail.com
@@ -12,7 +12,7 @@ BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libhandy-1.so:x11-toolkits/libhandy \
 		libgtop-2.0.so:devel/libgtop \
-		libappstream.so:devel/AppStream
+		libappstream.so:devel/appstream
 RUN_DEPENDS=	elementary-wallpapers>0:x11-themes/elementary-wallpapers \
 		gnome-session>0:x11/gnome-session
 

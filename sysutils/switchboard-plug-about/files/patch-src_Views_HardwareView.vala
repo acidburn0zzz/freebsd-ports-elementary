@@ -1,10 +1,11 @@
---- src/Views/HardwareView.vala.orig	2021-08-24 20:34:26 UTC
+--- src/Views/HardwareView.vala.orig	2022-04-06 18:14:50 UTC
 +++ src/Views/HardwareView.vala
-@@ -22,16 +22,9 @@
+@@ -22,17 +22,9 @@
  
  public class About.HardwareView : Gtk.Grid {
      private bool oem_enabled;
 -    private string manufacturer_icon_path;
+-    private string? manufacturer_icon_dark_path = null;
 -    private string manufacturer_name;
 -    private string manufacturer_support_url;
      private string memory;
@@ -17,7 +18,7 @@
  
      private Gtk.Image manufacturer_logo;
  
-@@ -97,61 +90,19 @@ public class About.HardwareView : Gtk.Grid {
+@@ -102,53 +94,17 @@ public class About.HardwareView : Gtk.Grid {
          manufacturer_logo = new Gtk.Image () {
              halign = Gtk.Align.END,
              pixel_size = 128,
@@ -28,13 +29,6 @@
          };
  
 -        if (oem_enabled) {
--            var fileicon = new FileIcon (File.new_for_path (manufacturer_icon_path));
-+        details_grid.add (product_name_info);
- 
--            if (manufacturer_icon_path != null) {
--                manufacturer_logo.gicon = fileicon;
--            }
--
 -            if (product_name != null) {
 -                product_name_info.label = "<b>%s</b>".printf (product_name);
 -                product_name_info.use_markup = true;
@@ -57,9 +51,7 @@
 -            details_grid.add (product_name_info);
 -        }
 -
--        if (manufacturer_logo.gicon == null) {
--            load_fallback_manufacturer_icon.begin ();
--        }
+-        update_manufacturer_logo ();
 -
          details_grid.add (processor_info);
          details_grid.add (graphics_grid);
@@ -83,10 +75,34 @@
          margin_left = 16;
          margin_right = 16;
          column_spacing = 32;
-@@ -161,14 +112,6 @@ public class About.HardwareView : Gtk.Grid {
+@@ -156,38 +112,8 @@ public class About.HardwareView : Gtk.Grid {
+ 
+         add (manufacturer_logo);
          add (details_grid);
+-
+-        granite_settings.notify["prefers-color-scheme"].connect (() => {
+-            update_manufacturer_logo ();
+-        });
      }
  
+-    private void update_manufacturer_logo () {
+-        if (oem_enabled) {
+-            string path = manufacturer_icon_path;
+-            if (granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK && manufacturer_icon_dark_path != null) {
+-                path = manufacturer_icon_dark_path;
+-            }
+-            var fileicon = new FileIcon (File.new_for_path (path));
+-
+-            if (path != null) {
+-                manufacturer_logo.gicon = fileicon;
+-            }
+-        }
+-
+-        if (manufacturer_logo.gicon == null) {
+-            load_fallback_manufacturer_icon.begin ();
+-        }
+-    }
+-
 -    private async void load_fallback_manufacturer_icon () {
 -        get_system_interface_instance ();
 -
@@ -98,7 +114,7 @@
      private string? try_get_arm_model (GLib.HashTable<string, string> values) {
          string? cpu_implementer = values.lookup ("CPU implementer");
          string? cpu_part = values.lookup ("CPU part");
-@@ -258,52 +201,12 @@ public class About.HardwareView : Gtk.Grid {
+@@ -277,52 +203,12 @@ public class About.HardwareView : Gtk.Grid {
              }
          }
  
@@ -151,81 +167,81 @@
          if (session_manager != null) {
              return clean_name (session_manager.renderer);
          }
-@@ -339,44 +242,77 @@ public class About.HardwareView : Gtk.Grid {
+@@ -358,48 +244,73 @@ public class About.HardwareView : Gtk.Grid {
          get_graphics_info.begin ();
          get_storage_info.begin ();
  
-+        oem_enabled = false;
-+    }
-+
-+    private async uint64 get_fs_size (string path) {
-+        GLib.File file = GLib.File.new_for_path (path);
-+        GLib.FileInfo info = null;
-+        uint64 size = 0;
-+
-         try {
+-        try {
 -            var oem_file = new KeyFile ();
 -            oem_file.load_from_file ("/etc/oem.conf", KeyFileFlags.NONE);
 -            // Assume we get the manufacturer name
 -            manufacturer_name = oem_file.get_string ("OEM", "Manufacturer");
-+            info = yield file.query_filesystem_info_async (GLib.FileAttribute.FILESYSTEM_SIZE);
-+            size = info.get_attribute_uint64 (GLib.FileAttribute.FILESYSTEM_SIZE);
-+        } catch (GLib.Error e) {
-+            critical (e.message);
-+		}
++        oem_enabled = false;
++    }
  
 -            // We need to check if the key is here because get_string throws an error if the key isn't available.
 -            if (oem_file.has_key ("OEM", "Product")) {
 -                product_name = oem_file.get_string ("OEM", "Product");
 -            }
-+        return size;
-+    }
++    private async uint64 get_fs_size (string path) {
++        GLib.File file = GLib.File.new_for_path (path);
++        GLib.FileInfo info = null;
++        uint64 size = 0;
  
 -            if (oem_file.has_key ("OEM", "Version")) {
 -                product_version = oem_file.get_string ("OEM", "Version");
 -            }
-+    private uint64 make_sum (List<uint64?> list) {
-+        uint64 result = 0;
++        try {
++            info = yield file.query_filesystem_info_async (GLib.FileAttribute.FILESYSTEM_SIZE);
++            size = info.get_attribute_uint64 (GLib.FileAttribute.FILESYSTEM_SIZE);
++        } catch (GLib.Error e) {
++            critical (e.message);
++        }
++        return size;
++    }
  
 -            if (oem_file.has_key ("OEM", "Logo")) {
 -                manufacturer_icon_path = oem_file.get_string ("OEM", "Logo");
 -            }
++    private uint64 make_sum (List<uint64?> list) {
++        uint64 result = 0;
 +        list.foreach ((i) => {
 +            result = result + i;
 +        });
- 
--            if (oem_file.has_key ("OEM", "URL")) {
--                manufacturer_support_url = oem_file.get_string ("OEM", "URL");
--            }
 +        return result;
 +    }
  
--            oem_enabled = true;
--        } catch (Error e) {
--            debug (e.message);
--            oem_enabled = false;
+-            if (oem_file.has_key ("OEM", "LogoDark")) {
+-                manufacturer_icon_dark_path = oem_file.get_string ("OEM", "LogoDark");
+-            }
 +    private List<string> get_mount_points () {
 +        List<GLib.UnixMountEntry> entries;
 +        List<string> list; // list of mount points
 +        unowned string blk_dev; // e.g. /dev, ...
 +        unowned string mnt_p; // mount point
-+
+ 
+-            if (oem_file.has_key ("OEM", "URL")) {
+-                manufacturer_support_url = oem_file.get_string ("OEM", "URL");
+-            }
 +        entries = GLib.UnixMountEntry.get ();
 +        list = new List<string> ();
-+
+ 
+-            oem_enabled = true;
+-        } catch (Error e) {
+-            debug (e.message);
+-            oem_enabled = false;
 +        foreach (unowned GLib.UnixMountEntry entry in entries) {
 +            if (entry.is_system_internal ()) {
 +                blk_dev = entry.get_device_path ();
 +                if ((blk_dev != null) && (blk_dev.has_prefix ("/dev"))) {
 +                    mnt_p = entry.get_mount_path ();
-+                    // We want only partitions of system */
++                    // We want only partitions of system
 +                    if (! mnt_p.has_prefix ("/home")) {
 +                        list.append (mnt_p);
 +                    }
 +                }
 +            }
          }
-+
 +        return list;
      }
  
@@ -256,7 +272,7 @@
              storage_capacity = _("Unknown");
          }
  
-@@ -413,127 +349,39 @@ public class About.HardwareView : Gtk.Grid {
+@@ -436,127 +347,39 @@ public class About.HardwareView : Gtk.Grid {
      }
  
      private async string get_storage_type (string storage_capacity) {
