@@ -1,5 +1,5 @@
 PORTNAME=	greeter
-PORTVERSION=	6.0.1
+PORTVERSION=	6.0.2
 CATEGORIES=	x11
 PKGNAMEPREFIX=	elementary-
 
@@ -33,6 +33,6 @@ GH_ACCOUNT=	elementary
 post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|%%PREFIX%%|${LOCALBASE}|g' \
 		${WRKSRC}/src/Widgets/BackgroundImage.vala \
-#		${WRKSRC}/data/io.elementary.greeter.conf
+		${WRKSRC}/data/io.elementary.greeter.conf
 
 .include <bsd.port.mk>
