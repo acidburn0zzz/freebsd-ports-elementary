@@ -1,6 +1,12 @@
---- overrides/default-settings.gschema.override.in.orig	2021-08-31 19:15:18 UTC
+--- overrides/default-settings.gschema.override.in.orig	2021-10-30 21:11:17 UTC
 +++ overrides/default-settings.gschema.override.in
-@@ -25,7 +25,6 @@ font-name='Inter 9'
+@@ -21,11 +21,12 @@ xkb-options=['grp:alt_shift_toggle']
+ [org.gnome.desktop.interface:Pantheon]
+ cursor-theme='elementary'
+ document-font-name='Open Sans 10'
++font-antialiasing='grayscale'
++font-hinting='slight'
+ font-name='Inter 9'
  gtk-theme='io.elementary.stylesheet.blueberry'
  icon-theme='elementary'
  monospace-font-name='Roboto Mono 10'
@@ -8,7 +14,7 @@
  
  [org.gnome.desktop.peripherals.touchpad:Pantheon]
  natural-scroll=true
-@@ -88,15 +87,6 @@ button-layout='close:maximize'
+@@ -88,15 +89,6 @@ button-layout='close:maximize'
  mouse-button-modifier='<Super>'
  resize-with-right-button=true
  
@@ -24,7 +30,7 @@
  [org.gnome.mutter:Pantheon]
  auto-maximize=false
  overlay-key='Super_L'
-@@ -122,9 +112,6 @@ active=false
+@@ -122,9 +114,6 @@ active=false
  [org.gnome.settings-daemon.plugins.color:Pantheon]
  night-light-temperature=4500
  
@@ -34,7 +40,14 @@
  [org.gnome.settings-daemon.plugins.power:Pantheon]
  idle-dim=false
  
-@@ -139,9 +126,6 @@ overrides={'Gtk/DialogsUseHeader': <0>, 'Gtk/EnablePri
+@@ -133,15 +122,10 @@ idle-dim=false
+ active=false
+ 
+ [org.gnome.settings-daemon.plugins.xsettings:Pantheon]
+-antialiasing='grayscale'
+-hinting='slight'
+-overrides={'Gtk/DialogsUseHeader': <0>, 'Gtk/EnablePrimaryPaste': <0>, 'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DecorationLayout': <'close:menu,maximize'>}
++overrides={'Gtk/DialogsUseHeader': <0>, 'Gtk/EnablePrimaryPaste': <0>, 'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DecorationLayout': <'close:menu,maximize'>,'Gtk/ShowUnicodeMenu': <0>}
  
  [org.gtk.Settings.FileChooser:Pantheon]
  sort-directories-first=true
