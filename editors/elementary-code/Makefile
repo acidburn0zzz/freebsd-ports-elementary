@@ -1,5 +1,5 @@
 PORTNAME=	code
-DISTVERSION=	6.1.0
+DISTVERSION=	6.2.0
 CATEGORIES=	editors
 PKGNAMEPREFIX=	elementary-
 
@@ -22,9 +22,8 @@ LIB_DEPENDS=	libatk-1.0.so:accessibility/atk \
 		libpeas-1.0.so:devel/libpeas \
 		libpeas-gtk-1.0.so:devel/libpeas \
 		libsoup-2.4.so:devel/libsoup \
-		libvala-0.50.so:lang/vala \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
-		libzeitgeist-2.0.so:sysutils/zeitgeist
+		libvala-0.56.so:lang/vala \
+		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 
 USES=		compiler:c++11-lang desktop-file-utils elementary gettext \
 		gnome meson ninja pkgconfig python:3.6+,build xorg
