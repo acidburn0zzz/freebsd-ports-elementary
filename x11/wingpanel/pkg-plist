@@ -4,7 +4,7 @@ include/wingpanel/wingpanel.h
 lib/gala/plugins/libwingpanel-interface.so
 lib/libwingpanel.so
 lib/libwingpanel.so.3
-lib/libwingpanel.so.3.0.0
+lib/libwingpanel.so.3.0.2
 libdata/pkgconfig/wingpanel.pc
 share/applications/io.elementary.wingpanel.desktop
 share/icons/hicolor/scalable/apps/io.elementary.wingpanel.svg

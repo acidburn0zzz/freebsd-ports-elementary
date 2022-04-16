@@ -10,7 +10,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
-		libmutter-9.so:x11-wm/mutter \
+		libmutter-10.so:x11-wm/mutter \
 		libxklavier.so:x11/libxklavier \
 		libibus-1.0.so:textproc/ibus \
 		libhandy-1.so:x11-toolkits/libhandy

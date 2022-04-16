@@ -1,0 +1,11 @@
+--- meson.build.orig	2022-01-19 09:20:07 UTC
++++ meson.build
+@@ -1,7 +1,7 @@
+ project(
+     'io.elementary.wingpanel',
+     'c', 'vala',
+-    version: '3.0.0',
++    version: '%%PORTVERSION%%',
+ )
+ 
+ add_project_arguments([
