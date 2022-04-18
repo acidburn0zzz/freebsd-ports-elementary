@@ -23,7 +23,7 @@
          title.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
  
 -        var kernel_version_label = new Gtk.Label ("%s %s".printf (uts_name.sysname, uts_name.release)) {
-+        var kernel_version_label = new Gtk.Label ("%s".printf (uts_name.sysname)) {
++        var kernel_version_label = new Gtk.Label ("%s".printf (uts_name.release)) {
              selectable = true,
              xalign = 0
          };
