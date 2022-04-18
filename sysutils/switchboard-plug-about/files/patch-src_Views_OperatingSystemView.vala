@@ -9,25 +9,15 @@
          }
  
          var logo_icon_name = Environment.get_os_info ("LOGO");
-@@ -72,7 +72,7 @@ public class About.OperatingSystemView : Gtk.Grid {
-         // want more granular control over text formatting
-         var pretty_name = "<b>%s</b> %s".printf (
-             Environment.get_os_info (GLib.OsInfoKey.NAME),
--            Environment.get_os_info (GLib.OsInfoKey.VERSION) ?? ""
-+            Environment.get_os_info (GLib.OsInfoKey.VERSION_ID) ?? ""
-         );
- 
-         var title = new Gtk.Label (pretty_name) {
-@@ -84,14 +84,14 @@ public class About.OperatingSystemView : Gtk.Grid {
+@@ -84,14 +84,9 @@ public class About.OperatingSystemView : Gtk.Grid {
          };
          title.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
  
 -        var kernel_version_label = new Gtk.Label ("%s %s".printf (uts_name.sysname, uts_name.release)) {
-+        var kernel_version_label = new Gtk.Label ("%s".printf (uts_name.release)) {
-             selectable = true,
-             xalign = 0
-         };
- 
+-            selectable = true,
+-            xalign = 0
+-        };
+-
 -        var website_url = Environment.get_os_info (GLib.OsInfoKey.HOME_URL);
 +        var website_url = Environment.get_os_info (GLib.OsInfoKey.HOME_URL).down ();
          if (website_url == "" || website_url == null) {
@@ -36,7 +26,7 @@
          }
  
          var website_label = new Gtk.LinkButton.with_label (website_url, _("Website")) {
-@@ -112,8 +112,6 @@ public class About.OperatingSystemView : Gtk.Grid {
+@@ -112,8 +107,6 @@ public class About.OperatingSystemView : Gtk.Grid {
              margin_top = 12
          };
  
@@ -45,7 +35,7 @@
          Gtk.Button? update_button = null;
          var appcenter_info = new GLib.DesktopAppInfo ("io.elementary.appcenter.desktop");
          if (appcenter_info != null) {
-@@ -131,7 +129,6 @@ public class About.OperatingSystemView : Gtk.Grid {
+@@ -131,7 +124,6 @@ public class About.OperatingSystemView : Gtk.Grid {
              spacing = 6
          };
          button_grid.add (settings_restore_button);
@@ -53,7 +43,15 @@
          if (update_button != null) {
              button_grid.add (update_button);
          }
-@@ -162,61 +159,22 @@ public class About.OperatingSystemView : Gtk.Grid {
+@@ -148,7 +140,6 @@ public class About.OperatingSystemView : Gtk.Grid {
+         software_grid.attach (logo_overlay, 0, 0, 1, 4);
+         software_grid.attach (title, 1, 0, 3);
+ 
+-        software_grid.attach (kernel_version_label, 1, 2, 3);
+         software_grid.attach (website_label, 1, 3);
+         software_grid.attach (help_button, 2, 3);
+         software_grid.attach (translate_button, 3, 3);
+@@ -162,61 +153,22 @@ public class About.OperatingSystemView : Gtk.Grid {
  
          settings_restore_button.clicked.connect (settings_restore_clicked);
  
@@ -126,7 +124,7 @@
       /**
       * returns true to continue, false to cancel
       */
-@@ -265,7 +223,6 @@ public class About.OperatingSystemView : Gtk.Grid {
+@@ -265,7 +217,6 @@ public class About.OperatingSystemView : Gtk.Grid {
          string[] prefixes = {
              "org.pantheon.desktop",
              "io.elementary.desktop",

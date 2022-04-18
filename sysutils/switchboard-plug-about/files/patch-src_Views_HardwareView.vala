@@ -18,7 +18,7 @@
  
      private Gtk.Image manufacturer_logo;
  
-@@ -102,53 +94,17 @@ public class About.HardwareView : Gtk.Grid {
+@@ -102,53 +94,19 @@ public class About.HardwareView : Gtk.Grid {
          manufacturer_logo = new Gtk.Image () {
              halign = Gtk.Align.END,
              pixel_size = 128,
@@ -33,7 +33,8 @@
 -                product_name_info.label = "<b>%s</b>".printf (product_name);
 -                product_name_info.use_markup = true;
 -            }
--
++        details_grid.add (product_name_info);
+ 
 -            if (product_version != null) {
 -                 product_name_info.label += " %s".printf (product_version);
 -            }
@@ -75,7 +76,7 @@
          margin_left = 16;
          margin_right = 16;
          column_spacing = 32;
-@@ -156,38 +112,8 @@ public class About.HardwareView : Gtk.Grid {
+@@ -156,38 +114,8 @@ public class About.HardwareView : Gtk.Grid {
  
          add (manufacturer_logo);
          add (details_grid);
@@ -114,7 +115,25 @@
      private string? try_get_arm_model (GLib.HashTable<string, string> values) {
          string? cpu_implementer = values.lookup ("CPU implementer");
          string? cpu_part = values.lookup ("CPU part");
-@@ -277,52 +203,12 @@ public class About.HardwareView : Gtk.Grid {
+@@ -207,7 +135,7 @@ public class About.HardwareView : Gtk.Grid {
+         }
+ 
+         var counts = new Gee.HashMap<string, uint> ();
+-        const string[] KEYS = { "model name", "cpu", "Processor" };
++        const string[] KEYS = { "model name", "cpu", "processor" };
+ 
+         for (int i = 0; i < info.ncpu; i++) {
+             unowned GLib.HashTable<string, string> values = info.cpuinfo[i].values;
+@@ -257,7 +185,7 @@ public class About.HardwareView : Gtk.Grid {
+             } else if (cpu.@value == 6) {
+                 result += _("Hexa-Core %s").printf (clean_name (cpu.key));
+             } else {
+-                result += "%u\u00D7 %s ".printf (cpu.@value, clean_name (cpu.key));
++                result += "%s ".printf (clean_name (cpu.key));
+             }
+         }
+ 
+@@ -277,52 +205,12 @@ public class About.HardwareView : Gtk.Grid {
              }
          }
  
@@ -167,7 +186,7 @@
          if (session_manager != null) {
              return clean_name (session_manager.renderer);
          }
-@@ -358,48 +244,73 @@ public class About.HardwareView : Gtk.Grid {
+@@ -358,48 +246,73 @@ public class About.HardwareView : Gtk.Grid {
          get_graphics_info.begin ();
          get_storage_info.begin ();
  
@@ -272,7 +291,33 @@
              storage_capacity = _("Unknown");
          }
  
-@@ -436,127 +347,39 @@ public class About.HardwareView : Gtk.Grid {
+@@ -410,153 +323,38 @@ public class About.HardwareView : Gtk.Grid {
+ 
+         string pretty = GLib.Markup.escape_text (info).strip ();
+ 
+-        const GraphicsReplaceStrings REPLACE_STRINGS[] = {
+-            { "Mesa DRI ", ""},
+-            { "Mesa (.*)", "\\1"},
+-            { "[(]R[)]", "®"},
+-            { "[(]TM[)]", "™"},
+-            { "Gallium .* on (AMD .*)", "\\1"},
+-            { "(AMD .*) [(].*", "\\1"},
+-            { "(AMD [A-Z])(.*)", "\\1\\L\\2\\E"},
+-            { "Graphics Controller", "Graphics"},
+-            { "Intel Corporation", "Intel®"},
+-            { "NVIDIA Corporation (.*) \\[(\\S*) (\\S*) (.*)\\]", "NVIDIA® \\2® \\3® \\4"}
+-        };
+-
+-        try {
+-            foreach (GraphicsReplaceStrings replace_string in REPLACE_STRINGS) {
+-                GLib.Regex re = new GLib.Regex (replace_string.regex, 0, 0);
+-                pretty = re.replace (pretty, -1, 0, replace_string.replacement, 0);
+-            }
+-        } catch (Error e) {
+-            critical ("Couldn't cleanup vendor string: %s", e.message);
+-        }
+-
+         return pretty;
      }
  
      private async string get_storage_type (string storage_capacity) {
@@ -307,11 +352,11 @@
 +        disk_name = path.splice (0, "/dev/".length);
 +
 +        if (disk_name.has_prefix ("nvme")) {
-+            storage = _("%s storage (NVMe SSD)").printf (storage_capacity);
++            storage = _("%s storage (nvme)").printf (storage_capacity);
 +        } else if (disk_name.has_prefix ("mmc")) {
-+            storage = _("%s storage (eMMC)").printf (storage_capacity);
++            storage = _("%s storage (mmc)").printf (storage_capacity);
 +        } else if (disk_name.has_prefix ("ada")) {
-+            storage = _("%s storage (HDD)").printf (storage_capacity);
++            storage = _("%s storage (ada)").printf (storage_capacity);
 +        } else {
              storage = _("%s storage").printf (storage_capacity);
          }
@@ -355,11 +400,11 @@
 -        return disk_name;
 -    }
 -
-     struct GraphicsReplaceStrings {
-         string regex;
-         string replacement;
-     }
- 
+-    struct GraphicsReplaceStrings {
+-        string regex;
+-        string replacement;
+-    }
+-
 -    private void get_system_interface_instance () {
 -        if (system_interface == null) {
 -            try {
