@@ -22,9 +22,7 @@ RUN_DEPENDS+=	io.elementary.tasks:deskutils/elementary-tasks \
 		io.elementary.code:editors/elementary-code \
 		io.elementary.photos:graphics/elementary-photos \
 		io.elementary.calculator:math/pantheon-calculator \
-		io.elementary.videos:multimedia/elementary-videos \
 		io.elementary.greeter-compositor:x11/elementary-greeter \
-		io.elementary.screenshot:x11/elementary-screenshot \
 		io.elementary.terminal:x11/elementary-terminal \
 		io.elementary.files:x11-fm/elementary-files \
 		io.elementary.calendar:deskutils/elementary-calendar
@@ -56,5 +54,11 @@ GH_PROJECT=	session-settings
 
 MESON_ARGS=	-Dfallback-session="" \
 		-Ddetect-program-prefixes=true
+
+OPTIONS_DEFINE=	FULL
+FULL_DESC=	Install additional applications
+
+FULL_RUN_DEPENDS=	io.elementary.videos:multimedia/elementary-videos \
+			io.elementary.screenshot:x11/elementary-screenshot
 
 .include <bsd.port.mk>
