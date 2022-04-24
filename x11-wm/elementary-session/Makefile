@@ -61,4 +61,8 @@ FULL_DESC=	Install additional applications
 FULL_RUN_DEPENDS=	io.elementary.videos:multimedia/elementary-videos \
 			io.elementary.screenshot:x11/elementary-screenshot
 
+post-patch:
+	@${REINPLACE_CMD} -e "s|%%PORTVERSION%%|'${PORTVERSION}'|" \
+		${WRKSRC}/meson.build
+
 .include <bsd.port.mk>

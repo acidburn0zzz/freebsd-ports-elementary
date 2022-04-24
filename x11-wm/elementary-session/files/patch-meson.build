@@ -4,7 +4,7 @@
  project('elementary-session-settings',
 -        version: '5.0.3',
 -        default_options: 'sysconfdir=/etc')
-+        version: '5.0.3')
++        version: %%PORTVERSION%%)
  
  prefix = get_option('prefix')
  datadir = join_paths(prefix, get_option('datadir'))
