@@ -1,5 +1,5 @@
 PORTNAME=	agent-polkit
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	elementary-
 
