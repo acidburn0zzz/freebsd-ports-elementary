@@ -1,5 +1,5 @@
 PORTNAME=	elementary
-PORTVERSION=	6.1.1
+PORTVERSION=	7.0.0
 CATEGORIES=	x11-themes
 DIST_SUBDIR=	elementary
 PKGNAMESUFFIX=	-theme
