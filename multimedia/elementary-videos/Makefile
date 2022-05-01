@@ -16,13 +16,13 @@ LIB_DEPENDS=	libclutter-1.0.so:graphics/clutter \
 		libgranite.so:x11-toolkits/granite \
 		libhandy-1.so:x11-toolkits/libhandy
 
-USES=		desktop-file-utils gettext gnome meson pkgconfig xorg
+USES=		desktop-file-utils gettext gnome gstreamer meson pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 GH_PROJECT=	videos
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 GLIB_SCHEMAS=	io.elementary.videos.gschema.xml
-USE_GSTREAMER1=	yes core faad libav ogg opus theora vorbis x264 x \
+USE_GSTREAMER=	core faad libav ogg opus plugins theora vorbis x264 x \
 		ximagesrc
 USE_XORG=	x11
 

@@ -15,10 +15,10 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libhandy-1.so:x11-toolkits/libhandy
 RUN_DEPENDS=	webcamd>0:multimedia/webcamd
 
-USES=	elementary gettext gnome meson pkgconfig \
+USES=	elementary gettext gnome gstreamer meson pkgconfig \
 	python:3.6+,build
 USE_GNOME=	glib20 gtk30
-USE_GSTREAMER1=	yes good gtk jpeg ogg v4l2 vorbis vpx
+USE_GSTREAMER=	good gtk jpeg ogg v4l2 vorbis vpx
 USE_ELEMENTARY=	granite
 
 USE_GITHUB=	yes

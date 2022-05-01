@@ -25,7 +25,7 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 		libwebp.so:graphics/webp
 
-USES=			compiler:c11 desktop-file-utils gettext gnome meson \
+USES=			compiler:c11 desktop-file-utils gettext gnome gstreamer meson \
 			pkgconfig sqlite:3 xorg
 USE_GITHUB=		yes
 GH_ACCOUNT=		elementary
@@ -33,7 +33,6 @@ GH_PROJECT=		photos
 USE_GNOME=		cairo glib20 gdkpixbuf2 gtk30 libxml2
 GLIB_SCHEMAS=		io.elementary.photos-extras.gschema.xml \
 			io.elementary.photos.gschema.xml
-USE_GSTREAMER1=		yes
 USE_LDCONFIG=		yes
 USE_XORG=		x11
 
