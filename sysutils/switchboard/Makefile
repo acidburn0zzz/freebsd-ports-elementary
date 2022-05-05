@@ -1,5 +1,5 @@
 PORTNAME=	switchboard
-PORTVERSION=	6.0.0
+PORTVERSION=	6.0.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	duchateau.olivier@gmail.com
