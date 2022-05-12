@@ -4,7 +4,7 @@ CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	7
 
 MAINTAINER=	desktop@FreeBSD.org
-COMMENT=	Extensions of GTK+3 toolkit
+COMMENT=	Extensions of GTK 4.0 toolkit
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
