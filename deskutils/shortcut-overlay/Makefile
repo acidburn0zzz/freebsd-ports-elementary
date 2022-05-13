@@ -1,5 +1,5 @@
 PORTNAME=	shortcut-overlay
-PORTVERSION=	1.2.1
+PORTVERSION=	2.0.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	duchateau.olivier@gmail.com
@@ -14,8 +14,8 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 
 USES=	elementary gettext gnome meson pkgconfig \
 	python:3.6+,build
-USE_GNOME=	glib20 gtk30
-USE_ELEMENTARY=	granite
+USE_GNOME=	glib20 gtk40
+USE_ELEMENTARY=	granite7
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
