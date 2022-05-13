@@ -1,5 +1,5 @@
 PORTNAME=	switchboard-plug-mouse-touchpad
-PORTVERSION=	6.1.0
+PORTVERSION=	7.0.0
 CATEGORIES=	x11
 
 MAINTAINER=	duchateau.olivier@gmail.com
@@ -20,7 +20,5 @@ USE_ELEMENTARY=	granite switchboard
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
-
-MESON_ARGS=	-Dgnome_40=true
 
 .include <bsd.port.mk>
