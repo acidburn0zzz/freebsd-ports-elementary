@@ -15,7 +15,8 @@ RUN_DEPENDS=	io.elementary.notifications:deskutils/elementary-notifications \
 		elementary-agent-polkit>0:sysutils/elementary-agent-polkit \
 		io.elementary.settings-daemon:sysutils/elementary-settings-daemon \
 		xdg-user-dirs-gtk-update:devel/xdg-user-dirs-gtk \
-		desktop-file-install:devel/desktop-file-utils
+		desktop-file-install:devel/desktop-file-utils \
+		plank:x11/plank
 
 # Standalone applications
 RUN_DEPENDS+=	io.elementary.tasks:deskutils/elementary-tasks \
@@ -25,7 +26,8 @@ RUN_DEPENDS+=	io.elementary.tasks:deskutils/elementary-tasks \
 		io.elementary.greeter-compositor:x11/elementary-greeter \
 		io.elementary.terminal:x11/elementary-terminal \
 		io.elementary.files:x11-fm/elementary-files \
-		io.elementary.calendar:deskutils/elementary-calendar
+		io.elementary.calendar:deskutils/elementary-calendar \
+		io.elementary.music:audio/elementary-music
 
 # Switchboard plugins
 RUN_DEPENDS+=	switchboard-plug-a11y>0:accessibility/switchboard-plug-a11y \
