@@ -1,0 +1,10 @@
+--- src/meson.build.orig	2022-04-07 06:54:49 UTC
++++ src/meson.build
+@@ -31,7 +31,6 @@ gala_bin_sources = files(
+     'Gestures/GestureSettings.vala',
+     'Gestures/GestureTracker.vala',
+     'Gestures/ScrollBackend.vala',
+-    'Gestures/ToucheggBackend.vala',
+     'HotCorners/HotCorner.vala',
+     'HotCorners/HotCornerManager.vala',
+     'Widgets/IconGroup.vala',
