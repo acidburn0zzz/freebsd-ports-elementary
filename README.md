@@ -16,9 +16,15 @@ It is an **early state** (very unstable). Repository contains several branches:
 
 You need to adjust **LOCAL_REP** variable, before to run it. The ports collection must be present in your system. Then run `sh elementary-merge -h` for more details.
 
+## Screenshots
+
+### io.elementary-greeter
+
 [![Greeter screenshot 1](https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/img/io.elementary.greeter_55.png)](https://codeberg.org/freebsd-ports-elementary/raw/branch/master/img/io.elementary.greeter.png)
 [![Greeter screenshot 2](https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/img/io.elementary.greeter-01_55.png)](https://codeberg.org/freebsd-ports-elementary/raw/branch/master/img/io.elementary.greeter-01.png)
 [![Greeter screenshot 3](https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/img/io.elementary.greeter-02_55.png)](https://codeberg.org/freebsd-ports-elementary/raw/branch/master/img/io.elementary.greeter-02.png)
+
+### switchboard-plug-about
 
 ![System information](https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/img/switchboard-plug-about.png)
 
