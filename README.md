@@ -18,7 +18,7 @@ You need to adjust **LOCAL_REP** variable, before to run it. The ports collectio
 
 ## Screenshots
 
-### io.elementary-greeter
+### io.elementary.greeter
 
 [![Greeter screenshot 1](https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/img/io.elementary.greeter_55.png)](https://codeberg.org/freebsd-ports-elementary/raw/branch/master/img/io.elementary.greeter.png)
 [![Greeter screenshot 2](https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/img/io.elementary.greeter-01_55.png)](https://codeberg.org/freebsd-ports-elementary/raw/branch/master/img/io.elementary.greeter-01.png)
