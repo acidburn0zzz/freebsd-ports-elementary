@@ -18,6 +18,8 @@ It is an **early state**. Repository contains several branches:
 
 You need to adjust **LOCAL_REP** variable, before to run it. The ports collection must be present in your system. Then run `sh elementary-merge -h` for more details.
 
+3. Install `x11-wm/elementary-session`
+
 ```
 # cd /usr/ports/x11-wm/elementary-session
 # make install clean
