@@ -45,6 +45,15 @@ Below full desktop ↓
 
 ## Tips
 
+### Theme for GTK 4 applications
+
+By default GTK 4 theme settings is missing. To fix this:
+
+```
+% mkdir ~/.config/gtk-4.0
+% cp /usr/local/etc/gtk-3.0/settings.ini ~/.config/gtk-4.0/
+```
+
 ### Webcam setup
 
 1. Install webcamd
