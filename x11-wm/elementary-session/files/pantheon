@@ -1,0 +1,8 @@
+# gnome-session can find RequiredComponents for Pantheon session
+export XDG_CONFIG_DIRS=/usr/local/etc/xdg:$XDG_CONFIG_DIRS
+
+# gnome-session can find the Pantheon session
+export XDG_DATA_DIRS=/usr/local/share:$XDG_DATA_DIRS
+
+# Start the Pantheon session
+exec /usr/local/bin/gnome-session --builtin --session=pantheon "$@"

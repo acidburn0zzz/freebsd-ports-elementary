@@ -12,7 +12,6 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	io.elementary.notifications:deskutils/elementary-notifications \
 		io.elementary.shortcut-overlay:deskutils/shortcut-overlay \
 		elementary-agent-geoclue2>0:net/elementary-agent-geoclue2 \
-		elementary-agent-polkit>0:sysutils/elementary-agent-polkit \
 		io.elementary.settings-daemon:sysutils/elementary-settings-daemon \
 		xdg-user-dirs-gtk-update:devel/xdg-user-dirs-gtk \
 		desktop-file-install:devel/desktop-file-utils \
@@ -22,7 +21,7 @@ RUN_DEPENDS=	io.elementary.notifications:deskutils/elementary-notifications \
 RUN_DEPENDS+=	io.elementary.tasks:deskutils/elementary-tasks \
 		io.elementary.code:editors/elementary-code \
 		io.elementary.photos:graphics/elementary-photos \
-		io.elementary.calculator:math/pantheon-calculator \
+		io.elementary.calculator:math/elementary-calculator \
 		io.elementary.greeter-compositor:x11/elementary-greeter \
 		io.elementary.terminal:x11/elementary-terminal \
 		io.elementary.files:x11-fm/elementary-files \
@@ -60,11 +59,19 @@ MESON_ARGS=	-Dfallback-session="" \
 OPTIONS_DEFINE=	FULL
 FULL_DESC=	Install additional applications
 
-FULL_RUN_DEPENDS=	io.elementary.videos:multimedia/elementary-videos \
+FULL_RUN_DEPENDS=	io.elementary.camera:multimedia/elementary-camera \
 			io.elementary.screenshot:x11/elementary-screenshot
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PORTVERSION%%|'${PORTVERSION}'|" \
 		${WRKSRC}/meson.build
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${LOCALBASE}|" \
+		${WRKSRC}/xsessions/pantheon.desktop
+
+pre-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec
+
+post-install:
+	${INSTALL_SCRIPT} ${FILESDIR}/pantheon ${STAGEDIR}${PREFIX}/libexec
 
 .include <bsd.port.mk>
