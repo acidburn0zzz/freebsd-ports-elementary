@@ -2,10 +2,9 @@
 
 This is the [FreeBSD Ports](https://cgit.freebsd.org/ports/) collection in order to make this desktop environment usable.
 
-::: warning
-Running the Pantheon desktop requires at least 13.1-RELEASE or higher^[Because `deskutils/xdg-desktop-portal` is needed.]
+**Running the Pantheon desktop requires at least 13.1-RELEASE or higher. Because `deskutils/xdg-desktop-portal` is needed.**
 
-It is an **early state** (very unstable). Repository contains several branches:
+It is an **early state**. Repository contains several branches:
 
 * [3rd-party-apps](https://codeberg.org/olivierd/freebsd-ports-elementary/src/branch/3rd-party-apps) → curated list of applications, which use the Granite toolkit
 * [6.1](https://codeberg.org/olivierd/freebsd-ports-elementary/src/branch/6.1) → **main branch**
@@ -24,7 +23,7 @@ cd /usr/ports/x11-wm/elementary-session
 make install clean
 ```
 
-Currently io.elementary.greeter (the greeter for LightDM) is unabled to launch pantheon session^[gnome-keyring daemon crashed]. But it is possible from a console, use [xinitrc](https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/xinitrc) script.
+Currently `io.elementary.greeter` (the greeter for LightDM) is unabled to launch pantheon session (`gnome-keyring` daemon crashes). But it is possible from a console, use [xinitrc](https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/xinitrc) script.
 
 ## Screenshots
 
