@@ -19,15 +19,15 @@ It is an **early state**. Repository contains several branches:
 You need to adjust **LOCAL_REP** variable, before to run it. The ports collection must be present in your system. Then run `sh elementary-merge -h` for more details.
 
 ```
-cd /usr/ports/x11-wm/elementary-session
-make install clean
+# cd /usr/ports/x11-wm/elementary-session
+# make install clean
 ```
 
 Currently `io.elementary.greeter` (the greeter for LightDM) is unabled to launch pantheon session (`gnome-keyring` daemon crashes). But it is possible from a console, use [xinitrc](https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/xinitrc) script.
 
 ## Screenshots
 
-Full desktop
+Below full desktop ↓
 
 [![Pantheon desktop](https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/img/pantheon-desktop_55.png)](https://codeberg.org/freebsd-ports-elementary/raw/branch/master/img/pantheon-desktop.png)
 
