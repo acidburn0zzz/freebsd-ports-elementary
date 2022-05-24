@@ -9,8 +9,6 @@ COMMENT=	Mail application designed for the Elementary desktop
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-#BROKEN=		crash at runtime
-
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libhandy-1.so:x11-toolkits/libhandy \
