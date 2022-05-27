@@ -8,7 +8,6 @@ It is an **early state**. Repository contains several branches:
 
 * [3rd-party-apps](https://codeberg.org/olivierd/freebsd-ports-elementary/src/branch/3rd-party-apps) → curated list of applications, which use the Granite toolkit
 * [6.1](https://codeberg.org/olivierd/freebsd-ports-elementary/src/branch/6.1) → **main branch**
-* broken
 * obsolete → no need anymore
 
 ## How to test
