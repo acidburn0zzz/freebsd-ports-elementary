@@ -15,6 +15,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libfolks.so:net-im/folks \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 		libsoup-2.4.so:devel/libsoup
+RUN_DEPENDS=	switchboard-plug-onlineaccounts>0:net/switchboard-plug-onlineaccounts
 
 USES=		desktop-file-utils elementary gettext gnome meson pkgconfig \
 		python:3.6+,build
