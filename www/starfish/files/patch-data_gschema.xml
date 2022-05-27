@@ -1,0 +1,17 @@
+--- data/gschema.xml.orig	2021-12-18 22:12:29 UTC
++++ data/gschema.xml
+@@ -2,12 +2,12 @@
+ <schemalist>
+   <schema path="/hr/from/josipantolis/starfish/" id="hr.from.josipantolis.starfish">
+     <key name="homepage" type="s">
+-      <default>'file://{{MESON_INSTALL_PREFIX}}/share/doc/starfish/index.gmi'</default>
++      <default>'file://%%PREFIX%%/share/doc/starfish/index.gmi'</default>
+       <summary>User's homepage</summary>
+       <description>URI of the gemini document used as a homepage</description>
+     </key>
+     <key name="introduction" type="s">
+-      <default>'file://{{MESON_INSTALL_PREFIX}}/share/doc/starfish/index.gmi'</default>
++      <default>'file://%%PREFIX%%/share/doc/starfish/index.gmi'</default>
+       <summary>Introduction to Gemini</summary>
+       <description>Location on disc of help documentation fles that provide an introduction to Gemini.</description>
+     </key>

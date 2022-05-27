@@ -1,0 +1,19 @@
+--- meson.build.orig	2021-12-18 22:12:29 UTC
++++ meson.build
+@@ -120,6 +120,8 @@ executable(
+     install: true
+ )
+ 
++meson.add_install_script('meson/post_install.py', meson.project_name ())
++
+ # Install gschema and register gemini MIME type
+ install_data(
+     join_paths('data', 'gschema.xml'),
+@@ -131,7 +133,6 @@ install_data(
+     install_dir: join_paths(get_option('datadir'), 'mime', 'packages'),
+     rename: meson.project_name () + '.xml'
+ )
+-meson.add_install_script('meson/post_install.py', meson.project_name ())
+ 
+ # Translate and install .desktop file
+ i18n.merge_file(
