@@ -26,7 +26,8 @@ RUN_DEPENDS+=	io.elementary.tasks:deskutils/elementary-tasks \
 		io.elementary.terminal:x11/elementary-terminal \
 		io.elementary.files:x11-fm/elementary-files \
 		io.elementary.calendar:deskutils/elementary-calendar \
-		io.elementary.music:audio/elementary-music
+		io.elementary.music:audio/elementary-music \
+		io.elementary.videos:multimedia/elementary-videos
 
 # Switchboard plugins
 RUN_DEPENDS+=	switchboard-plug-a11y>0:accessibility/switchboard-plug-a11y \
