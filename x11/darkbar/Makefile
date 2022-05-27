@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	darkbar
 PORTVERSION=	0.1.2
 CATEGORIES=	x11
