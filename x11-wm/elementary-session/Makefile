@@ -31,6 +31,7 @@ RUN_DEPENDS+=	io.elementary.tasks:deskutils/elementary-tasks \
 
 # Switchboard plugins
 RUN_DEPENDS+=	switchboard-plug-a11y>0:accessibility/switchboard-plug-a11y \
+		switchboard-plug-sound>0:audio/switchboard-plug-sound \
 		switchboard-plug-notifications>0:deskutils/switchboard-plug-notifications \
 		switchboard-plug-about>0:sysutils/switchboard-plug-about \
 		switchboard-plug-applications>0:x11/switchboard-plug-applications \
