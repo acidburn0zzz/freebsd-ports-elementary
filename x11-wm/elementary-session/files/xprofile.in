@@ -79,4 +79,4 @@ cat /dev/null $XRESOURCES | xrdb -merge -
 test -r $HOME/.Xmodmap && xmodmap $HOME/.Xmodmap
 
 # Populate Plank launchers
-[ -d "$XDG_CONFIG_HOME/plank/dock1/launchers" ] || mkdir -p "$XDG_CONFIG_HOME/plank/dock1/launchers" && cp -R %%PREFIX%%/share/plank/dock1/launchers/io.element	ry*.dockitem $XDG_CONFIG_HOME/plank/dock1/launchers/
+[ -d "$XDG_CONFIG_HOME/plank/dock1/launchers" ] || mkdir -p "$XDG_CONFIG_HOME/plank/dock1/launchers" && cp -R %%PREFIX%%/share/plank/dock1/launchers/*.dockitem $XDG_CONFIG_HOME/plank/dock1/launchers/
