@@ -55,13 +55,13 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 GH_PROJECT=	session-settings
 
-MESON_ARGS=	-Dfallback-session="" \
+MESON_ARGS=	-Dfallback-session="gnome" \
 		-Ddetect-program-prefixes=true
 
 OPTIONS_DEFINE=	EXAMPLES FULL
 OPTIONS_SUB=	yes
 
-EXAMPLES_SUB_FILES=	pkg-message xprofile
+EXAMPLES_SUB_FILES=	pkg-message xinitrc xprofile
 
 FULL_DESC=	Install additional applications
 FULL_RUN_DEPENDS=	io.elementary.camera:multimedia/elementary-camera \
@@ -75,6 +75,10 @@ pre-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 
 post-install-EXAMPLES-on:
-	${INSTALL_SCRIPT} ${WRKDIR}/xprofile ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/plank.desktop \
+		${STAGEDIR}${EXAMPLESDIR}
+.for f in xinitrc xprofile
+	${INSTALL_SCRIPT} ${WRKDIR}/${f} ${STAGEDIR}${EXAMPLESDIR}
+.endfor
 
 .include <bsd.port.mk>

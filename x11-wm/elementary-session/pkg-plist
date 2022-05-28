@@ -2,6 +2,8 @@ etc/xdg/autostart/pantheon-gnome-keyring-pkcs11.desktop
 etc/xdg/autostart/pantheon-gnome-keyring-secrets.desktop
 etc/xdg/autostart/pantheon-gnome-keyring-ssh.desktop
 share/applications/pantheon-mimeapps.list
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/plank.desktop
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xinitrc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xprofile
 share/gnome-session/sessions/pantheon.session
 share/xsessions/pantheon.desktop

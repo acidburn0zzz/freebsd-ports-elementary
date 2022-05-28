@@ -1,8 +1,0 @@
---- session/pantheon.session.in.orig	2021-02-19 20:24:49 UTC
-+++ session/pantheon.session.in
-@@ -1,5 +1,4 @@
- [GNOME Session]
- Name=Pantheon
- RequiredComponents=@SESSION_COMPONENTS@
--FallbackSession=@FALLBACK_SESSION@
- DesktopName=Pantheon
