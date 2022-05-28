@@ -29,7 +29,7 @@ You need to adjust **LOCAL_REP** variable, before to run it. The ports collectio
 Currently `io.elementary.greeter` (the greeter for LightDM) is unabled to launch pantheon session (`gnome-keyring` daemon crashes). But it is possible to have full session from a console (or `xdm`).
 
 1. Enable the gnome-keyring daemon, follow instruction from `x11/elementary-greeter` → `pkg info -D elementary-greeter`
-2. Create `.xinitrc` (or adjust our own). `x11-wm/elementary-session` provides 2 skeletons to files **xinitrc** and **xprofile** → `pkg info -D elementary-session`
+2. Create `.xinitrc` (or adjust our own). `x11-wm/elementary-session` provides 2 skeletons for files **xinitrc** and **xprofile** → `pkg info -D elementary-session`
 
 Such files are needed, because Gala (the window manager) loads several environment variables.
 
@@ -49,7 +49,7 @@ Such files are needed, because Gala (the window manager) loads several environme
 
 ## Screenshots
 
-[![Pantheeon desktop](https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/img/pantheon-desktop_55.png)](https://codeberg.org/freebsd-ports-elementary/raw/branch/master/img/pantheon-desktop.png)
+[![Pantheeon desktop](https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/img/pantheon-desktop_55.png)](https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/img/pantheon-desktop.png)
 
 [![Greeter screenshot](https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/img/io.elementary.greeter_55.png)](https://codeberg.org/freebsd-ports-elementary/raw/branch/master/img/io.elementary.greeter.png)
 
