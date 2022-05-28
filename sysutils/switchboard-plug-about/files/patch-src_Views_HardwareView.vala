@@ -133,7 +133,7 @@
              }
          }
  
-@@ -277,52 +205,12 @@ public class About.HardwareView : Gtk.Grid {
+@@ -277,65 +205,32 @@ public class About.HardwareView : Gtk.Grid {
              }
          }
  
@@ -184,9 +184,33 @@
 -        }
 -
          if (session_manager != null) {
-             return clean_name (session_manager.renderer);
+-            return clean_name (session_manager.renderer);
++            if (session_manager.renderer != null || session_manager.renderer != "") {
++                return clean_name (session_manager.renderer);
++            } else {
++                return null;
++            }
          }
-@@ -358,48 +246,73 @@ public class About.HardwareView : Gtk.Grid {
+ 
+-        return _("Unknown Graphics");
++        return null;
+     }
+ 
+     private async void get_graphics_info () {
+         var primary_gpu = yield get_gpu_info (true);
+-        primary_graphics_info.label = primary_gpu;
++        if (primary_gpu != null) {
++            primary_graphics_info.label = primary_gpu;
++        }
+ 
+         var secondary_gpu = yield get_gpu_info (false);
+-        if (secondary_gpu != null) {
++        // Workaround to avoid GPU information multiple times
++        if (secondary_gpu != null && secondary_gpu != primary_gpu) {
+             secondary_graphics_info.label = secondary_gpu;
+             graphics_grid.add (secondary_graphics_info);
+             graphics_grid.show_all ();
+@@ -358,48 +253,73 @@ public class About.HardwareView : Gtk.Grid {
          get_graphics_info.begin ();
          get_storage_info.begin ();
  
@@ -291,7 +315,7 @@
              storage_capacity = _("Unknown");
          }
  
-@@ -410,153 +323,38 @@ public class About.HardwareView : Gtk.Grid {
+@@ -410,153 +330,38 @@ public class About.HardwareView : Gtk.Grid {
  
          string pretty = GLib.Markup.escape_text (info).strip ();
  
