@@ -27,11 +27,11 @@ RUN_DEPENDS+=	io.elementary.tasks:deskutils/elementary-tasks \
 		io.elementary.files:x11-fm/elementary-files \
 		io.elementary.calendar:deskutils/elementary-calendar \
 		io.elementary.music:audio/elementary-music \
+		io.elementary.mail:mail/elementary-mail \
 		io.elementary.videos:multimedia/elementary-videos
 
 # Switchboard plugins
 RUN_DEPENDS+=	switchboard-plug-a11y>0:accessibility/switchboard-plug-a11y \
-		switchboard-plug-sound>0:audio/switchboard-plug-sound \
 		switchboard-plug-notifications>0:deskutils/switchboard-plug-notifications \
 		switchboard-plug-about>0:sysutils/switchboard-plug-about \
 		switchboard-plug-applications>0:x11/switchboard-plug-applications \
@@ -58,22 +58,23 @@ GH_PROJECT=	session-settings
 MESON_ARGS=	-Dfallback-session="" \
 		-Ddetect-program-prefixes=true
 
-OPTIONS_DEFINE=	FULL
-FULL_DESC=	Install additional applications
+OPTIONS_DEFINE=	EXAMPLES FULL
+OPTIONS_SUB=	yes
 
+EXAMPLES_SUB_FILES=	pkg-message xprofile
+
+FULL_DESC=	Install additional applications
 FULL_RUN_DEPENDS=	io.elementary.camera:multimedia/elementary-camera \
 			io.elementary.screenshot:x11/elementary-screenshot
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PORTVERSION%%|'${PORTVERSION}'|" \
 		${WRKSRC}/meson.build
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${LOCALBASE}|" \
-		${WRKSRC}/xsessions/pantheon.desktop
 
-pre-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec
+pre-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 
-post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/pantheon ${STAGEDIR}${PREFIX}/libexec
+post-install-EXAMPLES-on:
+	${INSTALL_SCRIPT} ${WRKDIR}/xprofile ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

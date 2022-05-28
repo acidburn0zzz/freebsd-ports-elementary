@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOM
+Add these lines in each LightDM PAM configuration files, %%PREFIX%%/etc/pam.d/
+
+  # auth
+  [...]
+  auth	optional	pam_gnome_keyring.so
+
+  # account
+  [...]
+
+  # session
+  [...]
+  session	optional	pam_gnome_keyring.so	auto_start
+
+  # password
+  [...]
+
+Then copy %%EXAMPLESDIR%%/xprofile into your home directory.
+
+  cp %%EXAMPLESDIR%%/xprofile ~/.xprofile
+EOM
+}
+]
