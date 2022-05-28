@@ -1,0 +1,23 @@
+[
+{ type: install
+  message: <<EOM
+If your desktop environment such GNOME, Cinnamon, or MATE need to unlock
+gnome-keyring daemon. You need to add following lines in each LightDM
+PAM configuration files, %%PREFIX%%/etc/pam.d/
+
+  # auth
+  [...]
+  auth	optional	pam_gnome_keyring.so
+
+  # account
+  [...]
+
+  # session
+  [...]
+  session	optional	pam_gnome_keyring.so	auto_start
+
+  # password
+  [...]
+EOM
+}
+]

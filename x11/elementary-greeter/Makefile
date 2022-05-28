@@ -30,6 +30,8 @@ USE_XORG=	x11
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 
+SUB_FILES=	pkg-message
+
 post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|%%PREFIX%%|${LOCALBASE}|g' \
 		${WRKSRC}/src/Widgets/BackgroundImage.vala \
