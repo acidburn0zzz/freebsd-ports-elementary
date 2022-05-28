@@ -1,6 +1,7 @@
 --- overrides/plank-dockitems.gschema.override.orig	2021-10-30 21:11:17 UTC
 +++ overrides/plank-dockitems.gschema.override
-@@ -1,2 +1,2 @@
+@@ -1,2 +1,3 @@
  [net.launchpad.plank.dock.settings:Pantheon]
 -dock-items=['gala-multitaskingview.dockitem','org.gnome.Epiphany.dockitem','io.elementary.mail.dockitem','io.elementary.tasks.dockitem', 'io.elementary.calendar.dockitem','io.elementary.music.dockitem','io.elementary.videos.dockitem','io.elementary.photos.dockitem','io.elementary.switchboard.dockitem','io.elementary.appcenter.dockitem']
 +dock-items=['gala-multitaskingview.dockitem','io.elementary.mail.dockitem','io.elementary.tasks.dockitem', 'io.elementary.calendar.dockitem','io.elementary.music.dockitem','io.elementary.videos.dockitem','io.elementary.photos.dockitem','io.elementary.switchboard.dockitem']
++theme='Gtk+'
