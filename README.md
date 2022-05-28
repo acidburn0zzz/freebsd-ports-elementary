@@ -51,7 +51,7 @@ Such files are needed, because Gala (the window manager) loads several environme
 
 [![Pantheeon desktop](https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/img/pantheon-desktop_55.png)](https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/img/pantheon-desktop.png)
 
-[![Greeter screenshot](https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/img/io.elementary.greeter_55.png)](https://codeberg.org/freebsd-ports-elementary/raw/branch/master/img/io.elementary.greeter.png)
+[![Greeter screenshot](https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/img/io.elementary.greeter_55.png)](https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/img/io.elementary.greeter.png)
 
 ## Tips
 
