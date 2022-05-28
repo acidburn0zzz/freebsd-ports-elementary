@@ -5,7 +5,7 @@
          support_url = Environment.get_os_info (GLib.OsInfoKey.SUPPORT_URL);
          if (support_url == "" || support_url == null) {
 -            support_url = "https://elementary.io/support";
-+            support_url = "https://https://bugs.freebsd.org/";
++            support_url = "https://bugs.freebsd.org/";
          }
  
          var logo_icon_name = Environment.get_os_info ("LOGO");
