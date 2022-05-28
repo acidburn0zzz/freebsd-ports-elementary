@@ -64,5 +64,19 @@ if command -v xdg-user-dirs-update >/dev/null 2>&1 ; then
 	xdg-user-dirs-update
 fi
 
+# For now, start with an empty list
+XRESOURCES=""
+
+test -r $HOME/.Xdefaults && XRESOURCES="$XRESOURCES $HOME/.Xdefaults"
+
+# ~/.Xresources contains overrides to the above
+test -r "$HOME/.Xresources" && XRESOURCES="$XRESOURCES $HOME/.Xresources"
+
+# Load all X resources (adds /dev/null to avoid an empty list that would hang the process)
+cat /dev/null $XRESOURCES | xrdb -merge -
+
+# Load local modmap
+test -r $HOME/.Xmodmap && xmodmap $HOME/.Xmodmap
+
 # Populate Plank launchers
 [ -d "$XDG_CONFIG_HOME/plank/dock1/launchers" ] || mkdir -p "$XDG_CONFIG_HOME/plank/dock1/launchers" && cp -R %%PREFIX%%/share/plank/dock1/launchers/io.element	ry*.dockitem $XDG_CONFIG_HOME/plank/dock1/launchers/
