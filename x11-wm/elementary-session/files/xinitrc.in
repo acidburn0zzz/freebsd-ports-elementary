@@ -9,5 +9,5 @@ rm $HOME/*.core
 [ -f $HOME/.xprofile ] && . $HOME/.xprofile
 
 %%PREFIX%%/libexec/gvfsd-trash &
-[ -e "$XDG_CONFIG_HOME/autostart/plank.desktop" ] || %%PREFIX%%/bin/plank &
-exec %%PREFIX%%/bin/ck-launch-session %%PREFIX%%/bin/gnome-session --builtin --session=pantheon
+[ -f "$XDG_CONFIG_HOME/autostart/plank.desktop" ] || plank &
+exec ck-launch-session gnome-session --builtin --session=pantheon

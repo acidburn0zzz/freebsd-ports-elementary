@@ -31,8 +31,7 @@ RUN_DEPENDS+=	io.elementary.tasks:deskutils/elementary-tasks \
 		io.elementary.videos:multimedia/elementary-videos
 
 # Switchboard plugins
-RUN_DEPENDS+=	switchboard-plug-a11y>0:accessibility/switchboard-plug-a11y \
-		switchboard-plug-notifications>0:deskutils/switchboard-plug-notifications \
+RUN_DEPENDS+=	switchboard-plug-notifications>0:deskutils/switchboard-plug-notifications \
 		switchboard-plug-about>0:sysutils/switchboard-plug-about \
 		switchboard-plug-applications>0:x11/switchboard-plug-applications \
 		switchboard-plug-display>0:x11/switchboard-plug-display \
