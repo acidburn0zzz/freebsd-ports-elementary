@@ -1,5 +1,5 @@
 PORTNAME=	louper
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	deskutils
 
 MAINTAINER=	duchateau.olivier@gmail.com
