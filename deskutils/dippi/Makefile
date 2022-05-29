@@ -1,5 +1,5 @@
 PORTNAME=	dippi
-PORTVERSION=	3.1.1
+PORTVERSION=	3.1.4
 CATEGORIES=	deskutils
 
 MAINTAINER=	duchateau.olivier@gmail.com
