@@ -4,7 +4,6 @@ share/applications/hr.from.josipantolis.starfish.desktop
 %%DOCSDIR%%/discover.gmi
 %%DOCSDIR%%/index.gmi
 %%DOCSDIR%%/terminology.gmi
-share/glib-2.0/schemas/hr.from.josipantolis.starfish.gschema.xml
 share/icons/hicolor/128x128/apps/hr.from.josipantolis.starfish.svg
 share/icons/hicolor/128x128@2/apps/hr.from.josipantolis.starfish.svg
 share/icons/hicolor/16x16/apps/hr.from.josipantolis.starfish.svg

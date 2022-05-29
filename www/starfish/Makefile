@@ -13,7 +13,8 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libhandy-1.so:x11-toolkits/libhandy \
 		libgtkspell3-3.so:textproc/gtkspell3 \
 		libgnutls.so:security/gnutls
-#RUN_DEPENDS=	elementary-theme>0:x11-themes/elementary-theme
+RUN_DEPENDS=	elementary-theme>0:x11-themes/elementary-theme \
+		noto-emoji>0:x11-fonts/noto-emoji
 
 USES=		desktop-file-utils elementary gettext gnome meson pkgconfig \
 		shared-mime-info
