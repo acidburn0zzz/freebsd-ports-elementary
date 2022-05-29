@@ -1,4 +1,4 @@
-# FreeBSD ElementaryOS development repo
+# FreeBSD elementary OS development repo
 
 This is the [FreeBSD Ports](https://cgit.freebsd.org/ports/) collection in order to make this desktop environment usable. Keep in mind, it can crash at anytime.
 
