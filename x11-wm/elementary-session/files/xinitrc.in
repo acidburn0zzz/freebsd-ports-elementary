@@ -9,7 +9,7 @@
 #%%PREFIX%%/libexec/gvfsd-trash &
 [ -f "$XDG_CONFIG_HOME/autostart/plank.desktop" ] || plank &
 
-# Required for starting from a console (or xdm)
+# 'ck-launch-session' is for session started from a console (or xdm)
 #exec ck-launch-session gnome-session --builtin --session=pantheon
-# We start session with a login manager
+# With only a login manager
 exec gnome-session --builtin --session=pantheon
