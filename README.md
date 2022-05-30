@@ -26,10 +26,10 @@ You need to adjust **LOCAL_REP** variable, before to run it. The ports collectio
 
 ### How to setup
 
-Currently `io.elementary.greeter` (the greeter for LightDM) is unabled to launch pantheon session (`gnome-keyring` daemon crashes). But it is possible to have full session from a console (or `xdm`).
+Currently `io.elementary.greeter` (greeter for LightDM) fails to load pantheon session. But it is possible to have full session from a console or with `x11/lightdm-gtk-greeter`.
 
-1. Enable the gnome-keyring daemon, follow instruction from `x11/elementary-greeter` → `pkg info -D elementary-greeter`
-2. Create `.xinitrc` (or adjust our own). `x11-wm/elementary-session` provides 2 skeletons for files **xinitrc** and **xprofile** → `pkg info -D elementary-session`
+1. Enable the gnome-keyring daemon (**it is mandatory**), follow instructions → `pkg info -D elementary-greeter`
+2. Create `.xinitrc` (or adjust our own). `x11-wm/elementary-session` provides 2 skeletons for **xinitrc** and **xprofile** → `pkg info -D elementary-session`
 
 Such files are needed, because Gala (the window manager) loads several environment variables.
 
