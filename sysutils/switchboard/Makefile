@@ -3,7 +3,7 @@ PORTVERSION=	6.0.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	Extensible system settings for the Elementary desktop
+COMMENT=	Extensible system settings for elementary OS
 
 LICENSE=	GPLv3
 

@@ -4,7 +4,7 @@ CATEGORIES=	x11-themes
 PKGNAMEPREFIX=	elementary-
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	Collection of wallpapers for the Elementary desktop
+COMMENT=	Collection of wallpapers for elementary OS
 
 LICENSE=	CC0-1.0 GPLv3+
 LICENSE_COMB=	multi

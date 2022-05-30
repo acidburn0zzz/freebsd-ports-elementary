@@ -4,7 +4,7 @@ CATEGORIES=	x11-wm
 DIST_SUBDIR=	elementary
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	Session for the Elementary desktop
+COMMENT=	Session for elementary OS
 
 LICENSE=	GPLv2
 

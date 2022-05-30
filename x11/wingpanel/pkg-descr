@@ -1,4 +1,4 @@
-Wingpanel is the extensible top panel for the Elementary desktop.
+Wingpanel is the extensible top panel designed for elementary OS.
 It is an empty container that accepts indicators as extensions,
 including the application menu.
 

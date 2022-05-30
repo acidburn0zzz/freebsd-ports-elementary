@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	Stylish top panel for the Elementary desktop
+COMMENT=	Stylish top panel for elementary OS
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

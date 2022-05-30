@@ -4,7 +4,7 @@ CATEGORIES=	deskutils
 PKGNAMEPREFIX=	elementary-
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	Manage tasks designed for the Elementary desktop
+COMMENT=	Manage tasks designed for elementary OS
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,7 +5,7 @@ DIST_SUBDIR=	elementary
 PKGNAMESUFFIX=	-theme
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	Gtk themes for the Elementary desktop
+COMMENT=	Gtk themes for elementary OS
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

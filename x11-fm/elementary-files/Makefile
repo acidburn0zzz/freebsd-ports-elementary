@@ -4,7 +4,7 @@ CATEGORIES=	x11-fm
 PKGNAMEPREFIX=	elementary-
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	File browser for the Elementary desktop
+COMMENT=	File browser designed for elementary OS
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

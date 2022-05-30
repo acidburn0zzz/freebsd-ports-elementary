@@ -4,7 +4,7 @@ CATEGORIES=	deskutils
 PKGNAMEPREFIX=	elementary-
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	Notification server for the Elementary desktop
+COMMENT=	Notification server designed for elementary OS
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -4,7 +4,7 @@ CATEGORIES=	multimedia
 PKGNAMEPREFIX=	elementary-
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	Webcam application designed for the Elementary desktop
+COMMENT=	Webcam application designed for elementary OS
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

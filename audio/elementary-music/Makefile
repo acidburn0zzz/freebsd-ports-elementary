@@ -4,7 +4,7 @@ CATEGORIES=	audio
 PKGNAMEPREFIX=	elementary-
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	Music player for the Elementary desktop
+COMMENT=	Music player designed for elementary OS
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

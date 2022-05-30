@@ -3,7 +3,7 @@ PORTVERSION=	6.3.1
 CATEGORIES=	x11-wm
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	Window manager for the Elementary desktop
+COMMENT=	Window manager for elementary OS
 
 LICENSE=	GPLv3
 

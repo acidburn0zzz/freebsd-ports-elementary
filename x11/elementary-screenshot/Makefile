@@ -4,7 +4,7 @@ CATEGORIES=	x11
 PKGNAMEPREFIX=	elementary-
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	Screenshot tool for the Elementary desktop
+COMMENT=	Screenshot tool designed for elementary OS
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

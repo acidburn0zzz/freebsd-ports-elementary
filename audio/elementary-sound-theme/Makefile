@@ -4,7 +4,7 @@ CATEGORIES=	audio
 PKGNAMEPREFIX=	elementary-
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	System sounds for the Elementary desktop
+COMMENT=	System sounds for elementary OS
 
 LICENSE=	Unlicense
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept

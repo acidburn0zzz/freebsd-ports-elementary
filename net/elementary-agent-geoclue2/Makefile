@@ -4,7 +4,7 @@ CATEGORIES=	net
 PKGNAMEPREFIX=	elementary-
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	Geoclue agent for the Elementary desktop
+COMMENT=	Geoclue agent designed for elementary OS
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -4,7 +4,7 @@ CATEGORIES=	sysutils
 PKGNAMEPREFIX=	elementary-
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	Default settings for the Elementary desktop
+COMMENT=	Default settings designed for elementary OS
 
 DISABLE_LICENSES=	yes
 

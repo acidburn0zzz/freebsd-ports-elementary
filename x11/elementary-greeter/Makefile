@@ -4,7 +4,7 @@ CATEGORIES=	x11
 PKGNAMEPREFIX=	elementary-
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	LightDM greeter for the Elementary desktop
+COMMENT=	LightDM greeter designed for elementary OS
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
