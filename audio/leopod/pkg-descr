@@ -1,0 +1,10 @@
+Leopod is a podcast subscription manager and player designed for elementary OS.
+Subscribe to RSS feeds of podcasts, download episodes, and listen to them.
+It provides following features:
+- Subscribing to RSS Feeds
+- Downloading Audio Files
+- Playing Audio Files
+- Checking Feeds for updated information periodically
+- Remembering the last played position of each episode
+
+WWW: https://github.com/leggettc18/leopod
