@@ -8,10 +8,11 @@ COMMENT=	Session for elementary OS
 
 LICENSE=	GPLv2
 
-# Specifics to Elementary OS
+# For functional session
 RUN_DEPENDS=	io.elementary.notifications:deskutils/elementary-notifications \
 		io.elementary.shortcut-overlay:deskutils/shortcut-overlay \
 		elementary-agent-geoclue2>0:net/elementary-agent-geoclue2 \
+		elementary-agent-polkit>0:sysutils/elementary-agent-polkit \
 		io.elementary.settings-daemon:sysutils/elementary-settings-daemon \
 		xdg-user-dirs-gtk-update:devel/xdg-user-dirs-gtk \
 		desktop-file-install:devel/desktop-file-utils \
@@ -24,6 +25,7 @@ RUN_DEPENDS+=	io.elementary.tasks:deskutils/elementary-tasks \
 		io.elementary.calculator:math/elementary-calculator \
 		io.elementary.greeter-compositor:x11/elementary-greeter \
 		io.elementary.terminal:x11/elementary-terminal \
+		io.elementary.screenshot:x11/elementary-screenshot \
 		io.elementary.files:x11-fm/elementary-files \
 		io.elementary.calendar:deskutils/elementary-calendar \
 		io.elementary.music:audio/elementary-music \
@@ -63,8 +65,8 @@ OPTIONS_SUB=	yes
 EXAMPLES_SUB_FILES=	pkg-message xinitrc xprofile
 
 FULL_DESC=	Install additional applications
-FULL_RUN_DEPENDS=	io.elementary.camera:multimedia/elementary-camera \
-			io.elementary.screenshot:x11/elementary-screenshot
+FULL_RUN_DEPENDS=	io.elementary.mail:mail/elementary-mail \
+			io.elementary.camera:multimedia/elementary-camera
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PORTVERSION%%|'${PORTVERSION}'|" \
