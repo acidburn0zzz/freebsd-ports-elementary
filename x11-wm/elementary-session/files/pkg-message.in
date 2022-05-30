@@ -5,7 +5,8 @@ In order to have Plank panel running at start of your session:
   mkdir -p ~/.config/autostart
   cp %%EXAMPLESDIR%%/plank.desktop ~/.config/autostart/
 
-Then copy %%EXAMPLESDIR%%/xprofile into your home directory.
+Then copy 'xprofile' and 'xinitrc' into your home directory:
+  cp %%EXAMPLESDIR%%/xinitrc ~/.xinitrc
   cp %%EXAMPLESDIR%%/xprofile ~/.xprofile
 EOM
 }
