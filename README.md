@@ -1,10 +1,10 @@
 # FreeBSD elementary OS development repo
 
-This is the [FreeBSD Ports](https://cgit.freebsd.org/ports/) collection in order to make this desktop environment usable. Keep in mind, it can crash at anytime.
+This is the [FreeBSD Ports](https://cgit.freebsd.org/ports/) collection in order to make this desktop environment usable. *Keep in mind, desktop can crash at anytime.*
 
-**Running the Pantheon desktop requires at least 13.1-RELEASE or higher. Because `deskutils/xdg-desktop-portal` is needed.**
+**/!\ Running the Pantheon desktop requires at least 13.1-RELEASE or higher (some components depend of `deskutils/xdg-desktop-portal`).**
 
-It is an **early state**. Repository contains several branches:
+Repository contains several branches:
 
 * [3rd-party-apps](https://codeberg.org/olivierd/freebsd-ports-elementary/src/branch/3rd-party-apps) → curated list of applications, which use the Granite toolkit
 * [6.1](https://codeberg.org/olivierd/freebsd-ports-elementary/src/branch/6.1) → **main branch**
