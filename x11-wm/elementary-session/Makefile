@@ -65,7 +65,9 @@ EXAMPLES_SUB_FILES=	pkg-message xinitrc xprofile
 
 FULL_DESC=	Install additional applications
 FULL_RUN_DEPENDS=	io.elementary.mail:mail/elementary-mail \
-			io.elementary.camera:multimedia/elementary-camera
+			io.elementary.camera:multimedia/elementary-camera \
+			switchboard-plug-a11y>0:accessibility/switchboard-plug-a11y
+FULL_SUB_FILES=		30_org.onboard.gschema.override
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PORTVERSION%%|'${PORTVERSION}'|" \
@@ -74,11 +76,18 @@ post-patch:
 pre-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 
+pre-install-FULL-on:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/glib-2.0/schemas
+
 post-install-EXAMPLES-on:
 	${INSTALL_DATA} ${FILESDIR}/plank.desktop \
 		${STAGEDIR}${EXAMPLESDIR}
 .for f in xinitrc xprofile
 	${INSTALL_SCRIPT} ${WRKDIR}/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
+
+post-install-FULL-on:
+	${INSTALL_DATA} ${WRKDIR}/30_org.onboard.gschema.override \
+		${STAGEDIR}${PREFIX}/share/glib-2.0/schemas/
 
 .include <bsd.port.mk>
