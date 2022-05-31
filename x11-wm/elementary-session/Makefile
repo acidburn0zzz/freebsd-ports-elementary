@@ -4,19 +4,18 @@ CATEGORIES=	x11-wm
 DIST_SUBDIR=	elementary
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	Session for elementary OS
+COMMENT=	Session component for elementary OS
 
 LICENSE=	GPLv2
 
-# For functional session
+# Background daemons
 RUN_DEPENDS=	io.elementary.notifications:deskutils/elementary-notifications \
 		io.elementary.shortcut-overlay:deskutils/shortcut-overlay \
 		elementary-agent-geoclue2>0:net/elementary-agent-geoclue2 \
 		elementary-agent-polkit>0:sysutils/elementary-agent-polkit \
 		io.elementary.settings-daemon:sysutils/elementary-settings-daemon \
 		xdg-user-dirs-gtk-update:devel/xdg-user-dirs-gtk \
-		desktop-file-install:devel/desktop-file-utils \
-		plank:x11/plank
+		desktop-file-install:devel/desktop-file-utils
 
 # Standalone applications
 RUN_DEPENDS+=	io.elementary.tasks:deskutils/elementary-tasks \

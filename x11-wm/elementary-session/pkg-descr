@@ -1,3 +1,4 @@
-Provides some session-specific configuration files for elementary OS.
+This provides session management for elementary OS, and some session-specific
+configuration files.
 
 WWW: https://github.com/elementary/session-settings
