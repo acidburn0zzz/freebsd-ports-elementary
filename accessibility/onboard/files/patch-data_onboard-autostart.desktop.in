@@ -1,0 +1,8 @@
+--- data/onboard-autostart.desktop.in.orig	2017-02-15 08:42:04 UTC
++++ data/onboard-autostart.desktop.in
+@@ -9,4 +9,4 @@ NoDisplay=true
+ X-Ubuntu-Gettext-Domain=onboard
+ AutostartCondition=GSettings org.gnome.desktop.a11y.applications screen-keyboard-enabled
+ X-GNOME-AutoRestart=true
+-OnlyShowIn=GNOME;Unity;MATE;
++OnlyShowIn=Unity;MATE;

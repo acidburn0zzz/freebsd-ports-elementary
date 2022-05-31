@@ -1,0 +1,10 @@
+--- data/onboard-settings.desktop.in.orig	2017-02-15 08:42:04 UTC
++++ data/onboard-settings.desktop.in
+@@ -6,6 +6,6 @@ Exec=onboard-settings
+ Terminal=false
+ Type=Application
+ Categories=Settings;Accessibility;
+-MimeType=application/x-onboardsettings;
++_Keywords=onscreen;keyboard;accessibility;utility;settings;configuration;
+ Icon=onboard
+ X-Ubuntu-Gettext-Domain=onboard

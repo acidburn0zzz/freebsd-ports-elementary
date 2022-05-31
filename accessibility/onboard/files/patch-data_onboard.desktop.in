@@ -1,0 +1,10 @@
+--- data/onboard.desktop.in.orig	2017-02-15 08:42:04 UTC
++++ data/onboard.desktop.in
+@@ -6,6 +6,6 @@ Exec=onboard
+ Terminal=false
+ Type=Application
+ Categories=Utility;Accessibility;
+-MimeType=application/x-onboard;
++_Keywords=onscreen;keyboard;accessibility;utility;
+ Icon=onboard
+ X-Ubuntu-Gettext-Domain=onboard
