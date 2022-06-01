@@ -60,8 +60,8 @@ Such files are needed, because Gala (the window manager) loads several environme
 By default GTK 4 theme settings is missing. To fix this:
 
 ```
-% mkdir ~/.config/gtk-4.0
-% cp /usr/local/etc/gtk-3.0/settings.ini ~/.config/gtk-4.0/
+% mkdir -p ~/.config/gtk-4.0
+% fetch https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/gtk-4.0_settings.ini -o ~/.config/gtk-4.0/settings.ini
 ```
 
 ### Webcam setup
