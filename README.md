@@ -61,7 +61,8 @@ By default GTK 4 theme settings is missing. To fix this:
 
 ```
 % mkdir -p ~/.config/gtk-4.0
-% fetch https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/gtk-4.0_settings.ini -o ~/.config/gtk-4.0/settings.ini
+% fetch https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/gtk-4.0_settings.ini \
+  -o ~/.config/gtk-4.0/settings.ini
 ```
 
 ### Webcam setup
