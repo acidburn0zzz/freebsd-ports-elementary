@@ -1,13 +1,15 @@
 [
 { type: install
   message: <<EOM
-In order to have Plank panel running at start of your session:
+To have panel automatically launched:
   mkdir -p ~/.config/autostart
   cp %%EXAMPLESDIR%%/plank.desktop ~/.config/autostart/
 
-Then copy 'xprofile' and 'xinitrc' into your home directory:
-  cp %%EXAMPLESDIR%%/xinitrc ~/.xinitrc
+Then copy 'xprofile' into your home directory:
   cp %%EXAMPLESDIR%%/xprofile ~/.xprofile
+
+If you want to launch session from a console (without login manager)
+  cp %%EXAMPLESDIR%%/xinitrc ~/.xinitrc
 EOM
 }
 ]

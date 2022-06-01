@@ -1,4 +1,8 @@
 #!/bin/sh
+#
+# .xinitrc script in order to have session.
+# Run only this script from a console (or xdm).
+#
 
 #export LC_CTYPE="fr_FR.UTF-8"
 #export LANG="fr_FR.UTF-8"
@@ -8,8 +12,4 @@
 # Usually loaded when 'io.elementary.files is opened
 #%%PREFIX%%/libexec/gvfsd-trash &
 [ -f "$XDG_CONFIG_HOME/autostart/plank.desktop" ] || plank &
-
-# 'ck-launch-session' is for session started from a console (or xdm)
-#exec ck-launch-session gnome-session --builtin --session=pantheon
-# With only a login manager
-exec gnome-session --builtin --session=pantheon
+exec ck-launch-session gnome-session --builtin --session=pantheon
