@@ -1,4 +1,4 @@
-# Provide support for the Elementary OS related ports
+# Provide support for the elementary OS related ports.
 #
 # Feature:      elementary
 # Usage:        USES= elementary
@@ -7,7 +7,7 @@
 # Variable which can be set by the port:
 # USE_ELEMENTARY  List of components
 #
-# MAINTAINER: portmgr@FreeBSD.org
+# MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_ELEMENTARY_MK)
 _INCLUDE_USES_ELEMENTARY_MK=  yes
