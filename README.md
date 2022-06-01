@@ -65,6 +65,20 @@ By default GTK 4 theme settings is missing. To fix this:
   -o ~/.config/gtk-4.0/settings.ini
 ```
 
+### Turn numlock on
+
+Even if numlock is enabled with your login manager. When session is opened, this feature is disabled. To change this:
+
+```
+% gsettings set io.elementary.wingpanel.keyboard numlock true
+```
+
+To see others properties:
+
+```
+% gsettings list-recursively io.elementary.wingpanel.keyboard
+```
+
 ### Webcam setup
 
 1. Install webcamd
