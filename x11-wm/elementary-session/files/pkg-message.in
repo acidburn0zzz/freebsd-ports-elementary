@@ -8,7 +8,7 @@ To have panel automatically launched:
 Then copy 'xprofile' into your home directory:
   cp %%EXAMPLESDIR%%/xprofile ~/.xprofile
 
-If you want to launch session from a console (without login manager)
+If you want to launch new session from a console (without login manager)
   cp %%EXAMPLESDIR%%/xinitrc ~/.xinitrc
 EOM
 }

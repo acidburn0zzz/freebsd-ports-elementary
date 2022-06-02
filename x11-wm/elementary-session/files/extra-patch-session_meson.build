@@ -1,0 +1,21 @@
+--- session/meson.build.orig	2021-02-19 20:24:49 UTC
++++ session/meson.build
+@@ -10,18 +10,15 @@ pantheon_components = [
+ 
+ gsd_components = [
+   'org.gnome.SettingsDaemon.A11ySettings',
+-  'org.gnome.SettingsDaemon.Color',
+   'org.gnome.SettingsDaemon.Datetime',
+   'org.gnome.SettingsDaemon.Housekeeping',
+   'org.gnome.SettingsDaemon.Keyboard',
+   'org.gnome.SettingsDaemon.MediaKeys',
+   'org.gnome.SettingsDaemon.Power',
+   'org.gnome.SettingsDaemon.PrintNotifications',
+-  'org.gnome.SettingsDaemon.Rfkill',
+   'org.gnome.SettingsDaemon.Sharing',
+   'org.gnome.SettingsDaemon.Smartcard',
+   'org.gnome.SettingsDaemon.Sound',
+-  'org.gnome.SettingsDaemon.Wacom',
+   'org.gnome.SettingsDaemon.XSettings',
+ ]
+ 

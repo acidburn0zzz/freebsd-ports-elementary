@@ -55,7 +55,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 GH_PROJECT=	session-settings
 
-MESON_ARGS=	-Dfallback-session="gnome" \
+MESON_ARGS=	-Dfallback-session="gnome-xorg" \
 		-Ddetect-program-prefixes=true
 
 OPTIONS_DEFINE=	EXAMPLES FULL
@@ -67,6 +67,8 @@ FULL_DESC=	Install additional applications
 FULL_RUN_DEPENDS=	io.elementary.mail:mail/elementary-mail \
 			io.elementary.camera:multimedia/elementary-camera \
 			switchboard-plug-a11y>0:accessibility/switchboard-plug-a11y
+FULL_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-session_meson.build
+FULL_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-disable-onboard-and-orca
 FULL_SUB_FILES=		30_org.onboard.gschema.override
 
 post-patch:
