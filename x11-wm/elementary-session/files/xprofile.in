@@ -64,5 +64,8 @@ if command -v xdg-user-dirs-update >/dev/null 2>&1 ; then
 	xdg-user-dirs-update
 fi
 
+# Avoid warning with org.freedesktop.Notifications (bus not acquired)
+[ -e "$XDG_CACHE_HOME/.notifications.session" ] || truncate -s 0 $XDG_CACHE_HOME/.notifications.session
+
 # Populate Plank launchers
 [ -d "$XDG_CONFIG_HOME/plank/dock1/launchers" ] || mkdir -p "$XDG_CONFIG_HOME/plank/dock1/launchers" && cp -R %%PREFIX%%/share/plank/dock1/launchers/*.dockitem $XDG_CONFIG_HOME/plank/dock1/launchers/
