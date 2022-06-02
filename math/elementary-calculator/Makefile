@@ -1,5 +1,5 @@
 PORTNAME=	calculator
-PORTVERSION=	2.0.0
+DISTVERSION=	2.0.0
 CATEGORIES=	math
 PKGNAMEPREFIX=	elementary-
 
@@ -15,10 +15,11 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libhandy-1.so:x11-toolkits/libhandy
 
 USES=		gettext gnome meson pkgconfig python:3.6+,build
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk40
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
+
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk40
 
 GLIB_SCHEMAS=	io.elementary.calculator.gschema.xml
 
