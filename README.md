@@ -28,7 +28,7 @@ You need to adjust **LOCAL_REP** variable, before to run it. The ports collectio
 
 Currently it is possible to have full session from a console or with a login manager (preferably LightDM).
 
-`x11-wm/elementary-session` provides 2 skeletons for **xinitrc** and **profile** `pkg info -D elementary-session`.
+`x11-wm/elementary-session` provides 2 skeletons for **xinitrc** and **profile** (for more details `pkg info -D elementary-session`).
 
 1. Enable the gnome-keyring daemon (**it is mandatory**), follow instructions → `pkg info -D elementary-greeter`
 2. Copy **xprofile** file into your home directory:
@@ -37,9 +37,9 @@ Currently it is possible to have full session from a console or with a login man
 % cp /usr/local/share/examples/elementary-session/xprofile ~/.xprofile
 ```
 
-This file is important, because it loads several variables.
+This file is important, because it loads several variables needed for desktop.
 
-3. Allow plank to be launched at startup
+3. Allow `plank` to be launched at startup
 
 ```
 % mkdir -p ~/.config/autostart
