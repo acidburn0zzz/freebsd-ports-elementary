@@ -4,7 +4,6 @@ etc/xdg/autostart/pantheon-gnome-keyring-ssh.desktop
 %%FULL%%etc/xdg/autostart/pantheon-onboard-autostart.desktop
 %%FULL%%etc/xdg/autostart/pantheon-orca-autostart.desktop
 etc/xdg/autostart/pantheon-org.gnome.SettingsDaemon.A11ySettings.desktop
-etc/xdg/autostart/pantheon-org.gnome.SettingsDaemon.Datetime.desktop
 etc/xdg/autostart/pantheon-org.gnome.SettingsDaemon.Housekeeping.desktop
 etc/xdg/autostart/pantheon-org.gnome.SettingsDaemon.Keyboard.desktop
 etc/xdg/autostart/pantheon-org.gnome.SettingsDaemon.MediaKeys.desktop
@@ -14,7 +13,6 @@ etc/xdg/autostart/pantheon-org.gnome.SettingsDaemon.ScreensaverProxy.desktop
 etc/xdg/autostart/pantheon-org.gnome.SettingsDaemon.Sharing.desktop
 etc/xdg/autostart/pantheon-org.gnome.SettingsDaemon.Smartcard.desktop
 etc/xdg/autostart/pantheon-org.gnome.SettingsDaemon.Sound.desktop
-etc/xdg/autostart/pantheon-org.gnome.SettingsDaemon.UsbProtection.desktop
 etc/xdg/autostart/pantheon-org.gnome.SettingsDaemon.XSettings.desktop
 share/applications/pantheon-mimeapps.list
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/plank.desktop

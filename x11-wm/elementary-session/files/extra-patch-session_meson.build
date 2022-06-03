@@ -1,11 +1,11 @@
 --- session/meson.build.orig	2021-02-19 20:24:49 UTC
 +++ session/meson.build
-@@ -10,18 +10,15 @@ pantheon_components = [
+@@ -10,18 +10,14 @@ pantheon_components = [
  
  gsd_components = [
    'org.gnome.SettingsDaemon.A11ySettings',
 -  'org.gnome.SettingsDaemon.Color',
-   'org.gnome.SettingsDaemon.Datetime',
+-  'org.gnome.SettingsDaemon.Datetime',
    'org.gnome.SettingsDaemon.Housekeeping',
    'org.gnome.SettingsDaemon.Keyboard',
    'org.gnome.SettingsDaemon.MediaKeys',
@@ -19,3 +19,22 @@
    'org.gnome.SettingsDaemon.XSettings',
  ]
  
+@@ -33,10 +29,6 @@ gsd_mouse_clipboard = [
+   'org.gnome.SettingsDaemon.Mouse',
+ ]
+ 
+-# Added in 3.36.0
+-# https://gitlab.gnome.org/GNOME/gnome-session/-/commit/86d4132c7810b5c1b2392f63c15b3b90b8a7a4f9
+-gsd_usb_protection = ['org.gnome.SettingsDaemon.UsbProtection']
+-
+ # Needed where we're not using light-locker and are using Gala above 3.3.2
+ # We're using 3.36 to target this as it's the first elementary release where this is true
+ gsd_screensaver_proxy = ['org.gnome.SettingsDaemon.ScreensaverProxy']
+@@ -49,7 +41,6 @@ gsd_version = gsd_dep.version()
+ 
+ # Merge the gsd_components list depending on the gnome-settings-daemon version.
+ if gsd_version.version_compare('>=3.36.0')
+-  gsd_components += gsd_usb_protection
+   gsd_components += gsd_screensaver_proxy
+ elif gsd_version.version_compare('< 3.33.90')
+   gsd_components += gsd_mouse_clipboard
