@@ -54,7 +54,7 @@ Through `startx` or `xdm`. Create `.xinitrc` script (or adjust yours own).
 % cp /usr/local/share/examples/elementary-session/xinitrc ~/.xinitrc
 ```
 
-With *greeter*, the Pantheon desktop installs by default `x11/elementary-greeter`. If `io.elementary.greeter` fails, `x11/lightdm-gtk-greeter` is good alternative.
+With a *greeter*, the Pantheon desktop installs by default `x11/elementary-greeter`. If `io.elementary.greeter` fails, `x11/lightdm-gtk-greeter` is good alternative too.
 
 - Follow instructions → `pkg info -D lightdm`
 - Change value of **greeter-session** in `/usr/local/etc/lightdm/lightdm.conf`
