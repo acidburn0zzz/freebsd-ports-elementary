@@ -26,23 +26,54 @@ You need to adjust **LOCAL_REP** variable, before to run it. The ports collectio
 
 ### How to setup
 
-Currently `io.elementary.greeter` (greeter for LightDM) fails to load pantheon session. But it is possible to have full session from a console or with `x11/lightdm-gtk-greeter`.
+Currently it is possible to have full session from a console or with a login manager (preferably LightDM).
+
+`x11-wm/elementary-session` provides 2 skeletons for **xinitrc** and **profile** `pkg info -D elementary-session`.
 
 1. Enable the gnome-keyring daemon (**it is mandatory**), follow instructions → `pkg info -D elementary-greeter`
-2. Create `.xinitrc` (or adjust our own). `x11-wm/elementary-session` provides 2 skeletons for **xinitrc** and **xprofile** → `pkg info -D elementary-session`
-
-Such files are needed, because Gala (the window manager) loads several environment variables.
+2. Copy **xprofile** file into your home directory:
 
 ```
-% cp /usr/local/share/examples/elementary-session/xinitrc ~/.xinitrc
 % cp /usr/local/share/examples/elementary-session/xprofile ~/.xprofile
 ```
 
-3. Launch Plank automatically
+This file is important, because it loads several variables.
+
+3. Allow plank to be launched at startup
 
 ```
 % mkdir -p ~/.config/autostart
 % cp /usr/local/share/examples/elementary-session/plank.desktop ~/.config/autostart/
+```
+
+Next steps depend on how you are going to launch desktop.
+
+Through `startx` or `xdm`. Create `.xinitrc` script (or adjust yours own).
+
+```
+% cp /usr/local/share/examples/elementary-session/xinitrc ~/.xinitrc
+```
+
+With *greeter*, the Pantheon desktop installs by default `x11/elementary-greeter`. If `io.elementary.greeter` fails, `x11/lightdm-gtk-greeter` is good alternative.
+
+- Follow instructions → `pkg info -D lightdm`
+- Change value of **greeter-session** in `/usr/local/etc/lightdm/lightdm.conf`
+
+```
+[...]
+greeter-session=io.elementary.greeter
+#greeter-hide-users=false
+greeter-allow-guest=false
+[...]
+```
+
+If you want to have support of localization (e.g. for non-English users). You must create file in `/var/db/AccountsService/users/`. Name of such file is your login. For example for French users:
+
+```
+[User]
+Language=fr_FR.UTF-8
+XSession=pantheon
+SystemAccount=false
 ```
 
 4. Enjoy!
