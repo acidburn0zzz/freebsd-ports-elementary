@@ -28,7 +28,7 @@ You need to adjust **LOCAL_REP** variable, before to run it. The ports collectio
 
 Currently it is possible to have full session from a console or with a login manager (preferably LightDM).
 
-`x11-wm/elementary-session` provides 2 skeletons for **xinitrc** and **profile** (for more details `pkg info -D elementary-session`).
+`x11-wm/elementary-session` provides 2 skeletons for **xinitrc** and **xprofile** (for more details `pkg info -D elementary-session`).
 
 1. Enable the gnome-keyring daemon (**it is mandatory**), follow instructions → `pkg info -D elementary-greeter`
 2. Copy **xprofile** file into your home directory:
@@ -102,12 +102,6 @@ Even if numlock is enabled with your login manager. When session is opened, this
 
 ```
 % gsettings set io.elementary.wingpanel.keyboard numlock true
-```
-
-To see others properties:
-
-```
-% gsettings list-recursively io.elementary.wingpanel.keyboard
 ```
 
 ### Webcam setup
