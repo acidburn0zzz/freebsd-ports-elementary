@@ -1,5 +1,5 @@
 PORTNAME=	camera
-PORTVERSION=	6.0.3
+PORTVERSION=	6.1.0
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	elementary-
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	webcamd>0:multimedia/webcamd
 USES=	elementary gettext gnome gstreamer meson pkgconfig \
 	python:3.6+,build
 USE_GNOME=	glib20 gtk30
-USE_GSTREAMER=	good gtk jpeg ogg v4l2 vorbis vpx
+USE_GSTREAMER=	good gtk jpeg libgstreamer ogg plugins v4l2 vorbis vpx
 USE_ELEMENTARY=	granite
 
 USE_GITHUB=	yes
