@@ -42,6 +42,8 @@ LOCAL_REP=""
 PRGFILE=$(realpath "$0")
 PRGNAME="${0##*/}"
 
+#VALA_API=$(/usr/local/bin/valac --api-version)
+
 CWD=$(pwd)
 
 # Repository
@@ -120,23 +122,23 @@ revert()
 			${GIT} switch main;
 
 			dirs=$(find ${LOCAL_REP} -type d -depth 2 \
-                   ! -path '*/.git*' ! -path '*/Mk*');
+                               ! -path '*/.git*' ! -path '*/Mk*');
 			for d in ${dirs}; do
-                # Name
-                port=${d##${LOCAL_REP}/}
+                                # Name
+                                port=${d##${LOCAL_REP}/}
 
 				if [ -d "${port}" ]; then
 					rm -Rf ${port};
-                fi
-            done
+                                fi
+                        done
 
 			if [ -e Mk/Uses/elementary.mk ]; then
 				rm Mk/Uses/elementary.mk
-            fi
+                        fi
 
 			${GIT} restore -s main . ;
 
-			${GIT} branch -D io.elementary ;
+			${GIT} branch -D elementary ;
 
 			cd ${CWD};
 			exit 0
@@ -155,38 +157,42 @@ merge()
 	else
 		if [ -n "${PORTSDIR}" ]; then
 			cd ${PORTSDIR};
-			${GIT} switch io.elementary 2>/dev/null;
+			${GIT} switch elementary 2>/dev/null;
 			if [ ${?} -ne 0 ]; then
-				${GIT} switch -c io.elementary;
+				${GIT} switch -c elementary;
 			fi
 
 			dirs=$(find ${LOCAL_REP} -type d -depth 2 \
-                   ! -path '*/.git*' ! -path '*/Mk*');
+                               ! -path '*/.git*' ! -path '*/Mk*');
 			for d in ${dirs}; do
-                # Name
-                port=${d##${LOCAL_REP}/}
+                                # Name
+                                port=${d##${LOCAL_REP}/}
 
-				# New port
-				if [ ! -d "${port}" ]; then
-					mkdir "${port}";
-				fi
+                                # New port
+                                if [ ! -d "${port}" ]; then
+                                        mkdir "${port}";
+                                fi
 
-				# Clean port directory
-				if [ -d "${port}/work" ]; then
-					rm -Rf "${port}/work";
-				fi
+                                # Clean port directory
+                                if [ -d "${port}/work" ]; then
+                                        rm -Rf "${port}/work";
+                                fi
 								
-				# Overrides files/
-				if [ -d "${port}/files" ]; then
-					rm -Rf "${port}/files";
-				fi
+                                # Overrides files/
+                                if [ -d "${port}/files" ]; then
+                                        rm -Rf "${port}/files";
+                                fi
 
-				# Copy everything
-				cp -Rv ${d}/* ${port};
+                                # Copy everything
+                                cp -Rv ${d}/* ${port};
 			done
 
 			# Mk/...
 			cp ${LOCAL_REP}/Mk/Uses/elementary.mk ${PORTSDIR}/Mk/Uses ;
+
+			# Use another version of Vala
+			#sed -i '' -e "s|-0.48|-${VALA_API}|" \
+                        #    ${PORTSDIR}/editors/elementary-code/Makefile
 
 			cd ${CWD};
 			exit 0
@@ -198,7 +204,7 @@ merge()
 
 opts=$(getopt hcmur ${*})
 if [ ${?} -ne 0 ]; then
-		usage
+	usage
 fi
 set -- ${opts}
 
