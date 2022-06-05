@@ -1,6 +1,5 @@
 PORTNAME=	wingpanel
 PORTVERSION=	3.0.2
-PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	duchateau.olivier@gmail.com
