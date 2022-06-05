@@ -1,6 +1,8 @@
 # FreeBSD elementary OS development repo
 
-This is the [FreeBSD Ports](https://cgit.freebsd.org/ports/) collection in order to make this desktop environment usable. *Keep in mind, desktop can crash at anytime.*
+This is the [FreeBSD Ports](https://cgit.freebsd.org/ports/) collection in order to make this desktop environment usable.
+
+It is not yet production ready, some features are not well supported.
 
 **/!\ Running the Pantheon desktop requires at least 13.1-RELEASE or higher (some components depend of `deskutils/xdg-desktop-portal`).**
 
