@@ -1,0 +1,15 @@
+[desktop/ibus/general]
+preload-engines=['xkb:fr:oss:fra']
+
+[org/gnome/desktop/input-sources]
+sources=[('xkb', 'fr+oss'), ('ibus', 'xkb:fr:oss:fra')]
+
+[io/elementary/wingpanel/keyboard]
+numlock=true
+
+[org/gnome/desktop/session]
+idle-delay=uint32 1800
+
+# 'io.elementary.mail' is too unstable
+[net/launchpad/plank/docks/dock1]
+dock-items=['gala-multitaskingview.dockitem', 'io.elementary.tasks.dockitem', 'io.elementary.calendar.dockitem', 'io.elementary.music.dockitem', 'io.elementary.photos.dockitem', 'io.elementary.switchboard.dockitem']

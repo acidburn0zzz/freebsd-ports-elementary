@@ -88,6 +88,16 @@ SystemAccount=false
 
 ## Tips
 
+### Turn numlock on
+
+Even if numlock is enabled with your login manager. When session is opened, this feature is disabled. To change this:
+
+```
+% gsettings set io.elementary.wingpanel.keyboard numlock true
+```
+
+The best way is to create a [dconf profile](https://help.gnome.org/admin//system-admin-guide/3.8/dconf-custom-defaults.html.en) → [mine](https://codeberg.org/olivierd/freebsd-ports-elementary/src/branch/master/dconf/).
+
 ### Theme for GTK 4 applications
 
 By default GTK 4 theme settings is missing. To fix this:
@@ -96,14 +106,6 @@ By default GTK 4 theme settings is missing. To fix this:
 % mkdir -p ~/.config/gtk-4.0
 % fetch https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/gtk-4.0_settings.ini \
   -o ~/.config/gtk-4.0/settings.ini
-```
-
-### Turn numlock on
-
-Even if numlock is enabled with your login manager. When session is opened, this feature is disabled. To change this:
-
-```
-% gsettings set io.elementary.wingpanel.keyboard numlock true
 ```
 
 ### Webcam setup
