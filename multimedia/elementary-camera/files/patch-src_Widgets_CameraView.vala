@@ -21,18 +21,16 @@
  
              gst_video_widget = gtksink.widget;
  
-@@ -268,17 +260,13 @@ public class Camera.Widgets.CameraView : Gtk.Box {
-         var preview_video_src = (Gst.Element) pipeline.get_by_name (VIDEO_SRC_NAME);
-         string device_path;
-         preview_video_src.get ("device", out device_path);
--        var brightness_value = GLib.Value (typeof (double));
--        color_balance.get_property ("brightness", ref brightness_value);
--        var contrast_value = GLib.Value (typeof (double));
--        color_balance.get_property ("contrast", ref contrast_value);
+@@ -274,11 +266,14 @@ public class Camera.Widgets.CameraView : Gtk.Box {
+         color_balance.get_property ("contrast", ref contrast_value);
          Gst.Pipeline picture_pipeline;
          try {
++             // We directly use properties of v4l2src, instead videobalance filter
++             // See gst-inspect-1.0 v4l2src
               picture_pipeline = (Gst.Pipeline) Gst.parse_launch (
-                 "v4l2src device=%s name=%s num-buffers=1 !".printf (device_path, VIDEO_SRC_NAME) +
+-                "v4l2src device=%s name=%s num-buffers=1 !".printf (device_path, VIDEO_SRC_NAME) +
++                "v4l2src device=%s name=%s num-buffers=1 ".printf (device_path, VIDEO_SRC_NAME) +
++                "brightness=%d contrast=%d !".printf ((int) brightness_value.get_double (), (int) contrast_value.get_double ()) +
                  "videoscale ! video/x-raw, width=%d, height=%d !".printf (picture_width, picture_height) +
                  "videoflip method=%s !".printf ((horizontal_flip)?"horizontal-flip":"none") +
 -                "videobalance brightness=%f contrast=%f !".printf (brightness_value.get_double (), contrast_value.get_double ()) +
@@ -40,7 +38,7 @@
                  "jpegenc ! filesink location=%s name=filesink".printf (Camera.Utils.get_new_media_filename (Camera.Utils.ActionType.PHOTO))
              );
  
-@@ -336,9 +324,9 @@ public class Camera.Widgets.CameraView : Gtk.Box {
+@@ -336,9 +331,9 @@ public class Camera.Widgets.CameraView : Gtk.Box {
              missing_messages += Gst.PbUtils.missing_element_installer_detail_new ("webmmux");
          }
  
@@ -53,17 +51,17 @@
          }
  
          var audio_queue = Gst.ElementFactory.make ("queue", null);
-@@ -361,7 +349,8 @@ public class Camera.Widgets.CameraView : Gtk.Box {
+@@ -361,7 +356,8 @@ public class Camera.Widgets.CameraView : Gtk.Box {
          }
  
          if (missing_messages.length > 0) {
 -            Gst.PbUtils.install_plugins_async (missing_messages, null, (result) => {});
 +            // There is no wrapper around pkg(8) for missing plugins
-+            //Gst.PbUtils.install_plugins_async (missing_messages, null, (result) => {});
++            //Gst.PbUtils.install_plugins_async (missing_messages, null, (result) => {}); 
              recording = false;
              return;
          }
-@@ -369,8 +358,8 @@ public class Camera.Widgets.CameraView : Gtk.Box {
+@@ -369,8 +365,8 @@ public class Camera.Widgets.CameraView : Gtk.Box {
          record_bin.add_many (queue, videoconvert, encoder, muxer, filesink);
          queue.link_many (videoconvert, encoder, muxer, filesink);
  
