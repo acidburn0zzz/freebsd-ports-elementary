@@ -1,3 +1,7 @@
-TIMESTAMP = 1649348627
+TIMESTAMP = 1654441840
 SHA256 (elementary/elementary-gala-6.3.1_GH0.tar.gz) = f2aad3c51d576baa2f5dd0c5ec790ba3344d7a80add5bfb91ccb86eb28424635
 SIZE (elementary/elementary-gala-6.3.1_GH0.tar.gz) = 480817
+SHA256 (elementary/1e223b3.patch) = 6e6a0fab89157f3cbf84f5b08698a5af5ac8a81639a3ea1afcd74ba5d05532dc
+SIZE (elementary/1e223b3.patch) = 2869
+SHA256 (elementary/e86a951.patch) = d91c65d1b2a4b0fce15abc6cf0a5bd15f43658125b80d58a18e9207f7947f118
+SIZE (elementary/e86a951.patch) = 8266

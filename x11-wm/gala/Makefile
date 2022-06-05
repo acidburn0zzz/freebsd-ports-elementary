@@ -2,6 +2,10 @@ PORTNAME=	gala
 PORTVERSION=	6.3.1
 CATEGORIES=	x11-wm
 
+PATCH_SITES=	https://github.com/elementary/${PORTNAME}/commit/
+PATCHFILES+=	1e223b3.patch:-p1 \
+		e86a951.patch:-p1
+
 MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	Window manager for elementary OS
 
@@ -33,5 +37,15 @@ MESON_ARGS=	-Dsystemd=false
 
 GLIB_SCHEMAS=	org.pantheon.desktop.gala.gschema.xml \
 		20_elementary.pantheon.wm.gschema.override
+
+post-patch:
+# Force X11 backend
+	${REINPLACE_CMD} -e "s|Exec=gala|Exec=gala --x11|" \
+		${WRKSRC}/data/gala.desktop
+
+	${FIND} ${WRKSRC}/data -type f -name '*.desktop' | \
+		${XARGS} \
+		${REINPLACE_CMD} -e "s|X-GNOME-HiddenUnderSystemd|#X-GNOME-HiddenUnderSystemd| ;\
+		s|metacity|gala|g"
 
 .include <bsd.port.mk>
