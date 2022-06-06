@@ -38,7 +38,7 @@ LOCAL_REP=""
 : ${PORTSDIR:="/usr/ports"}
 
 # Name of the branch (used in official ports collection)
-: {BRANCH:="main"}
+BRANCH="main"
 ####
 
 #### Don't change anything below
@@ -66,6 +66,8 @@ usage()
 {
     cat <<EOF >&2
 usage: $PRGNAME option
+
+'${BRANCH}' is the default branch for ports collection
 
 options:
   -h    show this help
