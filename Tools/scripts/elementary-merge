@@ -36,11 +36,17 @@
 LOCAL_REP=""
 # The official ports collection
 : ${PORTSDIR:="/usr/ports"}
+
+# Name of the branch (used in official ports collection)
+: {BRANCH:="main"}
 ####
 
 #### Don't change anything below
 PRGFILE=$(realpath "$0")
 PRGNAME="${0##*/}"
+
+# We follow upstream releases
+ELEMENTARY_RELEASE="6.1"
 
 #VALA_API=$(/usr/local/bin/valac --api-version)
 
@@ -52,13 +58,13 @@ CWD=$(pwd)
 
 err()
 {
-	echo "$@" >&2
-	exit 1
+    echo "$@" >&2
+    exit 1
 }
 
 usage()
 {
-	cat <<EOF >&2
+    cat <<EOF >&2
 usage: $PRGNAME option
 
 options:
@@ -68,174 +74,174 @@ options:
   -u    update local repository
   -r    revert changes in official ports tree
 EOF
-		exit 0
+    exit 0
 }
 
 check_git()
 {
-	if [ -x $(which git 2>/dev/null) ]; then
-		echo $(which git);
-	else
-		err "ERROR: git(1) not found. Try 'pkg install git'";
-	fi
+    if [ -x $(which git 2>/dev/null) ]; then
+        echo $(which git);
+    else
+        err "ERROR: git(1) not found. Try 'pkg install git'";
+    fi
 }
 
 init_repository()
 {
-	if [ ! -d $(dirname ${LOCAL_REP}) ]; then
-		mkdir -p $(dirname ${LOCAL_REP})
-	fi
+    if [ ! -d $(dirname ${LOCAL_REP}) ]; then
+        mkdir -p $(dirname ${LOCAL_REP})
+    fi
 }
 
 update()
 {
-	cd ${LOCAL_REP}
+    cd ${LOCAL_REP}
 
-	${1} pull
+    ${1} pull
 }
 
 clone()
 {
-	GIT=$(check_git)
-		
-	if [ ! -d "${LOCAL_REP}/.git" ]; then
-		$(init_repository)
+    GIT=$(check_git)
 
-		cd $(dirname ${LOCAL_REP})
-		${GIT} clone -b 6.1 --depth 1 ${HOST}
-	else
-		update ${GIT};
-	fi
-	exit 0
+    if [ ! -d "${LOCAL_REP}/.git" ]; then
+        $(init_repository)
+
+        cd $(dirname ${LOCAL_REP})
+        ${GIT} clone -b ${ELEMENTARY_RELEASE} --depth 1 ${HOST} .
+    else
+        update ${GIT};
+    fi
+    exit 0
 }
 
 revert()
 {
-	GIT=$(check_git)
+    GIT=$(check_git)
 
-	if [ ! -d "${LOCAL_REP}/.git" ]; then
-		err "ERROR: You mut clone repository first!"
-	else
-		if [ -n "${PORTSDIR}" ]; then
-			cd ${PORTSDIR};
+    if [ ! -d "${LOCAL_REP}/.git" ]; then
+        err "ERROR: You mut clone repository first!"
+    else
+        if [ -n "${PORTSDIR}" ]; then
+            cd ${PORTSDIR};
 
-			${GIT} switch main;
+            ${GIT} switch ${BRANCH};
 
-			dirs=$(find ${LOCAL_REP} -type d -depth 2 \
-                               ! -path '*/.git*' ! -path '*/Mk*');
-			for d in ${dirs}; do
-                                # Name
-                                port=${d##${LOCAL_REP}/}
+            dirs=$(find ${LOCAL_REP} -type d -depth 2 \
+                   ! -path '*/.git*' ! -path '*/Mk*');
+            for d in ${dirs}; do
+                # Name
+                port=${d##${LOCAL_REP}/}
 
-				if [ -d "${port}" ]; then
-					rm -Rf ${port};
-                                fi
-                        done
+                if [ -d "${port}" ]; then
+                    rm -Rf ${port};
+                fi
+            done
 
-			if [ -e Mk/Uses/elementary.mk ]; then
-				rm Mk/Uses/elementary.mk
-                        fi
+            if [ -e Mk/Uses/elementary.mk ]; then
+                rm Mk/Uses/elementary.mk
+            fi
 
-			${GIT} restore -s main . ;
+            ${GIT} restore -s ${BRANCH} . ;
 
-			${GIT} branch -D elementary ;
+            ${GIT} branch -D elementary ;
 
-			cd ${CWD};
-			exit 0
+            cd ${CWD};
+            exit 0
        else
-		   err "ERROR: ${PORTSDIR} is not defined!"
+           err "ERROR: ${PORTSDIR} is not defined!"
        fi
     fi
 }
 
 merge()
 {
-	GIT=$(check_git)
+    GIT=$(check_git)
 
-	if [ ! -d "${LOCAL_REP}/.git" ]; then
-		err "ERROR: You must clone repository first!";
-	else
-		if [ -n "${PORTSDIR}" ]; then
-			cd ${PORTSDIR};
-			${GIT} switch elementary 2>/dev/null;
-			if [ ${?} -ne 0 ]; then
-				${GIT} switch -c elementary;
-			fi
+    if [ ! -d "${LOCAL_REP}/.git" ]; then
+        err "ERROR: You must clone repository first!";
+    else
+        if [ -n "${PORTSDIR}" ]; then
+            cd ${PORTSDIR};
+            ${GIT} switch elementary 2>/dev/null;
+            if [ ${?} -ne 0 ]; then
+                ${GIT} switch -c elementary;
+            fi
 
-			dirs=$(find ${LOCAL_REP} -type d -depth 2 \
-                               ! -path '*/.git*' ! -path '*/Mk*');
-			for d in ${dirs}; do
-                                # Name
-                                port=${d##${LOCAL_REP}/}
+            dirs=$(find ${LOCAL_REP} -type d -depth 2 \
+                   ! -path '*/.git*' ! -path '*/Mk*');
+            for d in ${dirs}; do
+                # Name
+                port=${d##${LOCAL_REP}/}
 
-                                # New port
-                                if [ ! -d "${port}" ]; then
-                                        mkdir "${port}";
-                                fi
+                # New port
+                if [ ! -d "${port}" ]; then
+                    mkdir "${port}";
+                fi
 
-                                # Clean port directory
-                                if [ -d "${port}/work" ]; then
-                                        rm -Rf "${port}/work";
-                                fi
-								
-                                # Overrides files/
-                                if [ -d "${port}/files" ]; then
-                                        rm -Rf "${port}/files";
-                                fi
+                # Clean port directory
+                if [ -d "${port}/work" ]; then
+                    rm -Rf "${port}/work";
+                fi
 
-                                # Copy everything
-                                cp -Rv ${d}/* ${port};
-			done
+                # Overrides files/
+                if [ -d "${port}/files" ]; then
+                    rm -Rf "${port}/files";
+                fi
 
-			# Mk/...
-			cp ${LOCAL_REP}/Mk/Uses/elementary.mk ${PORTSDIR}/Mk/Uses ;
+                # Copy everything
+                cp -Rv ${d}/* ${port};
+            done
 
-			# Use another version of Vala
-			#sed -i '' -e "s|-0.48|-${VALA_API}|" \
-                        #    ${PORTSDIR}/editors/elementary-code/Makefile
+            # Mk/...
+            cp ${LOCAL_REP}/Mk/Uses/elementary.mk ${PORTSDIR}/Mk/Uses ;
 
-			cd ${CWD};
-			exit 0
-		else
-			err "ERROR: ${PORTSDIR} is not defined!"
-		fi
-	fi
+            # Use another version of Vala
+            #sed -i '' -e "s|-0.48|-${VALA_API}|" \
+            #    ${PORTSDIR}/editors/elementary-code/Makefile
+
+            cd ${CWD};
+            exit 0
+        else
+            err "ERROR: ${PORTSDIR} is not defined!"
+        fi
+    fi
 }
 
 opts=$(getopt hcmur ${*})
 if [ ${?} -ne 0 ]; then
-	usage
+    usage
 fi
 set -- ${opts}
 
 if [ ${#} -eq 1 ]; then
-	usage;
+    usage;
 else
-	while true; do
-		case "${1}" in
-			-h)
-				usage;
-				shift
-				;;
-			-c)
-				clone;
-				shift
-				;;
-			-m)
-				merge;
-				shift
-				;;
-			-u)
-				clone;
-				shift
-				;;
-			-r)
-				revert;
-				shift
-				;;
-			--)
-				shift ; break
-				;;
-		esac
-	done
+    while true; do
+        case "${1}" in
+            -h)
+                usage;
+                shift
+                ;;
+            -c)
+                clone;
+                shift
+                ;;
+            -m)
+                merge;
+                shift
+                ;;
+            -u)
+                clone;
+                shift
+                ;;
+            -r)
+                revert;
+                shift
+                ;;
+            --)
+                shift ; break
+                ;;
+        esac
+    done
 fi
