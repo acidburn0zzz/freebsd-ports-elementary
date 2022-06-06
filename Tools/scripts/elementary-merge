@@ -107,7 +107,7 @@ clone()
     if [ ! -d "${LOCAL_REP}/.git" ]; then
         $(init_repository)
 
-        cd $(dirname ${LOCAL_REP})
+        cd ${LOCAL_REP}
         ${GIT} clone -b ${ELEMENTARY_RELEASE} --depth 1 ${HOST} .
     else
         update ${GIT};
