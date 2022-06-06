@@ -17,13 +17,31 @@ Repository contains several branches:
 1. `pkg install git`
 2. fetch [elementary-merge](https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/Tools/scripts/elementary-merge) script
 
-You need to adjust **LOCAL_REP** variable, before to run it. The ports collection must be present in your system. Then run `sh elementary-merge -h` for more details.
+You need to edit **LOCAL_REP** variable, before to run it. The ports collection must be present in your system. Then run `sh elementary-merge -h` for more details.
+
+```
+% fetch https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/Tools/scripts/elementary-merge
+% mkdir freebsd-ports-elementary
+% sh elementary-merge -c
+```
+
+Merge new ports into ports collection:
+
+```
+# sh elementary-merge -m
+```
 
 3. Install `x11-wm/elementary-session`
 
 ```
 # cd /usr/ports/x11-wm/elementary-session
 # make install clean
+```
+
+4. To remove new ports
+
+```
+# sh elementary-merge -r
 ```
 
 ### How to setup
