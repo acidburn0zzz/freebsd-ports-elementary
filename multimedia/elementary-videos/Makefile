@@ -1,5 +1,5 @@
 PORTNAME=	elementary-videos
-DISTVERSION=	2.8.3
+DISTVERSION=	2.8.4
 CATEGORIES=	multimedia
 
 MAINTAINER=	miguel@gocobachi.dev
