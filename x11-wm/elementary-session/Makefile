@@ -81,9 +81,11 @@ pre-install-EXAMPLES-on:
 pre-install-FULL-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/glib-2.0/schemas
 
-post-install-EXAMPLES-on:
+post-install:
 	${INSTALL_DATA} ${FILESDIR}/plank.desktop \
-		${STAGEDIR}${EXAMPLESDIR}
+		${STAGEDIR}${PREFIX}/etc/xdg/autostart
+
+post-install-EXAMPLES-on:
 .for f in xinitrc xprofile
 	${INSTALL_SCRIPT} ${WRKDIR}/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
