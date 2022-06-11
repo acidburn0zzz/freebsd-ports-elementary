@@ -6,12 +6,6 @@ if test "x$XDG_SESSION_TYPE" = "x"; then
 fi
 export XDG_SESSION_TYPE
 
-# Set $GDK_BACKEND
-if test "x$GDK_BACKEND" = "x"; then
-	GDK_BACKEND="x11"
-fi
-export GDK_BACKEND
-
 # Set $XDG_MENU_PREFIX
 if test "x$XDG_MENU_PREFIX" = "x" ; then
 	XDG_MENU_PREFIX="pantheon-"
@@ -54,7 +48,6 @@ fi
 
 # Unlock gnome-keyring
 if test -n "$DESKTOP_SESSION" ; then
-	eval $(gnome-keyring-daemon --start --components=pkc11,secrets,ssh)
 	export SSH_AUTH_SOCK
 fi
 
