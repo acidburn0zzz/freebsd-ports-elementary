@@ -59,13 +59,6 @@ Currently it is possible to have full session from a console or with a login man
 
 This file is important, because it loads several variables needed for desktop.
 
-3. Allow `plank` to be launched at startup
-
-```
-% mkdir -p ~/.config/autostart
-% cp /usr/local/share/examples/elementary-session/plank.desktop ~/.config/autostart/
-```
-
 Next steps depend on how you are going to launch desktop.
 
 Through `startx` or `xdm`. Create `.xinitrc` script (or adjust yours own).
