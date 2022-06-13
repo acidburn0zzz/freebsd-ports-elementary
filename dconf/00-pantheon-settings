@@ -6,6 +6,7 @@ sources=[('xkb', 'fr+oss'), ('ibus', 'xkb:fr:oss:fra')]
 
 [io/elementary/wingpanel/keyboard]
 numlock=true
+always-show-layout=true
 
 [org/gnome/desktop/session]
 idle-delay=uint32 1800
