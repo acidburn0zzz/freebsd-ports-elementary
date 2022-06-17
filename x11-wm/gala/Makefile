@@ -42,6 +42,9 @@ post-patch:
 # Force X11 backend
 	${REINPLACE_CMD} -e "s|Exec=gala|Exec=gala --x11|" \
 		${WRKSRC}/data/gala.desktop
+# Load daemon earlier
+	${REINPLACE_CMD} -e "s|=Desktop|=WindowManager|" \
+		${WRKSRC}/data/gala-daemon.desktop
 
 	${FIND} ${WRKSRC}/data -type f -name '*.desktop' | \
 		${XARGS} \
