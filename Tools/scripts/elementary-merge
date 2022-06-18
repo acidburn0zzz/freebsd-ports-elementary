@@ -53,7 +53,7 @@ ELEMENTARY_RELEASE="6.1"
 CWD=$(pwd)
 
 # Repository
-: ${HOST:="https://codeberg.org/olivierd/freebsd-ports-elementary.git"}
+HOST="https://codeberg.org/olivierd/freebsd-ports-elementary.git"
 
 
 err()
