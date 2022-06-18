@@ -11,6 +11,12 @@ always-show-layout=true
 [org/gnome/desktop/session]
 idle-delay=uint32 1800
 
+[org/gnome/desktop/screensaver]
+idle-activation-enabled=false
+
+[io/elementary/desktop/screensaver]
+lock-on-suspend=false
+
 # 'io.elementary.mail' is too unstable
 [net/launchpad/plank/docks/dock1]
 dock-items=['gala-multitaskingview.dockitem', 'io.elementary.tasks.dockitem', 'io.elementary.calendar.dockitem', 'io.elementary.music.dockitem', 'io.elementary.photos.dockitem', 'io.elementary.switchboard.dockitem']
