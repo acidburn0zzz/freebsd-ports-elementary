@@ -14,8 +14,7 @@ RUN_DEPENDS=	io.elementary.notifications:deskutils/elementary-notifications \
 		elementary-agent-geoclue2>0:net/elementary-agent-geoclue2 \
 		elementary-agent-polkit>0:sysutils/elementary-agent-polkit \
 		io.elementary.settings-daemon:sysutils/elementary-settings-daemon \
-		xdg-user-dirs-gtk-update:devel/xdg-user-dirs-gtk \
-		desktop-file-install:devel/desktop-file-utils
+		xdg-user-dirs-gtk-update:devel/xdg-user-dirs-gtk
 
 # Standalone applications
 RUN_DEPENDS+=	io.elementary.tasks:deskutils/elementary-tasks \
@@ -49,7 +48,7 @@ RUN_DEPENDS+=	wingpanel-indicator-sound>0:audio/wingpanel-indicator-sound \
 		wingpanel-indicator-datetime>0:x11-clocks/wingpanel-indicator-datetime \
 		wingpanel-indicator-session>0:x11-wm/wingpanel-indicator-session
 
-USES=		meson
+USES=		desktop-file-utils meson
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
