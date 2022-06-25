@@ -41,5 +41,7 @@ post-extract:
 post-patch:
 	${FIND} ${WRKSRC}/skel/plank/dock1/launchers -type f \
 		| ${XARGS} ${REINPLACE_CMD} -i "" -e 's|/usr|${LOCALBASE}|'
+	${REINPLACE_CMD} -i "" -e 's|/var/lib/flatpak/exports|${LOCALBASE}|' \
+		${WRKSRC}/skel/plank/dock1/launchers/io.elementary.videos.dockitem
 
 .include <bsd.port.mk>
