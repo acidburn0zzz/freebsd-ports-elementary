@@ -17,6 +17,13 @@ idle-activation-enabled=false
 [io/elementary/desktop/screensaver]
 lock-on-suspend=false
 
+[org/gnome/desktop/interface]
+cursor-blink=false
+
+[io/elementary/terminal/settings]
+font='Monospace Regular 10'
+save-exited-tabs=false
+
 # 'io.elementary.mail' is too unstable
 [net/launchpad/plank/docks/dock1]
 dock-items=['gala-multitaskingview.dockitem', 'io.elementary.tasks.dockitem', 'io.elementary.calendar.dockitem', 'io.elementary.music.dockitem', 'io.elementary.photos.dockitem', 'io.elementary.switchboard.dockitem']
