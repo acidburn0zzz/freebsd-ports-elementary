@@ -10,5 +10,4 @@
 
 # Usually loaded when 'io.elementary.files is opened
 #%%PREFIX%%/libexec/gvfsd-trash &
-[ -f "$XDG_CONFIG_HOME/autostart/plank.desktop" ] || plank &
 exec ck-launch-session gnome-session --builtin --session=pantheon
