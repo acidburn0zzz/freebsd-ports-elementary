@@ -62,6 +62,8 @@ fi
 
 # Unlock gnome-keyring
 if test -n "$DESKTOP_SESSION" ; then
+    # If .xinitrc is used, uncomment the next line
+    #eval $(gnome-keyring-daemon --start --components=pkc11,secrets,ssh)
 	export SSH_AUTH_SOCK
 fi
 
