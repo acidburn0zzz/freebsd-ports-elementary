@@ -25,5 +25,5 @@ font='Monospace Regular 10'
 save-exited-tabs=false
 
 [io/elementary/code/settings]
-indent-width=2
 style-scheme='classic'
+font='Monospace 10'
