@@ -1,5 +1,5 @@
 PORTNAME=	switchboard-plug-printers
-PORTVERSION=	2.1.10
+PORTVERSION=	2.2.0
 CATEGORIES=	print
 
 MAINTAINER=	duchateau.olivier@gmail.com
