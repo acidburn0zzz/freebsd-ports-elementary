@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	freedesktop-sound-theme>=0.8:audio/freedesktop-sound-theme
 
-USES=		meson elementary python:3.5+,build
+USES=		meson elementary python:3.7+,build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary

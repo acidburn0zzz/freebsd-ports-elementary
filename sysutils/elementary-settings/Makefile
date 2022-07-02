@@ -16,7 +16,7 @@ RUN_DEPENDS=	gnome-icons-elementary>0:x11-themes/gnome-icons-elementary \
 		open-sans>=0:x11-fonts/open-sans \
 		roboto-fonts-ttf>0:x11-fonts/roboto-fonts-ttf
 
-USES=		elementary gnome meson pkgconfig python:3.6+,build
+USES=		elementary gnome meson pkgconfig python:3.7+,build
 USE_GNOME=	glib20
 
 USE_GITHUB=	yes

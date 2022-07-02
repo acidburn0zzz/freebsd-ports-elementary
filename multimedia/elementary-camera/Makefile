@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 RUN_DEPENDS=	webcamd>0:multimedia/webcamd
 
 USES=	elementary gettext gnome gstreamer meson pkgconfig \
-	python:3.6+,build
+	python:3.7+,build
 USE_GNOME=	glib20 gtk30
 USE_GSTREAMER=	good gtk jpeg libgstreamer ogg plugins v4l2 vorbis vpx
 USE_ELEMENTARY=	granite

@@ -14,7 +14,7 @@ BUILD_DEPENDS=	sassc:textproc/sassc
 RUN_DEPENDS=	gnome-icons-elementary>0:x11-themes/gnome-icons-elementary \
 		inter-fonts-otf>0:x11-fonts/inter-fonts-otf
 
-USES=		gettext meson python:3.6+,build
+USES=		gettext meson python:3.7+,build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary

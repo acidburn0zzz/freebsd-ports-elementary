@@ -12,7 +12,7 @@ BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee
 
 USES=		elementary gettext gnome meson pkgconfig \
-		python:3.6+,build
+		python:3.7+,build
 USE_GNOME=	glib20 gtk30
 USE_ELEMENTARY=	gala granite switchboard
 

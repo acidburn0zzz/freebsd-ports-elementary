@@ -14,7 +14,7 @@ BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libpolkit-agent-1.so:sysutils/polkit
 
 USES=	elementary gettext gnome meson pkgconfig \
-	python:3.6+,build
+	python:3.7+,build
 USE_GNOME=	glib20 gtk30
 USE_ELEMENTARY=	granite
 

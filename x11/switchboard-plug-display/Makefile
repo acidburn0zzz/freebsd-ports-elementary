@@ -15,7 +15,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 RUN_DEPENDS=	gnome-settings-daemon>0:sysutils/gnome-settings-daemon
 
 USES=		elementary gettext gnome meson pkgconfig \
-		python:3.6+,build
+		python:3.7+,build
 USE_GNOME=	glib20 gtk30
 USE_ELEMENTARY=	granite switchboard
 

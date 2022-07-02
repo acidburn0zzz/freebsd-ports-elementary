@@ -25,7 +25,7 @@ RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
 		redacted-fonts-ttf>0:x11-fonts/redacted-fonts-ttf
 
 USES=		elementary gettext gnome meson pkgconfig \
-		python:3.6+,build xorg
+		python:3.7+,build xorg
 USE_GNOME=	glib20 gtk30 gnomedesktop3 cairo gdkpixbuf2
 USE_ELEMENTARY=	granite portals
 USE_XORG=	xfixes

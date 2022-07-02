@@ -18,7 +18,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 RUN_DEPENDS=	switchboard-plug-onlineaccounts>0:net/switchboard-plug-onlineaccounts
 
 USES=		desktop-file-utils elementary gettext gnome meson pkgconfig \
-		python:3.6+,build
+		python:3.7+,build
 USE_GNOME=	glib20 gtk30 evolutiondataserver3 gdkpixbuf2
 USE_ELEMENTARY=	granite
 

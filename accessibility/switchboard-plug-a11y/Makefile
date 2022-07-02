@@ -13,7 +13,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee
 RUN_DEPENDS=	wingpanel-indicator-a11y>:accessibility/wingpanel-indicator-a11y
 
 USES=		elementary gettext gnome meson pkgconfig \
-		python:3.6+,build
+		python:3.7+,build
 USE_GNOME=	glib20 gtk30
 USE_ELEMENTARY=	granite switchboard
 

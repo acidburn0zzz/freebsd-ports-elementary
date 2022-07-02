@@ -18,7 +18,7 @@ RUN_DEPENDS=	upower>0:sysutils/upower \
 		gnome-settings-daemon>0:sysutils/gnome-settings-daemon
 
 USES=		elementary gettext gnome meson pkgconfig \
-		python:3.6+,build
+		python:3.7+,build
 USE_GNOME=	glib20 gtk30 gnomemenus3 gdkpixbuf2
 USE_ELEMENTARY=	granite plank switchboard wingpanel
 

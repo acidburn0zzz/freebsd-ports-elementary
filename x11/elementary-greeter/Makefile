@@ -22,7 +22,7 @@ RUN_DEPENDS=	gnome-settings-daemon>0:sysutils/gnome-settings-daemon \
 		elementary-settings-daemon>0:sysutils/elementary-settings-daemon
 
 USES=		elementary gettext gnome meson pkgconfig \
-		python:3.6+,build xorg
+		python:3.7+,build xorg
 USE_GNOME=	glib20 gtk30 cairo gdkpixbuf2
 USE_ELEMENTARY=	granite wingpanel
 USE_XORG=	x11

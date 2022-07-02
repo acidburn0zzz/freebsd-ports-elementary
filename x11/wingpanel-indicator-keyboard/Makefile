@@ -15,7 +15,7 @@ RUN_DEPENDS=	xkeyboard-config>0:x11/xkeyboard-config \
 		switchboard-plug-keyboard>0:x11/switchboard-plug-keyboard
 
 USES=		elementary gettext gnome meson pkgconfig \
-		python:3.6+,build
+		python:3.7+,build
 USE_GNOME=	glib20 gtk30 libgnomekbd libxml2
 USE_ELEMENTARY=	granite wingpanel
 

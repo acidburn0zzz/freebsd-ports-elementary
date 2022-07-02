@@ -15,7 +15,7 @@ RUN_DEPENDS=	redacted-fonts-ttf>0:x11-fonts/redacted-fonts-ttf \
 		gnome-shell>0:x11/gnome-shell
 
 USES=		elementary gettext gnome meson pkgconfig \
-		python:3.5+,build
+		python:3.7+,build
 USE_GNOME=	glib20 gtk30 cairo gdkpixbuf2
 USE_ELEMENTARY=	granite
 

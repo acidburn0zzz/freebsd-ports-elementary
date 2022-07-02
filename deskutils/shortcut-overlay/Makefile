@@ -13,7 +13,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libhandy-1.so:x11-toolkits/libhandy
 
 USES=	elementary gettext gnome meson pkgconfig \
-	python:3.6+,build
+	python:3.7+,build
 USE_GNOME=	glib20 gtk40
 USE_ELEMENTARY=	granite7
 

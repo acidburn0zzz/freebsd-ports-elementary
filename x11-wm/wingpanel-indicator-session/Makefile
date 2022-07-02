@@ -18,7 +18,7 @@ RUN_DEPENDS=	consolekit2>0:sysutils/consolekit2 \
 		gnome-session>0:x11/gnome-session
 
 USES=		elementary gettext gnome meson pkgconfig \
-		python:3.6+,build
+		python:3.7+,build
 USE_GNOME=	glib20 gtk30 gdkpixbuf2
 USE_ELEMENTARY=	granite wingpanel
 

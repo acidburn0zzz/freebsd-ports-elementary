@@ -14,7 +14,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 RUN_DEPENDS=	notification-daemon>0:deskutils/notification-daemon
 
 USES=		elementary gettext gnome meson pkgconfig \
-		python:3.6+,build
+		python:3.7+,build
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 USE_ELEMENTARY=	granite wingpanel
 

@@ -12,7 +12,7 @@ BUILD_DEPENDS=	valac:lang/vala
 RUN_DEPENDS=	onboard:accessibility/onboard \
 		orca:accessibility/orca
 
-USES=		elementary gettext gnome meson python:3.6+,build \
+USES=		elementary gettext gnome meson python:3.7+,build \
 		pkgconfig
 USE_ELEMENTARY=	granite wingpanel
 USE_GNOME=	glib20 gtk30
