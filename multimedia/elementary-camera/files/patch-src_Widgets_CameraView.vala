@@ -30,7 +30,7 @@
               picture_pipeline = (Gst.Pipeline) Gst.parse_launch (
 -                "v4l2src device=%s name=%s num-buffers=1 !".printf (device_path, VIDEO_SRC_NAME) +
 +                "v4l2src device=%s name=%s num-buffers=1 ".printf (device_path, VIDEO_SRC_NAME) +
-+                "brightness=%d contrast=%d !".printf ((int) brightness_value.get_double (), (int) contrast_value.get_double ()) +
++                "brightness=%d contrast=%d !".printf ((int) GLib.Math.rint (brightness_value.get_double ()), (int) GLib.Math.rint (contrast_value.get_double ())) +
                  "videoscale ! video/x-raw, width=%d, height=%d !".printf (picture_width, picture_height) +
                  "videoflip method=%s !".printf ((horizontal_flip)?"horizontal-flip":"none") +
 -                "videobalance brightness=%f contrast=%f !".printf (brightness_value.get_double (), contrast_value.get_double ()) +

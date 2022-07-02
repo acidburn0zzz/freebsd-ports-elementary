@@ -1,0 +1,12 @@
+--- meson.build.orig	2022-06-03 17:32:32 UTC
++++ meson.build
+@@ -9,6 +9,9 @@ i18n = import('i18n')
+ 
+ add_global_arguments('-DGETTEXT_PACKAGE="@0@"'.format (meson.project_name()), language:'c')
+ 
++add_project_arguments(['--Xcc=-lm'], language: 'vala',)
++add_project_link_arguments(['-lm'], language: 'c',)
++
+ asresources = gnome.compile_resources(
+     'as-resources', 'data/' + meson.project_name() + '.gresource.xml',
+     source_dir: 'data',
