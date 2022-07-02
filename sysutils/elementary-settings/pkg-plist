@@ -3,7 +3,6 @@ share/accountsservice/interfaces/io.elementary.pantheon.AccountsService.xml
 share/dbus-1/interfaces/io.elementary.pantheon.AccountsService.xml
 share/plank/dock1/launchers/gala-multitaskingview.dockitem
 share/plank/dock1/launchers/io.elementary.calendar.dockitem
-share/plank/dock1/launchers/io.elementary.mail.dockitem
 share/plank/dock1/launchers/io.elementary.music.dockitem
 share/plank/dock1/launchers/io.elementary.photos.dockitem
 share/plank/dock1/launchers/io.elementary.switchboard.dockitem

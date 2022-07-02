@@ -27,7 +27,6 @@ RUN_DEPENDS+=	io.elementary.tasks:deskutils/elementary-tasks \
 		io.elementary.files:x11-fm/elementary-files \
 		io.elementary.calendar:deskutils/elementary-calendar \
 		io.elementary.music:audio/elementary-music \
-		io.elementary.mail:mail/elementary-mail \
 		io.elementary.videos:multimedia/elementary-videos
 
 # Switchboard plugins

@@ -34,7 +34,7 @@ GLIB_SCHEMAS=	20_net.launchpad.plank-dockitems.gschema.override \
 post-extract:
 	${CP} ${FILESDIR}/create-symlink.py ${WRKSRC}/meson/
 
-.for f in io.elementary.appcenter.dockitem org.gnome.Epiphany.dockitem
+.for f in io.elementary.appcenter.dockitem io.elementary.mail.dockitem org.gnome.Epiphany.dockitem
 	@${RM} ${WRKSRC}/skel/plank/dock1/launchers/${f}
 .endfor
 
