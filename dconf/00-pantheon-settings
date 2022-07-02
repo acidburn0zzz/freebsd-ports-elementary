@@ -24,6 +24,6 @@ cursor-blink=false
 font='Monospace Regular 10'
 save-exited-tabs=false
 
-# 'io.elementary.mail' is too unstable
-[net/launchpad/plank/docks/dock1]
-dock-items=['gala-multitaskingview.dockitem', 'io.elementary.tasks.dockitem', 'io.elementary.calendar.dockitem', 'io.elementary.music.dockitem', 'io.elementary.photos.dockitem', 'io.elementary.switchboard.dockitem']
+[io/elementary/code/settings]
+indent-width=2
+style-scheme='classic'
