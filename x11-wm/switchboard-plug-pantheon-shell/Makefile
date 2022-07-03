@@ -1,5 +1,5 @@
 PORTNAME=	switchboard-plug-pantheon-shell
-PORTVERSION=	6.1.0
+PORTVERSION=	6.2.0
 CATEGORIES=	x11-wm
 
 MAINTAINER=	duchateau.olivier@gmail.com
