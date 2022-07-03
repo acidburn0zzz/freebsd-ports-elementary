@@ -1,5 +1,5 @@
 PORTNAME=	louper
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	deskutils
 
 MAINTAINER=	duchateau.olivier@gmail.com
@@ -11,8 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libhandy-1.so:x11-toolkits/libhandy
 
-USES=		elementary gettext gnome meson pkgconfig \
-		python:3.6+,build
+USES=		elementary gettext gnome meson pkgconfig
 USE_GNOME=	glib20 gtk30
 USE_ELEMENTARY=	granite
 
