@@ -1,5 +1,5 @@
 PORTNAME=	camera
-PORTVERSION=	6.1.0
+PORTVERSION=	6.2.0
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	elementary-
 
