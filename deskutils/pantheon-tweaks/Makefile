@@ -1,5 +1,5 @@
 PORTNAME=	pantheon-tweaks
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.4
 CATEGORIES=	deskutils
 
 MAINTAINER=	duchateau.olivier@gmail.com
@@ -14,16 +14,17 @@ RUN_DEPENDS=	elementary-theme>0:x11-themes/elementary-theme \
 		gnome-icons-elementary>0:x11-themes/gnome-icons-elementary \
 		elementary-sound-theme>0:audio/elementary-sound-theme \
 		io.elementary.files:x11-fm/elementary-files \
-		io.elementary.terminal:x11/elementary-terminal \
-		io.elementary.videos:multimedia/elementary-videos
+		io.elementary.terminal:x11/elementary-terminal
 
 USES=		elementary gettext gnome meson pkgconfig \
-		python:3.6+,build
+		python:3.7+,build
 USE_GNOME=	glib20 gtk30
 USE_ELEMENTARY=	granite gala switchboard wingpanel
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
+
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
