@@ -17,6 +17,11 @@ idle-activation-enabled=false
 [io/elementary/desktop/screensaver]
 lock-on-suspend=false
 
+[org/gnome/settings-daemon/plugins/power]
+sleep-inactive-ac-type='nothing'
+sleep-inactive-battery-type='nothing'
+power-button-action='nothing'
+
 [org/gnome/desktop/interface]
 cursor-blink=false
 
