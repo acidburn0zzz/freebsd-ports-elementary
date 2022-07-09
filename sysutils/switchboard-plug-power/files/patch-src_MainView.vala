@@ -1,6 +1,20 @@
 --- src/MainView.vala.orig	2022-05-18 05:01:37 UTC
 +++ src/MainView.vala
-@@ -117,65 +117,6 @@ public class Power.MainView : Gtk.Grid {
+@@ -103,7 +103,12 @@ public class Power.MainView : Gtk.Grid {
+                 width_request = 480
+             };
+ 
+-            scale.set_value (screen.brightness);
++            if (screen.brightness == -1) {
++                scale.set_value (get_backlight_value ());
++            }
++            else {
++                scale.set_value (screen.brightness);
++            }
+ 
+             scale.value_changed.connect (on_scale_value_changed);
+             ((DBusProxy)screen).g_properties_changed.connect (on_screen_properties_changed);
+@@ -117,65 +122,6 @@ public class Power.MainView : Gtk.Grid {
              label_size.add_widget (als_label);
          }
  
@@ -66,7 +80,7 @@
          var screen_timeout_label = new Gtk.Label (_("Turn off display when inactive for:")) {
              halign = Gtk.Align.END,
              xalign = 1
-@@ -280,18 +221,6 @@ public class Power.MainView : Gtk.Grid {
+@@ -280,18 +226,6 @@ public class Power.MainView : Gtk.Grid {
  
          add (infobar);
  
@@ -85,7 +99,29 @@
          add (main_grid);
          show_all ();
  
-@@ -318,7 +247,7 @@ public class Power.MainView : Gtk.Grid {
+@@ -303,6 +237,21 @@ public class Power.MainView : Gtk.Grid {
+         stack_switcher.visible = stack.get_children ().length () > 1;
+     }
+ 
++    private static int get_backlight_value () {
++        string val;
++        int result = 100;
++
++        try {
++            var sub_process = new GLib.Subprocess (GLib.SubprocessFlags.STDOUT_PIPE, "backlight", "-q");
++            sub_process.communicate_utf8 (null, null, out val, null);
++
++            return int.parse (val.replace ("\n", ""));
++        } catch (GLib.Error e) {
++            warning (e.message);
++        }
++        return result;
++    }
++
+     private static Polkit.Permission? get_permission () {
+         if (permission != null) {
+             return permission;
+@@ -318,7 +267,7 @@ public class Power.MainView : Gtk.Grid {
      }
  
      private static bool backlight_detect () {
@@ -94,7 +130,7 @@
  
          try {
              var enumerator = interface_path.enumerate_children (
-@@ -330,32 +259,9 @@ public class Power.MainView : Gtk.Grid {
+@@ -330,32 +279,9 @@ public class Power.MainView : Gtk.Grid {
                  return true;
              }
  
