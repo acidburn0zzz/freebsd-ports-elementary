@@ -1,23 +1,5 @@
 --- src/MainView.vala.orig	2022-05-18 05:01:37 UTC
 +++ src/MainView.vala
-@@ -66,7 +66,7 @@ public class Power.MainView : Gtk.Grid {
-         };
- 
-         if (battery.is_present ()) {
--            var wingpanel_power_settings = new GLib.Settings ("io.elementary.desktop.wingpanel.power");
-+            //var wingpanel_power_settings = new GLib.Settings ("io.elementary.desktop.wingpanel.power");
- 
-             var show_percent_label = new Gtk.Label (_("Show battery percentage in Panel:")) {
-                 halign = Gtk.Align.END,
-@@ -76,7 +76,7 @@ public class Power.MainView : Gtk.Grid {
-             var show_percent_switch = new Gtk.Switch () {
-                 halign = Gtk.Align.START
-             };
--            wingpanel_power_settings.bind ("show-percentage", show_percent_switch, "active", SettingsBindFlags.DEFAULT);
-+            //wingpanel_power_settings.bind ("show-percentage", show_percent_switch, "active", SettingsBindFlags.DEFAULT);
- 
-             main_grid.attach (show_percent_label, 0, 0);
-             main_grid.attach (show_percent_switch, 1, 0);
 @@ -117,65 +117,6 @@ public class Power.MainView : Gtk.Grid {
              label_size.add_widget (als_label);
          }
@@ -103,22 +85,19 @@
          add (main_grid);
          show_all ();
  
-@@ -318,46 +247,7 @@ public class Power.MainView : Gtk.Grid {
+@@ -318,7 +247,7 @@ public class Power.MainView : Gtk.Grid {
      }
  
      private static bool backlight_detect () {
 -        var interface_path = File.new_for_path ("/sys/class/backlight/");
--
--        try {
--            var enumerator = interface_path.enumerate_children (
--            GLib.FileAttribute.STANDARD_NAME,
--            FileQueryInfoFlags.NONE);
--            FileInfo backlight;
--            if ((backlight = enumerator.next_file ()) != null) {
--                debug ("Detected backlight interface");
--                return true;
--            }
--
++        var interface_path = File.new_for_path ("/dev/backlight/");
+ 
+         try {
+             var enumerator = interface_path.enumerate_children (
+@@ -330,32 +259,9 @@ public class Power.MainView : Gtk.Grid {
+                 return true;
+             }
+ 
 -        enumerator.close ();
 -
 -        } catch (GLib.Error err) {
@@ -141,13 +120,11 @@
 -                return true;
 -            }
 -
--            enumerator.close ();
+             enumerator.close ();
 -
--        } catch (GLib.Error err) {
+         } catch (GLib.Error err) {
 -            warning (err.message); // Not critical as this is eventually dealt with
--        }
--
-+        // See /dev/backlight/...
-         return false;
-     }
++            warning (err.message);
+         }
  
+         return false;
