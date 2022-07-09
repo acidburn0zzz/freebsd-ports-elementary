@@ -17,6 +17,7 @@ idle-activation-enabled=false
 [io/elementary/desktop/screensaver]
 lock-on-suspend=false
 
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=265107
 [org/gnome/settings-daemon/plugins/power]
 sleep-inactive-ac-type='nothing'
 sleep-inactive-battery-type='nothing'
