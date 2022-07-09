@@ -25,32 +25,24 @@
          }
      }
  
-@@ -72,21 +72,34 @@ public class Session.Services.UserManager : Object {
+@@ -72,21 +72,26 @@ public class Session.Services.UserManager : Object {
          }
  
          try {
 -            UserInfo[] users = login_proxy.list_users ();
 -            if (users == null) {
-+            GLib.ObjectPath[] seats = login_proxy.get_seats ();
-+            if (seats == null) {
++            GLib.ObjectPath[] sessions = login_proxy.get_sessions ();
++            if (sessions == null) {
                  return UserState.OFFLINE;
              }
  
 -            foreach (UserInfo user in users) {
 -                if (user.uid == uuid) {
 -                    if (user.user_object == null) {
-+            foreach (GLib.ObjectPath seat in seats) {
-+                SystemSeatInterface? system_seat = yield Bus.get_proxy (BusType.SYSTEM,
-+                                                                        LOGIN_IFACE,
-+                                                                        seat,
-+                                                                        DBusProxyFlags.NONE);
-+                if (system_seat == null) {
-+                    return UserState.OFFLINE;
-+                }
-+
++            foreach (GLib.ObjectPath session in sessions) {
 +                UserInterface? user_interface = yield Bus.get_proxy (BusType.SYSTEM,
 +                                                                     LOGIN_IFACE,
-+                                                                     system_seat.get_active_session (),
++                                                                     session,
 +                                                                     DBusProxyFlags.NONE);
 +                if (user_interface == null) {
 +                    return UserState.OFFLINE;
@@ -70,7 +62,7 @@
                  }
              }
  
-@@ -98,23 +111,7 @@ public class Session.Services.UserManager : Object {
+@@ -98,23 +103,7 @@ public class Session.Services.UserManager : Object {
      }
  
      public static async UserState get_guest_state () {
