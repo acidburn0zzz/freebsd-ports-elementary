@@ -12,7 +12,8 @@ BUILD_DEPENDS=	valac:lang/vala \
 		dbus>0:devel/dbus
 LIB_DEPENDS=	libpolkit-gobject-1.so:sysutils/polkit \
 		libgee-0.8.so:devel/libgee
-RUN_DEPENDS=	gnome-settings-daemon>0:sysutils/gnome-settings-daemon
+RUN_DEPENDS=	gnome-settings-daemon>0:sysutils/gnome-settings-daemon \
+		upower>0:sysutils/upower
 
 USES=		elementary gettext gnome meson pkgconfig
 USE_ELEMENTARY=	granite switchboard
