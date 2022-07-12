@@ -10,7 +10,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee
-RUN_DEPENDS=	wingpanel-indicator-a11y>:accessibility/wingpanel-indicator-a11y
+RUN_DEPENDS=	wingpanel-indicator-a11y>0:accessibility/wingpanel-indicator-a11y
 
 USES=		elementary gettext gnome meson pkgconfig \
 		python:3.7+,build
