@@ -30,7 +30,7 @@
  [org.gnome.mutter:Pantheon]
  auto-maximize=false
  overlay-key='Super_L'
-@@ -122,9 +114,6 @@ active=false
+@@ -122,26 +114,19 @@ active=false
  [org.gnome.settings-daemon.plugins.color:Pantheon]
  night-light-temperature=4500
  
@@ -39,8 +39,10 @@
 -
  [org.gnome.settings-daemon.plugins.power:Pantheon]
  idle-dim=false
++ambient-enabled=false
  
-@@ -133,15 +122,10 @@ idle-dim=false
+ [org.gnome.settings-daemon.plugins.screensaver-proxy:Pantheon]
+ # Allows light-locker to accept DBus
  active=false
  
  [org.gnome.settings-daemon.plugins.xsettings:Pantheon]
