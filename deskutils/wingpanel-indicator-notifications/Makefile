@@ -1,5 +1,5 @@
 PORTNAME=	wingpanel-indicator-notifications
-PORTVERSION=	6.0.5
+PORTVERSION=	6.0.6
 CATEGORIES=	deskutils
 
 MAINTAINER=	duchateau.olivier@gmail.com
@@ -13,8 +13,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libhandy-1.so:x11-toolkits/libhandy
 RUN_DEPENDS=	notification-daemon>0:deskutils/notification-daemon
 
-USES=		elementary gettext gnome meson pkgconfig \
-		python:3.7+,build
+USES=		elementary gettext gnome meson pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 USE_ELEMENTARY=	granite wingpanel
 
