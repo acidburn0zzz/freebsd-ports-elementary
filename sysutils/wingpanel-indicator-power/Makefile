@@ -23,6 +23,8 @@ USE_GNOME=	glib20 gtk30
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 
+SUB_FILES=	pkg-message
+
 GLIB_SCHEMAS=	io.elementary.desktop.wingpanel.power.gschema.xml
 
 .include <bsd.port.mk>
