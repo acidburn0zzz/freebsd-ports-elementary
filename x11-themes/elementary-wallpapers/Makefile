@@ -1,6 +1,7 @@
 PORTNAME=	wallpapers
 PORTVERSION=	6.1.0
 CATEGORIES=	x11-themes
+DIST_SUBDIR=	elementary
 PKGNAMEPREFIX=	elementary-
 
 MAINTAINER=	duchateau.olivier@gmail.com
