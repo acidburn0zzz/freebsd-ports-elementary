@@ -9,6 +9,7 @@ COMMENT=	Simple on-screen keyboard
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
 LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell \
 		libudev.so:devel/libudev-devd \
 		libcanberra.so:audio/libcanberra \
@@ -22,7 +23,7 @@ RUN_DEPENDS=	iso-codes>0:misc/iso-codes \
 
 USES=		gnome gettext pkgconfig python:3.6+ shebangfix xorg
 USE_GNOME=	glib20 gtk30 pygobject3 gdkpixbuf2 cairo pango dconf
-USE_PYTHON=	distutils noflavors
+USE_PYTHON=	distutils
 SHEBANG_GLOB=	*.py
 SHEBANG_FILES=	Onboard/pypredict/tools/checkmodels
 USE_XORG=	x11 xi xkbfile xtst
