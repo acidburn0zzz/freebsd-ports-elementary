@@ -11,8 +11,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee
 
-USES=		elementary gettext gnome meson pkgconfig \
-		python:3.7+,build
+USES=		elementary gettext gnome meson pkgconfig
 USE_GNOME=	glib20 gtk30 gdkpixbuf2
 USE_ELEMENTARY=	granite switchboard
 

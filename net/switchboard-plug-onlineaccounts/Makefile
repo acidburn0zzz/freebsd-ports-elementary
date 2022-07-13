@@ -13,8 +13,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libhandy-1.so:x11-toolkits/libhandy \
 		libsoup-2.4.so:devel/libsoup
 
-USES=		elementary gettext gnome meson pkgconfig \
-		python:3.7+,build
+USES=		elementary gettext gnome meson pkgconfig
 USE_GNOME=	glib20 gtk30 evolutiondataserver3
 USE_ELEMENTARY=	granite switchboard
 

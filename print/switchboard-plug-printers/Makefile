@@ -13,8 +13,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libcups.so:print/cups
 RUN_DEPENDS=	cups-pk-helper>0:print/cups-pk-helper
 
-USES=		elementary gettext gnome meson pkgconfig \
-		python:3.7+,build
+USES=		elementary gettext gnome meson pkgconfig
 USE_GNOME=	glib20 gtk30
 USE_ELEMENTARY=	granite switchboard
 

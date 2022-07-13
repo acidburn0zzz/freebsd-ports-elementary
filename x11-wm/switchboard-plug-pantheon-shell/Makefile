@@ -18,8 +18,7 @@ RUN_DEPENDS=	contractor:sysutils/contractor \
 		elementary-wallpapers>0:x11-themes/elementary-wallpapers \
 		opendyslexic-fonts-otf>0:x11-fonts/opendyslexic-fonts-otf
 
-USES=		elementary gettext gnome meson pkgconfig \
-		python:3.7+,build
+USES=		elementary gettext gnome meson pkgconfig
 USE_GNOME=	glib20 gtk30 gnomedesktop3 librsvg2 gdkpixbuf2
 USE_ELEMENTARY=	granite plank switchboard wingpanel
 

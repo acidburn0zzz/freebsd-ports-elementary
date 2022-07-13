@@ -14,8 +14,7 @@ LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libgee-0.8.so:devel/libgee
 
-USES=		elementary gettext gnome meson pkgconfig \
-		python:3.7+,build
+USES=		elementary gettext gnome meson pkgconfig
 USE_GNOME=	glib20 gtk30
 USE_ELEMENTARY=	granite switchboard
 

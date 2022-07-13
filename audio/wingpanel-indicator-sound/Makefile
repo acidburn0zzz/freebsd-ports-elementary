@@ -15,8 +15,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libcanberra.so:audio/libcanberra \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3
 
-USES=		elementary gettext gnome meson pkgconfig \
-		python:3.7+,build
+USES=		elementary gettext gnome meson pkgconfig
 USE_GNOME=	glib20 gtk30 cairo gdkpixbuf2
 USE_ELEMENTARY=	granite wingpanel
 

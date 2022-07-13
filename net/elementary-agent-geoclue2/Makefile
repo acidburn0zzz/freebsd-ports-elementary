@@ -12,8 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgeoclue-2.so:net/geoclue
 
-USES=		elementary gettext gnome meson pkgconfig \
-		python:3.7+,build
+USES=		elementary gettext gnome meson pkgconfig
 USE_GNOME=	glib20 gtk30
 
 USE_GITHUB=	yes

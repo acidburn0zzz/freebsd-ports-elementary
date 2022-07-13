@@ -9,7 +9,7 @@ COMMENT=	Collection of wallpapers for elementary OS
 LICENSE=	CC0-1.0 GPLv3+
 LICENSE_COMB=	multi
 
-USES=		gettext meson pkgconfig python:3.7+,build
+USES=		gettext meson pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary

@@ -14,8 +14,7 @@ LIB_DEPENDS=	libhandy-1.so:x11-toolkits/libhandy
 RUN_DEPENDS=	redacted-fonts-ttf>0:x11-fonts/redacted-fonts-ttf \
 		gnome-shell>0:x11/gnome-shell
 
-USES=		elementary gettext gnome meson pkgconfig \
-		python:3.7+,build
+USES=		elementary gettext gnome meson pkgconfig
 USE_GNOME=	glib20 gtk30 cairo gdkpixbuf2
 USE_ELEMENTARY=	granite
 

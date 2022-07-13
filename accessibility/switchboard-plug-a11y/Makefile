@@ -12,8 +12,7 @@ BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee
 RUN_DEPENDS=	wingpanel-indicator-a11y>0:accessibility/wingpanel-indicator-a11y
 
-USES=		elementary gettext gnome meson pkgconfig \
-		python:3.7+,build
+USES=		elementary gettext gnome meson pkgconfig
 USE_GNOME=	glib20 gtk30
 USE_ELEMENTARY=	granite switchboard
 

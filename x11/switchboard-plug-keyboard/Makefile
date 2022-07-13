@@ -18,8 +18,7 @@ RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
 		xkeyboard-config>0:x11/xkeyboard-config \
 		setxkbmap:x11/setxkbmap
 
-USES=		elementary gettext gnome meson pkgconfig \
-		python:3.7+,build
+USES=		elementary gettext gnome meson pkgconfig
 USE_GNOME=	glib20 gtk30 libxml2 libgnomekbd
 USE_ELEMENTARY=	gala granite switchboard
 

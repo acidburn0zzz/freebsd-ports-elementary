@@ -17,8 +17,7 @@ RUN_DEPENDS=	consolekit2>0:sysutils/consolekit2 \
 		elementary-calendar>0:deskutils/elementary-calendar \
 		elementary-tasks>0:deskutils/elementary-tasks
 
-USES=		elementary gettext gnome meson pkgconfig \
-		python:3.7+,build
+USES=		elementary gettext gnome meson pkgconfig
 USE_GNOME=	glib20 gtk30 evolutiondataserver3
 USE_ELEMENTARY=	granite wingpanel
 

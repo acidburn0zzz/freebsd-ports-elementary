@@ -14,8 +14,7 @@ RUN_DEPENDS=	accountsservice>0:sysutils/accountsservice \
 		elementary-settings>0:sysutils/elementary-settings \
 		gnome-session>0:x11/gnome-session
 
-USES=		elementary gettext gnome meson pkgconfig \
-		python:3.7+,build
+USES=		elementary gettext gnome meson pkgconfig
 USE_GNOME=	glib20 gtk30
 USE_ELEMENTARY=	granite
 

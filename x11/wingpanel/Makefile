@@ -13,11 +13,9 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libmutter-10.so:x11-wm/mutter
 RUN_DEPENDS=	elementary-notifications>0:deskutils/elementary-notifications
 
-USES=		elementary gettext gnome meson pkgconfig \
-		python:3.7+,build
+USES=		elementary gettext gnome meson pkgconfig
 USE_GNOME=	glib20 gtk30
 USE_ELEMENTARY=	gala
-INSTALLS_ICONS=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
