@@ -64,7 +64,8 @@ EXAMPLES_SUB_FILES=	pkg-message xinitrc xprofile
 FULL_DESC=	Install additional applications
 FULL_RUN_DEPENDS=	io.elementary.mail:mail/elementary-mail \
 			io.elementary.camera:multimedia/elementary-camera \
-			switchboard-plug-a11y>0:accessibility/switchboard-plug-a11y
+			switchboard-plug-a11y>0:accessibility/switchboard-plug-a11y \
+			switchboard-plug-power>0:sysutils/switchboard-plug-power
 FULL_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-session_meson.build
 FULL_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-disable-onboard-and-orca
 FULL_SUB_FILES=		30_org.onboard.gschema.override
