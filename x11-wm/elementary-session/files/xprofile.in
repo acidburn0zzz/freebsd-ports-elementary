@@ -20,13 +20,13 @@ export XDG_CURRENT_DESKTOP
 
 # Set $XDG_CONFIG_DIRS
 if test "x$XDG_CONFIG_DIRS" = "x" ; then
-	XDG_CONFIG_DIRS="/etc/xdg:%%PREFIX%%/etc/xdg"
+	XDG_CONFIG_DIRS="%%PREFIX%%/etc/xdg:/etc/xdg"
 fi
 export XDG_CONFIG_DIRS
 
 # Set $XDG_DATA_DIRS
 if test "x$XDG_DATA_DIRS" = "x" ; then
-	XDG_DATA_DIRS="%%PREFIX%%/share:/usr/share"
+	XDG_DATA_DIRS="%%PREFIX%%/share/gnome:%%PREFIX%%/share:/usr/share"
 fi
 export XDG_DATA_DIRS
 

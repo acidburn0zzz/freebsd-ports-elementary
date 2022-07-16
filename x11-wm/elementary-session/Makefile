@@ -47,7 +47,7 @@ RUN_DEPENDS+=	wingpanel-indicator-sound>0:audio/wingpanel-indicator-sound \
 		wingpanel-indicator-datetime>0:x11-clocks/wingpanel-indicator-datetime \
 		wingpanel-indicator-session>0:x11-wm/wingpanel-indicator-session
 
-USES=		desktop-file-utils meson
+USES=		meson
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
