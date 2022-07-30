@@ -26,6 +26,9 @@ power-button-action='nothing'
 [org/gnome/desktop/interface]
 cursor-blink=false
 
+[io/elementary/terminal/saved-state]
+window-size=(645, 495)
+
 [io/elementary/terminal/settings]
 font='Monospace Regular 10'
 save-exited-tabs=false
