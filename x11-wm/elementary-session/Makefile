@@ -23,7 +23,6 @@ RUN_DEPENDS+=	io.elementary.tasks:deskutils/elementary-tasks \
 		io.elementary.calculator:math/elementary-calculator \
 		io.elementary.greeter-compositor:x11/elementary-greeter \
 		io.elementary.terminal:x11/elementary-terminal \
-		io.elementary.screenshot:x11/elementary-screenshot \
 		io.elementary.files:x11-fm/elementary-files \
 		io.elementary.calendar:deskutils/elementary-calendar \
 		io.elementary.music:audio/elementary-music \
@@ -36,7 +35,8 @@ RUN_DEPENDS+=	switchboard-plug-notifications>0:deskutils/switchboard-plug-notifi
 		switchboard-plug-display>0:x11/switchboard-plug-display \
 		switchboard-plug-keyboard>0:x11/switchboard-plug-keyboard \
 		switchboard-plug-mouse-touchpad>0:x11/switchboard-plug-mouse-touchpad \
-		switchboard-plug-pantheon-shell>0:x11-wm/switchboard-plug-pantheon-shell
+		switchboard-plug-pantheon-shell>0:x11-wm/switchboard-plug-pantheon-shell \
+		switchboard-plug-power>0:sysutils/switchboard-plug-power
 
 # Wingpanel plugins
 RUN_DEPENDS+=	wingpanel-indicator-sound>0:audio/wingpanel-indicator-sound \
@@ -63,9 +63,10 @@ EXAMPLES_SUB_FILES=	pkg-message xinitrc xprofile
 
 FULL_DESC=	Install additional applications
 FULL_RUN_DEPENDS=	io.elementary.mail:mail/elementary-mail \
+			io.elementary.screenshot:x11/elementary-screenshot \
 			io.elementary.camera:multimedia/elementary-camera \
-			switchboard-plug-a11y>0:accessibility/switchboard-plug-a11y \
-			switchboard-plug-power>0:sysutils/switchboard-plug-power
+			switchboard-plug-a11y>0:accessibility/switchboard-plug-a11y
+
 FULL_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-session_meson.build
 FULL_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-disable-onboard-and-orca
 FULL_SUB_FILES=		30_org.onboard.gschema.override
