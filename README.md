@@ -8,7 +8,7 @@ Repository contains several branches:
 * [6.1](https://codeberg.org/olivierd/freebsd-ports-elementary/src/branch/6.1) → **main branch**
 * obsolete → no need anymore
 
-For complete documentation, see [wiki](wiki).
+For complete documentation, see [wiki](../../../wiki).
 
 ## Screenshots
 
