@@ -1,0 +1,10 @@
+Iridium is a friendly IRC client built in Vala and Gtk.
+
+Features include:
+* Store your server connections and joined channels between sessions
+* Connect to servers securely with SSL support
+* Favorite channels for quick and easy access
+* Pick up where you left off with automatic server reconnection
+* Optionally disable remembered connections for increased privacy
+
+WWW: https://github.com/avojak/iridium
