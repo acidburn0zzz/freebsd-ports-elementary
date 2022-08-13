@@ -1,10 +1,6 @@
 # FreeBSD elementary OS development repo
 
-This is the [FreeBSD Ports](https://cgit.freebsd.org/ports/) collection in order to make this desktop environment usable.
-
-It is not yet production ready, some features are not well supported.
-
-**/!\ Running the Pantheon desktop requires at least 13.1-RELEASE or higher (some components depend of `deskutils/xdg-desktop-portal`).**
+This is the [FreeBSD Ports](https://cgit.freebsd.org/ports/) collection in order to run this desktop.
 
 Repository contains several branches:
 
@@ -12,84 +8,7 @@ Repository contains several branches:
 * [6.1](https://codeberg.org/olivierd/freebsd-ports-elementary/src/branch/6.1) → **main branch**
 * obsolete → no need anymore
 
-## How to test
-
-1. `pkg install git`
-2. fetch [elementary-merge](https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/Tools/scripts/elementary-merge) script
-
-You need to edit **LOCAL_REP** variable, before to run it. The ports collection must be present in your system. Then run `sh elementary-merge -h` for more details.
-
-```
-% fetch https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/Tools/scripts/elementary-merge
-% mkdir freebsd-ports-elementary
-% sh elementary-merge -c
-```
-
-Merge new ports into ports collection:
-
-```
-# sh elementary-merge -m
-```
-
-3. Install `x11-wm/elementary-session`
-
-```
-# cd /usr/ports/x11-wm/elementary-session
-# make install clean
-```
-
-4. To remove new ports
-
-```
-# sh elementary-merge -r
-```
-
-### How to setup
-
-Currently it is possible to have full session from a console or with a login manager (preferably LightDM).
-
-`x11-wm/elementary-session` provides 2 skeletons for **xinitrc** and **xprofile** (for more details `pkg info -D elementary-session`).
-
-1. Enable the gnome-keyring daemon (**it is mandatory**), follow instructions → `pkg info -D elementary-greeter`
-2. Copy **xprofile** file into your home directory:
-
-```
-% cp /usr/local/share/examples/elementary-session/xprofile ~/.xprofile
-```
-
-This file is important, because it loads several variables needed for desktop.
-
-Next steps depend on how you are going to launch desktop.
-
-Through `startx` or `xdm`. Create `.xinitrc` script (or adjust yours own).
-
-```
-% cp /usr/local/share/examples/elementary-session/xinitrc ~/.xinitrc
-```
-
-With a *greeter*, the Pantheon desktop installs by default `x11/elementary-greeter`. If `io.elementary.greeter` fails, `x11/lightdm-gtk-greeter` is good alternative too.
-
-- Follow instructions → `pkg info -D lightdm`
-- Change value of **greeter-session** in `/usr/local/etc/lightdm/lightdm.conf`
-
-```
-[...]
-greeter-session=io.elementary.greeter
-#greeter-hide-users=false
-greeter-allow-guest=false
-[...]
-```
-
-If you want to have support of localization (e.g. for non-English users). You must create file in `/var/db/AccountsService/users/`. Name of such file is your login. For example for French users:
-
-```
-[User]
-Language=fr_FR.UTF-8
-XSession=pantheon
-SystemAccount=false
-```
-
-4. Enjoy!
+For complete documentation, see [wiki](wiki).
 
 ## Screenshots
 
@@ -118,45 +37,3 @@ By default GTK 4 theme settings is missing. To fix this:
 % fetch https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/gtk-4.0_settings.ini \
   -o ~/.config/gtk-4.0/settings.ini
 ```
-
-### Webcam setup
-
-1. Install webcamd
-2. Load **cuse.ko** kernel module, and edit `/etc/rc.conf`
-3. Add yourself to the **webcamd** group
-4. Start **webcamd(8)** demon
-
-```
-# pkg install webcamd
-# kldload cuse
-# sysrc kld_list+=cuse
-# pw groupmod webcamd -m olivierd
-
-# vi /etc/rc.conf → webcamd_enable="YES"
-
-# service webcamd start
-```
-
-5. Check available cameras
-
-```
-% usbconfig
-.
-.
-.
-ugen2.3: <NC2141102N70206E30LM21 VGA Webcam> at usbus2, cfg=0 md=HOST spd=HIGH (480Mbps) pwr=ON (500mA)
-```
-
-The USB device of my webcam is **ugen2.3**, we can adjust value of `webcamd_0_flags`.
-
-	# vi /etc/rc.conf → webcamd_0_flags="-d ugen2.3"
-
-Now we can test, if everything is fine. Install gstreamer1-plugings-v4l2.
-
-	# pkg install gstreamer1-plugins-v4l2 gstreamer1-plugins-ximagesrc
-
-	% GST_V4L2_USE_LIBV4L2=1 gst-launch-1.0 v4l2src ! xvimagesink
-
-Or `cd multimedia/elementary-camera ; make install clean`
-
-![Screenshot of io.elementary.camera](https://codeberg.org/olivierd/freebsd-ports-elementary/raw/branch/master/img/io.elementary.camera.png)
