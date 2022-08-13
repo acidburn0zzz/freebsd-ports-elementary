@@ -1,5 +1,5 @@
 PORTNAME=	time-limit
-PORTVERSION=	2.0.1
+PORTVERSION=	3.0.0
 CATEGORIES=	x11-clocks
 
 MAINTAINER=	duchateau.olivier@gmail.com
@@ -10,10 +10,10 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libhandy-1.so:x11-toolkits/libhandy
 
-USES=		elementary gnome meson pkgconfig \
-		python:3.6+,build
-USE_GNOME=	cairo glib20 gtk30
-USE_ELEMENTARY=	granite
+USES=		elementary gettext gnome meson pkgconfig \
+		python:3.7+,build
+USE_GNOME=	cairo glib20 gtk40
+USE_ELEMENTARY=	granite7
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	marbetschar
