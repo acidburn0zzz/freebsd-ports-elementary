@@ -14,7 +14,7 @@ RUN_DEPENDS=	io.elementary.notifications:deskutils/elementary-notifications \
 		elementary-agent-geoclue2>0:net/elementary-agent-geoclue2 \
 		elementary-agent-polkit>0:sysutils/elementary-agent-polkit \
 		io.elementary.settings-daemon:sysutils/elementary-settings-daemon \
-		xdg-user-dirs-gtk-update:devel/xdg-user-dirs-gtk
+		xdg-user-dirs-gtk-update:x11/xdg-user-dirs-gtk
 
 # Standalone applications
 RUN_DEPENDS+=	io.elementary.tasks:deskutils/elementary-tasks \
