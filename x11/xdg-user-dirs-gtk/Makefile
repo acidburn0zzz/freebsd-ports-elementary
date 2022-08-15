@@ -1,8 +1,8 @@
 PORTNAME=	xdg-user-dirs-gtk
 PORTVERSION=	0.10
-CATEGORIES=	devel gnome
+CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+ integration of special directories
