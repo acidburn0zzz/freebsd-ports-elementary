@@ -12,6 +12,12 @@ if test "x$XDG_MENU_PREFIX" = "x" ; then
 fi
 export XDG_MENU_PREFIX
 
+# Set $DESKTOP_SESSION
+if test "x$DESKTOP_SESSION" = "x" ; then
+	DESKTOP_SESSION="pantheon"
+fi
+export DESKTOP_SESSION
+
 # Set $XDG_CURRENT_DESKTOP
 if test "x$XDG_CURRENT_DESKTOP" = "x" ; then
 	XDG_CURRENT_DESKTOP="Pantheon"
