@@ -1,5 +1,5 @@
 PORTNAME=	switchboard-plug-pantheon-shell
-PORTVERSION=	6.2.0
+PORTVERSION=	6.3.0
 CATEGORIES=	x11-wm
 
 MAINTAINER=	duchateau.olivier@gmail.com
@@ -12,7 +12,8 @@ BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libgexiv2.so:graphics/gexiv2 \
 		libaccountsservice.so:sysutils/accountsservice \
-		libtumbler-1.so:deskutils/xfce4-tumbler
+		libtumbler-1.so:deskutils/xfce4-tumbler \
+		libhandy-1.so:x11-toolkits/libhandy
 RUN_DEPENDS=	contractor:sysutils/contractor \
 		elementary-theme>=6.0.0:x11-themes/elementary-theme \
 		elementary-wallpapers>0:x11-themes/elementary-wallpapers \
